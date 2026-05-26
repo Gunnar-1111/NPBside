@@ -1,0 +1,337 @@
+{
+  "_doc": "Per-team offense rating from 2024-25 NPB corpus. `offenseRating` = team's park-neutralized avg runs per game minus league average (3.30). Positive = better offense.",
+  "_lastUpdated": "2026-05-26",
+  "_corpus": {
+    "games": 3394,
+    "teams": 12
+  },
+  "_leagueAvgPerTeam": 3.3,
+  "_method": "Bill James-style park-neutralization. NO control for opp SP — v2 should regress on opp pitching.",
+  "_caveat": "Pacific League uses DH, Central doesn't. Pacific ratings inflated ~0.1 r/g vs Central.",
+  "teams": {
+    "T": {
+      "league": "central",
+      "games": 292,
+      "avgRuns": 3.408,
+      "avgNeutralized": 3.741,
+      "offenseRating": 0.441,
+      "homeAvgNeutralized": 3.874,
+      "awayAvgNeutralized": 3.601,
+      "stdev": 2.549,
+      "by_year": {
+        "2024": {
+          "n": 143,
+          "avgNeutralized": 3.731,
+          "offenseRating": 0.431
+        },
+        "2025": {
+          "n": 148,
+          "avgNeutralized": 3.776,
+          "offenseRating": 0.476
+        },
+        "2026": {
+          "n": 1,
+          "avgNeutralized": 0.0,
+          "offenseRating": -3.3
+        }
+      }
+    },
+    "G": {
+      "league": "central",
+      "games": 282,
+      "avgRuns": 3.22,
+      "avgNeutralized": 3.38,
+      "offenseRating": 0.08,
+      "homeAvgNeutralized": 3.477,
+      "awayAvgNeutralized": 3.286,
+      "stdev": 2.712,
+      "by_year": {
+        "2024": {
+          "n": 141,
+          "avgNeutralized": 3.327,
+          "offenseRating": 0.027
+        },
+        "2025": {
+          "n": 140,
+          "avgNeutralized": 3.434,
+          "offenseRating": 0.134
+        },
+        "2026": {
+          "n": 1,
+          "avgNeutralized": 3.348,
+          "offenseRating": 0.048
+        }
+      }
+    },
+    "D": {
+      "league": "central",
+      "games": 276,
+      "avgRuns": 2.707,
+      "avgNeutralized": 2.938,
+      "offenseRating": -0.362,
+      "homeAvgNeutralized": 3.215,
+      "awayAvgNeutralized": 2.653,
+      "stdev": 2.202,
+      "by_year": {
+        "2024": {
+          "n": 137,
+          "avgNeutralized": 2.805,
+          "offenseRating": -0.495
+        },
+        "2025": {
+          "n": 138,
+          "avgNeutralized": 3.083,
+          "offenseRating": -0.217
+        },
+        "2026": {
+          "n": 1,
+          "avgNeutralized": 1.188,
+          "offenseRating": -2.112
+        }
+      }
+    },
+    "S": {
+      "league": "central",
+      "games": 279,
+      "avgRuns": 3.319,
+      "avgNeutralized": 3.125,
+      "offenseRating": -0.175,
+      "homeAvgNeutralized": 3.067,
+      "awayAvgNeutralized": 3.184,
+      "stdev": 2.35,
+      "by_year": {
+        "2024": {
+          "n": 138,
+          "avgNeutralized": 3.409,
+          "offenseRating": 0.109
+        },
+        "2025": {
+          "n": 140,
+          "avgNeutralized": 2.861,
+          "offenseRating": -0.439
+        },
+        "2026": {
+          "n": 1,
+          "avgNeutralized": 0.85,
+          "offenseRating": -2.45
+        }
+      }
+    },
+    "C": {
+      "league": "central",
+      "games": 282,
+      "avgRuns": 3.018,
+      "avgNeutralized": 3.07,
+      "offenseRating": -0.23,
+      "homeAvgNeutralized": 3.422,
+      "awayAvgNeutralized": 2.702,
+      "stdev": 2.616,
+      "by_year": {
+        "2024": {
+          "n": 141,
+          "avgNeutralized": 2.987,
+          "offenseRating": -0.313
+        },
+        "2025": {
+          "n": 140,
+          "avgNeutralized": 3.167,
+          "offenseRating": -0.133
+        },
+        "2026": {
+          "n": 1,
+          "avgNeutralized": 1.031,
+          "offenseRating": -2.269
+        }
+      }
+    },
+    "DB": {
+      "league": "central",
+      "games": 298,
+      "avgRuns": 3.634,
+      "avgNeutralized": 3.477,
+      "offenseRating": 0.177,
+      "homeAvgNeutralized": 3.295,
+      "awayAvgNeutralized": 3.651,
+      "stdev": 2.889,
+      "by_year": {
+        "2024": {
+          "n": 152,
+          "avgNeutralized": 3.56,
+          "offenseRating": 0.26
+        },
+        "2025": {
+          "n": 145,
+          "avgNeutralized": 3.407,
+          "offenseRating": 0.107
+        },
+        "2026": {
+          "n": 1,
+          "avgNeutralized": 0.883,
+          "offenseRating": -2.417
+        }
+      }
+    },
+    "L": {
+      "league": "pacific",
+      "games": 273,
+      "avgRuns": 2.714,
+      "avgNeutralized": 2.794,
+      "offenseRating": -0.506,
+      "homeAvgNeutralized": 3.01,
+      "awayAvgNeutralized": 2.583,
+      "stdev": 2.359,
+      "by_year": {
+        "2024": {
+          "n": 137,
+          "avgNeutralized": 2.566,
+          "offenseRating": -0.734
+        },
+        "2025": {
+          "n": 135,
+          "avgNeutralized": 3.034,
+          "offenseRating": -0.266
+        },
+        "2026": {
+          "n": 1,
+          "avgNeutralized": 1.701,
+          "offenseRating": -1.599
+        }
+      }
+    },
+    "E": {
+      "league": "pacific",
+      "games": 274,
+      "avgRuns": 3.266,
+      "avgNeutralized": 3.214,
+      "offenseRating": -0.086,
+      "homeAvgNeutralized": 2.996,
+      "awayAvgNeutralized": 3.424,
+      "stdev": 2.668,
+      "by_year": {
+        "2024": {
+          "n": 136,
+          "avgNeutralized": 3.367,
+          "offenseRating": 0.067
+        },
+        "2025": {
+          "n": 137,
+          "avgNeutralized": 3.087,
+          "offenseRating": -0.213
+        },
+        "2026": {
+          "n": 1,
+          "avgNeutralized": 0.0,
+          "offenseRating": -3.3
+        }
+      }
+    },
+    "F": {
+      "league": "pacific",
+      "games": 297,
+      "avgRuns": 3.768,
+      "avgNeutralized": 3.508,
+      "offenseRating": 0.208,
+      "homeAvgNeutralized": 3.56,
+      "awayAvgNeutralized": 3.456,
+      "stdev": 2.787,
+      "by_year": {
+        "2024": {
+          "n": 145,
+          "avgNeutralized": 3.419,
+          "offenseRating": 0.119
+        },
+        "2025": {
+          "n": 151,
+          "avgNeutralized": 3.584,
+          "offenseRating": 0.284
+        },
+        "2026": {
+          "n": 1,
+          "avgNeutralized": 4.854,
+          "offenseRating": 1.554
+        }
+      }
+    },
+    "M": {
+      "league": "pacific",
+      "games": 278,
+      "avgRuns": 3.237,
+      "avgNeutralized": 3.11,
+      "offenseRating": -0.19,
+      "homeAvgNeutralized": 3.281,
+      "awayAvgNeutralized": 2.928,
+      "stdev": 2.752,
+      "by_year": {
+        "2024": {
+          "n": 140,
+          "avgNeutralized": 3.277,
+          "offenseRating": -0.023
+        },
+        "2025": {
+          "n": 137,
+          "avgNeutralized": 2.938,
+          "offenseRating": -0.362
+        },
+        "2026": {
+          "n": 1,
+          "avgNeutralized": 3.093,
+          "offenseRating": -0.207
+        }
+      }
+    },
+    "H": {
+      "league": "pacific",
+      "games": 297,
+      "avgRuns": 4.0,
+      "avgNeutralized": 3.965,
+      "offenseRating": 0.665,
+      "homeAvgNeutralized": 3.913,
+      "awayAvgNeutralized": 4.019,
+      "stdev": 3.155,
+      "by_year": {
+        "2024": {
+          "n": 146,
+          "avgNeutralized": 4.14,
+          "offenseRating": 0.84
+        },
+        "2025": {
+          "n": 150,
+          "avgNeutralized": 3.763,
+          "offenseRating": 0.463
+        },
+        "2026": {
+          "n": 1,
+          "avgNeutralized": 8.929,
+          "offenseRating": 5.629
+        }
+      }
+    },
+    "B": {
+      "league": "pacific",
+      "games": 266,
+      "avgRuns": 3.165,
+      "avgNeutralized": 3.145,
+      "offenseRating": -0.155,
+      "homeAvgNeutralized": 3.159,
+      "awayAvgNeutralized": 3.132,
+      "stdev": 2.564,
+      "by_year": {
+        "2024": {
+          "n": 128,
+          "avgNeutralized": 2.853,
+          "offenseRating": -0.447
+        },
+        "2025": {
+          "n": 137,
+          "avgNeutralized": 3.395,
+          "offenseRating": 0.095
+        },
+        "2026": {
+          "n": 1,
+          "avgNeutralized": 6.178,
+          "offenseRating": 2.878
+        }
+      }
+    }
+  }
+}

@@ -126,18 +126,22 @@ def shrink_rating(rating, ip):
     return rating * weight
 
 
-def project_game(home_sp_rating, away_sp_rating, park_runs_factor, hca=HCA_RUNS):
+def project_game(home_sp_rating, away_sp_rating,
+                 home_off_rating, away_off_rating,
+                 park_runs_factor, hca=HCA_RUNS):
     """Expected runs for each team.
 
-    home_runs = (league_avg − away_SP_rating) × park_factor + hca/2
-    away_runs = (league_avg − home_SP_rating) × park_factor − hca/2
+    home_runs = (league_avg + home_OFFENSE − away_SP) × park_factor + hca/2
+    away_runs = (league_avg + away_OFFENSE − home_SP) × park_factor − hca/2
 
-    SP rating is "runs better than league avg per 9 IP" (positive = better).
-    Subtracting an opponent's rating gives expected runs they'd allow above/below
-    league avg. Park factor scales both teams equally.
+    Ratings are runs-above-avg per game:
+    - SP rating: positive = better pitcher (allows fewer runs)
+    - OFFENSE rating: positive = better offense (scores more runs)
+    Subtracting opponent's SP from your own offense baseline gives expected
+    runs scored. Park factor scales both teams equally.
     """
-    home_runs = (LEAGUE_AVG_PER_TEAM - away_sp_rating) * park_runs_factor + hca / 2
-    away_runs = (LEAGUE_AVG_PER_TEAM - home_sp_rating) * park_runs_factor - hca / 2
+    home_runs = (LEAGUE_AVG_PER_TEAM + home_off_rating - away_sp_rating) * park_runs_factor + hca / 2
+    away_runs = (LEAGUE_AVG_PER_TEAM + away_off_rating - home_sp_rating) * park_runs_factor - hca / 2
     home_runs = max(MIN_EXPECTED_RUNS, home_runs)
     away_runs = max(MIN_EXPECTED_RUNS, away_runs)
     return home_runs, away_runs
@@ -182,6 +186,8 @@ def main():
     parks = json.load(open(REPO / "data" / "park-factors.json"))
     yokoku = json.load(open(yokoku_path))
     pitchers = ratings_data["pitchers"]
+    team_offense_path = REPO / "data" / "team-offense-ratings.json"
+    team_offense = json.load(open(team_offense_path))["teams"] if team_offense_path.exists() else {}
 
     lines_out = []
     for g in yokoku["games"]:
@@ -196,6 +202,10 @@ def main():
         home_rating = shrink_rating(home_rating_raw, home_ip)
         away_rating = shrink_rating(away_rating_raw, away_ip)
 
+        # Team offense rating (positive = better offense than league avg)
+        home_off = team_offense.get(g["home"], {}).get("offenseRating", 0.0)
+        away_off = team_offense.get(g["away"], {}).get("offenseRating", 0.0)
+
         # Park lookup: pick the home team's park
         home_team_park = next(
             (k for k, v in parks.items()
@@ -205,7 +215,11 @@ def main():
         park_runs = parks[home_team_park]["runs"] if home_team_park else 1.0
         park_hr = parks[home_team_park]["hr"] if home_team_park else 1.0
 
-        home_runs, away_runs = project_game(home_rating, away_rating, park_runs)
+        home_runs, away_runs = project_game(
+            home_rating, away_rating,
+            home_off, away_off,
+            park_runs,
+        )
         lines = project_lines(home_runs, away_runs)
 
         lines_out.append({
@@ -217,12 +231,14 @@ def main():
             "homeSPRatingRaw": round(home_rating_raw, 3),
             "homeSPIp": home_ip,
             "homeSPFound": home_sp is not None,
+            "homeOffense": round(home_off, 3),
             "awaySP": g["awaySP"],
             "awaySPId": g.get("awaySPId"),
             "awaySPRating": round(away_rating, 3),
             "awaySPRatingRaw": round(away_rating_raw, 3),
             "awaySPIp": away_ip,
             "awaySPFound": away_sp is not None,
+            "awayOffense": round(away_off, 3),
             "park": home_team_park,
             "parkRunsFactor": park_runs,
             "parkHrFactor": park_hr,
@@ -234,17 +250,17 @@ def main():
 
     # Print
     print(f"NPB {date_str} — {len(lines_out)} games")
-    print(f"{'matchup':<8}  {'awayML':>8} {'homeML':>8}  {'total':>5}  "
-          f"{'home%':>6}  {'awayR':>6} {'homeR':>6}  {'aRating':>8} {'hRating':>8}  {'parkF':>6}  pitchers (found?)")
-    print("-" * 130)
+    print(f"{'matchup':<8}  {'awayML':>7} {'homeML':>7}  {'total':>5}  "
+          f"{'home%':>6}  {'aSP':>6} {'hSP':>6}  {'aOff':>6} {'hOff':>6}  {'parkF':>6}  pitchers")
+    print("-" * 110)
     for entry in lines_out:
         L = entry["lines"]
         af = "✓" if entry["awaySPFound"] else "✗"
         hf = "✓" if entry["homeSPFound"] else "✗"
         print(f"{entry['away']}@{entry['home']:<5}  "
-              f"{L['awayMl']:>+8d} {L['homeMl']:>+8d}  {L['total']:>5.1f}  "
-              f"{L['homeWinPct']:>5.1f}%  {L['awayExpectedRuns']:>6.2f} {L['homeExpectedRuns']:>6.2f}  "
-              f"{entry['awaySPRating']:>+8.2f} {entry['homeSPRating']:>+8.2f}  "
+              f"{L['awayMl']:>+7d} {L['homeMl']:>+7d}  {L['total']:>5.1f}  "
+              f"{L['homeWinPct']:>5.1f}%  {entry['awaySPRating']:>+6.2f} {entry['homeSPRating']:>+6.2f}  "
+              f"{entry['awayOffense']:>+6.2f} {entry['homeOffense']:>+6.2f}  "
               f"{entry['parkRunsFactor']:>6.3f}  "
               f"{entry['awaySP']}({af}) vs {entry['homeSP']}({hf})")
 
