@@ -266,6 +266,196 @@ def _clean_pitcher_row(row):
     return row
 
 
+# ─── Legacy parser (/bis/{yyyy}/games/sXXXX.html) ──────────────────
+
+# Legacy boxscore pitcher stats row — pitcher table has 10 columns:
+#   decision(○/●/blank), name, IP_int, IP_frac, BF(打者), H(安打), BB(四球),
+#   HBP(死球), K(三振), ER(自責)
+# Decision cell may contain "○" / "●" / "S" (save) / "<br />" (no decision).
+# IP_frac cell is e.g. ".1" / ".2" / "<br />" (full innings).
+LEGACY_PITCHER_ROW_RE = re.compile(
+    r'<tr class="gmstats">'
+    r'<td>([^<]*(?:<br ?/?>)?)</td>'      # decision (○/●/S/empty)
+    r'<td align="left" nowrap="nowrap">([^<]+)</td>'  # pitcher name
+    r'<td align="right">(\d+|<br ?/?>)</td>'           # IP integer
+    r'<td align="left">(\.?\d*|<br ?/?>)</td>'         # IP fraction
+    r'<td>(\d+)</td>'                                   # BF
+    r'<td>(\d+)</td>'                                   # H
+    r'<td>(\d+)</td>'                                   # BB
+    r'<td>(\d+)</td>'                                   # HBP
+    r'<td>(\d+)</td>'                                   # K
+    r'<td>(\d+)</td>',                                  # ER
+    re.DOTALL,
+)
+
+# Legacy batter row — 8 columns: pos, name, AB, H, RBI, BB, HBP, K
+LEGACY_BATTER_ROW_RE = re.compile(
+    r'<tr class="gmstats">'
+    r'<td>([^<]*)</td>'                                  # position (parens around pos, e.g. "(中)")
+    r'<td align="left" nowrap="nowrap">([^<]+)</td>'    # batter name
+    r'<td>(\d+)</td>'                                    # AB
+    r'<td>(\d+)</td>'                                    # H
+    r'<td>(\d+)</td>'                                    # RBI
+    r'<td>(\d+)</td>'                                    # BB
+    r'<td>(\d+)</td>'                                    # HBP
+    r'<td>(\d+)</td>',                                   # K
+    re.DOTALL,
+)
+
+# Section markers inside gmdivtbl. Order is: away_batters, home_batters, away_pitchers, home_pitchers.
+# Each <td class="gmcolorsub"> wraps a <table ... class="gmtbltop"> for one team's table.
+# The class attribute is not first; need to match any attribute order.
+LEGACY_TBLTOP_RE = re.compile(
+    r'<td class="gmcolorsub">.*?<table[^>]*\bclass="gmtbltop"[^>]*>(.*?)</table>',
+    re.DOTALL,
+)
+
+
+def _clean_legacy_ip(int_part, frac_part):
+    """Combine "3" + ".1" into "3.1" (3 1/3 IP). Empty → "0+" if BF > 0 else None."""
+    def normalize(s):
+        if not s or re.match(r'<br ?/?>', s.strip()):
+            return ""
+        return s.strip()
+    i = normalize(int_part)
+    f = normalize(frac_part)
+    if not i and not f:
+        return None
+    return f"{i or '0'}{f}"
+
+
+def _parse_legacy_pitcher_table(table_html):
+    rows = []
+    for m in LEGACY_PITCHER_ROW_RE.finditer(table_html):
+        decision_raw, name, ip_int, ip_frac, bf, h, bb, hbp, k, er = m.groups()
+        decision = re.sub(r'<br ?/?>', '', decision_raw).strip()
+        rows.append({
+            "decision": decision,
+            "pitcher": {"id": None, "name": name.strip()},
+            "ip": _clean_legacy_ip(ip_int, ip_frac),
+            "bf": bf, "h": h, "hr": None, "bb": bb, "hbp": hbp,
+            "k": k, "wp": None, "bk": None, "r": None, "er": er,
+            "pitches": None,
+        })
+    return rows
+
+
+def _parse_legacy_batter_table(table_html):
+    rows = []
+    order = 1
+    for m in LEGACY_BATTER_ROW_RE.finditer(table_html):
+        pos, name, ab, h, rbi, bb, hbp, k = m.groups()
+        rows.append({
+            "order": str(order),
+            "position": pos.strip(),
+            "batter": {"id": None, "name": name.strip()},
+            "ab": ab, "r": None, "h": h, "rbi": rbi, "sb": None,
+            "bb": bb, "hbp": hbp, "k": k,
+        })
+        order += 1
+    return rows
+
+
+def parse_legacy_boxscore(html, away_code, home_code):
+    """Parse /bis/{yyyy}/games/sXXXX.html (NPB.jp legacy archive format).
+
+    Schema differences vs the modern /scores/.../box.html parser:
+    - No player IDs (plain text names only)
+    - No HR-allowed column for pitchers
+    - No pitch count, no R (only ER)
+    - No WP / BK
+    - IP split across two cells (integer and fraction)
+    """
+    # Score, venue, status. Score block has HOME first then AWAY in gmboxrun cells.
+    # Pattern: flag{yyyy}_{code}_1l.gif ... gmboxrun">{R}
+    box_iter = re.finditer(
+        r'flag(\d{4})_([a-z]+)_1l\.gif.*?gmboxrun">(\d+)',
+        html, re.DOTALL,
+    )
+    team_runs = {}
+    for m in box_iter:
+        _, code, runs = m.groups()
+        team_runs[code] = int(runs)
+
+    # Venue + start time + status in gmdivinfo
+    venue_m = re.search(r'<td>([^<]+)</td><td align="right">試合時間', html)
+    venue = venue_m.group(1).replace("　", "").strip() if venue_m else None
+    start_m = re.search(r"開始(\d{1,2}:\d{2})", html)
+    start_time = start_m.group(1) if start_m else None
+
+    status = "final"
+    if "【中止】" in html or "雨天のため中止" in html:
+        status = "cancelled_rain"
+    elif "ノーゲーム" in html:
+        status = "no_game"
+
+    # Linescore: H and E live in the last 3 <td class="gmscore"> cells of each row.
+    # We've already got R from the score block; pull H/E from the linescore.
+    # Top row = AWAY, bottom row = HOME (NPB convention).
+    linescore_rows = re.findall(
+        r'<td class="gmscoreteam">[^<]+</td>(.*?)</tr>',
+        html, re.DOTALL,
+    )
+    away_hits = home_hits = away_errors = home_errors = None
+    if len(linescore_rows) >= 2:
+        def last_n(s, n):
+            cells = re.findall(r'<td[^>]*class="gmscore"[^>]*>([^<]+)</td>', s)
+            cells = [c for c in cells if c.strip() not in ("", "-")]
+            return cells[-n:] if len(cells) >= n else []
+        away_tail = last_n(linescore_rows[0], 3)
+        home_tail = last_n(linescore_rows[1], 3)
+        if len(away_tail) == 3:
+            try: away_hits, away_errors = int(away_tail[1]), int(away_tail[2])
+            except ValueError: pass
+        if len(home_tail) == 3:
+            try: home_hits, home_errors = int(home_tail[1]), int(home_tail[2])
+            except ValueError: pass
+
+    # Stat tables. gmdivtbl renders 4 <table class="gmtbltop"> in order:
+    #   away_batter, home_batter, away_pitcher, home_pitcher.
+    # Filter to just the tables inside gmdivtbl (the page also has stat-header tables
+    # at the top with the same class — we want only the ones with gmstats rows).
+    gmdivtbl_m = re.search(r'<div id="gmdivtbl">(.*?)</div>(?:\s*<div|\s*</div>)', html, re.DOTALL)
+    tbl_section = gmdivtbl_m.group(1) if gmdivtbl_m else html
+
+    away_batters = home_batters = []
+    away_pitchers = home_pitchers = []
+    tables = LEGACY_TBLTOP_RE.findall(tbl_section)
+    # Filter to tables that actually contain gmstats rows (skip header-only tables)
+    tables_with_stats = [t for t in tables if 'class="gmstats"' in t]
+    if len(tables_with_stats) >= 4:
+        away_batters = _parse_legacy_batter_table(tables_with_stats[0])
+        home_batters = _parse_legacy_batter_table(tables_with_stats[1])
+        away_pitchers = _parse_legacy_pitcher_table(tables_with_stats[2])
+        home_pitchers = _parse_legacy_pitcher_table(tables_with_stats[3])
+
+    return {
+        "away": {
+            "team": TEAM_CODE_MAP.get(away_code, away_code.upper()),
+            "runs": team_runs.get(away_code),
+            "hits": away_hits,
+            "errors": away_errors,
+            "pitchers": away_pitchers,
+            "batters": away_batters,
+        },
+        "home": {
+            "team": TEAM_CODE_MAP.get(home_code, home_code.upper()),
+            "runs": team_runs.get(home_code),
+            "hits": home_hits,
+            "errors": home_errors,
+            "pitchers": home_pitchers,
+            "batters": home_batters,
+        },
+        "status": status,
+        "venue": venue,
+        "startTime": start_time,
+        "format": "legacy",
+    }
+
+
+# ─── Dispatch ─────────────────────────────────────────────────────
+
+
 def parse_boxscore(html, away_code, home_code):
     parser = BoxscoreParser()
     parser.feed(html)
@@ -295,19 +485,40 @@ def parse_boxscore(html, away_code, home_code):
 
 
 def discover_games(date_str):
-    """Return list of (home_code, away_code, game_num) tuples for the date.
+    """Return list of (home_code, away_code, game_url) tuples for the date.
 
-    NPB.jp URL convention: /scores/YYYY/MMDD/{home}-{away}-{num}/ — the first team
-    code is the HOME team, the second is the visiting team. Verified by venue
-    cross-check: g-h-01 played at 東京ドーム (Giants' home park), s-l-01 at 神宮
-    (Yakult home), db-b-01 at 横浜 (DeNA home). The boxscore page renders the
-    AWAY team's tables first, then the HOME team's tables.
+    Two discovery paths:
+
+    1. **Historical archive**: /bis/{yyyy}/games/gm{yyyymmdd}.html lists each
+       game with `pet{yyyy}_{home}_1.gif` then `pet{yyyy}_{away}_1.gif` images
+       followed by `href="sXXXX.html"`. The s-URLs are the LEGACY boxscore
+       format (different HTML schema than /scores/). Works for past seasons.
+
+    2. **Current-season schedule**: /games/{yyyy}/schedule_{mm}.html lists
+       /scores/.../box.html URLs directly. Modern boxscore format. Works for
+       the CURRENT year only — past seasons show the navigation header but
+       no game links to that year's games.
+
+    Returns full URLs so the caller can dispatch to the right parser.
     """
     yyyy, mm, dd = date_str.split("-")
+    mmdd = mm + dd
+
+    # Path 1: historical archive (preferred — works for past seasons)
+    archive_url = f"{BASE}/bis/{yyyy}/games/gm{yyyymmdd_compact(date_str)}.html"
+    try:
+        html = fetch(archive_url)
+        games = _extract_from_archive(html, yyyy)
+        if games:
+            print(f"[fetch] {archive_url}  → {len(games)} games (legacy)", file=sys.stderr)
+            return games
+    except Exception as e:
+        print(f"[fetch] {archive_url}  → err: {e}", file=sys.stderr)
+
+    # Path 2: current-season schedule fallback (yields modern URLs)
     sched_url = f"{BASE}/games/{yyyy}/schedule_{mm}.html"
     print(f"[fetch] {sched_url}", file=sys.stderr)
     html = fetch(sched_url)
-    mmdd = mm + dd
     pattern = re.compile(rf'/scores/{yyyy}/{mmdd}/([a-z]+)-([a-z]+)-(\d+)/')
     seen = set()
     games = []
@@ -316,7 +527,39 @@ def discover_games(date_str):
         if key in seen:
             continue
         seen.add(key)
-        games.append((m.group(1), m.group(2), m.group(3)))
+        home, away, gnum = m.group(1), m.group(2), m.group(3)
+        url = f"{BASE}/scores/{yyyy}/{mmdd}/{home}-{away}-{gnum}/box.html"
+        games.append((home, away, url))
+    return games
+
+
+def yyyymmdd_compact(date_str):
+    y, m, d = date_str.split("-")
+    return f"{y}{m}{d}"
+
+
+# Match a single game block in the daily archive index. Each game has:
+#   pet{yyyy}_{home}_1.gif ... pet{yyyy}_{away}_1.gif ... href="sXXXX.html"
+# where the s-URL is the actual archive boxscore for that game.
+ARCHIVE_GAME_RE = re.compile(
+    r'pet(\d{4})_([a-z]+)_1\.gif.*?pet\1_([a-z]+)_1\.gif.*?href="(s\d+\.html)"',
+    re.DOTALL,
+)
+
+
+def _extract_from_archive(html, yyyy):
+    """Parse /bis/{yyyy}/games/gm{date}.html.
+
+    Returns list of (home_code, away_code, archive_url) tuples — archive_url is
+    the full /bis/{yyyy}/games/sXXX.html URL pointing to the legacy boxscore.
+    """
+    games = []
+    for m in ARCHIVE_GAME_RE.finditer(html):
+        year_in_gif, home, away, url_rel = m.group(1), m.group(2), m.group(3), m.group(4)
+        if year_in_gif != yyyy:
+            continue
+        full_url = f"{BASE}/bis/{yyyy}/games/{url_rel}"
+        games.append((home, away, full_url))
     return games
 
 
@@ -327,20 +570,23 @@ def scrape_day(date_str):
     print(f"[discover] {len(games)} games on {date_str}: {games}", file=sys.stderr)
 
     out = {"date": date_str, "games": []}
-    for home, away, gnum in games:
-        url = f"{BASE}/scores/{yyyy}/{mmdd}/{home}-{away}-{gnum}/box.html"
+    for home, away, url in games:
         print(f"[scrape] {url}", file=sys.stderr)
         try:
             html = fetch(url)
-            box = parse_boxscore(html, away, home)
+            # Dispatch: /scores/.../ → modern; /bis/games/sXXX.html → legacy.
+            if "/bis/" in url and "/games/s" in url:
+                box = parse_legacy_boxscore(html, away, home)
+            else:
+                box = parse_boxscore(html, away, home)
             box["gameUrl"] = url
             box["awayCode"] = away
             box["homeCode"] = home
-            box["gameNum"] = int(gnum)
             label = f"{box['away']['team']}@{box['home']['team']}"
-            ar, hr = box["away"]["runs"], box["home"]["runs"]
-            score_str = f"{ar}-{hr}" if ar is not None else "—"
-            print(f"  ✓ {label:<7} {box['status']:<14} {score_str:<6} venue={box['venue']}  start={box['startTime']}", file=sys.stderr)
+            ar, hr_ = box["away"]["runs"], box["home"]["runs"]
+            score_str = f"{ar}-{hr_}" if ar is not None else "—"
+            fmt = box.get("format", "modern")
+            print(f"  ✓ {label:<7} {box['status']:<14} {score_str:<6} venue={box['venue']}  start={box['startTime']}  [{fmt}]", file=sys.stderr)
             out["games"].append(box)
         except Exception as e:
             print(f"  ✗ failed: {e}", file=sys.stderr)

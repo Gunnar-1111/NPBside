@@ -1,0 +1,30 @@
+{
+  "date": "2025-07-23",
+  "games": [
+    {
+      "away": {
+        "team": "CL",
+        "runs": null,
+        "hits": 5,
+        "errors": 0,
+        "pitchers": [],
+        "batters": []
+      },
+      "home": {
+        "team": "PL",
+        "runs": null,
+        "hits": 9,
+        "errors": 1,
+        "pitchers": [],
+        "batters": []
+      },
+      "status": "final",
+      "venue": "京セラD大阪",
+      "startTime": "18:35",
+      "format": "legacy",
+      "gameUrl": "https://npb.jp/bis/2025/games/s2025072301955.html",
+      "awayCode": "cl",
+      "homeCode": "pl"
+    }
+  ]
+}

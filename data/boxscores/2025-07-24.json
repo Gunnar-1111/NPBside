@@ -1,0 +1,30 @@
+{
+  "date": "2025-07-24",
+  "games": [
+    {
+      "away": {
+        "team": "PL",
+        "runs": null,
+        "hits": 15,
+        "errors": 0,
+        "pitchers": [],
+        "batters": []
+      },
+      "home": {
+        "team": "CL",
+        "runs": null,
+        "hits": 16,
+        "errors": 2,
+        "pitchers": [],
+        "batters": []
+      },
+      "status": "final",
+      "venue": "横浜",
+      "startTime": "18:38",
+      "format": "legacy",
+      "gameUrl": "https://npb.jp/bis/2025/games/s2025072401956.html",
+      "awayCode": "pl",
+      "homeCode": "cl"
+    }
+  ]
+}
