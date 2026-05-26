@@ -194,34 +194,59 @@ class BoxscoreParser(HTMLParser):
             self.current_text.append(data)
 
 
-def parse_score_and_venue(html, matchup_path):
-    """Extract final score + venue name from the boxscore HTML.
+def parse_game_meta(html):
+    """Extract game-level metadata from the specific-game data section.
 
-    The boxscore page renders a navigation header listing ALL games of the day,
-    each as an <a href="/scores/YYYY/MMDD/{matchup}/"> block containing the score
-    and venue (in `<div class="state">（venue）...</div>`). We anchor on the
-    current game's matchup path to pick the right entry.
+    Reads from `<table id="tablefix_ls">` (the linescore) and surrounding
+    `<span class="place">`, `<time>`, `<p class="game_info">` markers — NOT
+    from the navigation header at the top of the boxscore page, which
+    always shows the CURRENT day's games regardless of the URL date.
 
-    Score format: `<div class="score">{home}-{away}</div>` (home runs first per
-    NPB's left-home / right-away rendering convention).
-
-    Returns dict or None.
+    Returns dict (always non-None). Keys present:
+      - venue (str | None)
+      - status: "final" | "cancelled_rain" | "cancelled" | "no_game" | "unknown"
+      - startTime (str "HH:MM" | None)
+      - awayRuns, awayHits, awayErrors (int | None — None if cancelled)
+      - homeRuns, homeHits, homeErrors (int | None)
     """
-    # Locate the <a> tag for THIS game and capture the following score + state divs.
-    pattern = re.compile(
-        r'href="' + re.escape(matchup_path) + r'"' +
-        r'.*?<div class="score">\s*(\d+)\s*-\s*(\d+)\s*</div>' +
-        r'.*?<div class="state">（([^）]+)）',
-        re.DOTALL
+    out = {"status": "unknown", "venue": None, "startTime": None,
+           "awayRuns": None, "homeRuns": None, "awayHits": None, "homeHits": None,
+           "awayErrors": None, "homeErrors": None}
+
+    venue_m = re.search(r'<span class="place">([^<]+)</span>', html)
+    if venue_m:
+        out["venue"] = venue_m.group(1).replace("　", "").strip()
+
+    if "【雨天のため中止】" in html:
+        out["status"] = "cancelled_rain"
+    elif "【ノーゲーム】" in html:
+        out["status"] = "no_game"
+    elif "【中止】" in html:
+        out["status"] = "cancelled"
+    elif "【試合終了】" in html or "【試合中】" in html:
+        out["status"] = "final" if "試合終了" in html else "in_progress"
+
+    start_m = re.search(r"◇開始\s*(\d{1,2}:\d{2})", html)
+    if start_m:
+        out["startTime"] = start_m.group(1)
+
+    # Linescore totals — top row is AWAY, bottom row is HOME by NPB convention.
+    # Each row ends with: <td class="total-1">{R}</td><td class="total-2">{H}</td><td class="total-2">{E}</td>
+    top_m = re.search(
+        r'<tr class="top">.*?<td class="total-1">(\d+)</td>\s*<td class="total-2">(\d+)</td>\s*<td class="total-2">(\d+)</td>',
+        html, re.DOTALL,
     )
-    m = pattern.search(html)
-    if not m:
-        return None
-    return {
-        "homeRuns": int(m.group(1)),
-        "awayRuns": int(m.group(2)),
-        "venue": m.group(3).replace("　", ""),
-    }
+    if top_m:
+        out["awayRuns"], out["awayHits"], out["awayErrors"] = (int(x) for x in top_m.groups())
+
+    bottom_m = re.search(
+        r'<tr class="bottom">.*?<td class="total-1">(\d+)</td>\s*<td class="total-2">(\d+)</td>\s*<td class="total-2">(\d+)</td>',
+        html, re.DOTALL,
+    )
+    if bottom_m:
+        out["homeRuns"], out["homeHits"], out["homeErrors"] = (int(x) for x in bottom_m.groups())
+
+    return out
 
 
 def _clean_ip(val):
@@ -241,23 +266,31 @@ def _clean_pitcher_row(row):
     return row
 
 
-def parse_boxscore(html, away_code, home_code, matchup_path):
+def parse_boxscore(html, away_code, home_code):
     parser = BoxscoreParser()
     parser.feed(html)
-    score = parse_score_and_venue(html, matchup_path)
+    meta = parse_game_meta(html)
     return {
         "away": {
             "team": TEAM_CODE_MAP.get(away_code, away_code.upper()),
+            "runs": meta["awayRuns"],
+            "hits": meta["awayHits"],
+            "errors": meta["awayErrors"],
             # NPB boxscore renders the AWAY team's tables first.
             "pitchers": [_clean_pitcher_row(r) for r in (parser.pitcher_tables[0] if len(parser.pitcher_tables) >= 1 else [])],
             "batters": parser.batter_tables[0] if len(parser.batter_tables) >= 1 else [],
         },
         "home": {
             "team": TEAM_CODE_MAP.get(home_code, home_code.upper()),
+            "runs": meta["homeRuns"],
+            "hits": meta["homeHits"],
+            "errors": meta["homeErrors"],
             "pitchers": [_clean_pitcher_row(r) for r in (parser.pitcher_tables[1] if len(parser.pitcher_tables) >= 2 else [])],
             "batters": parser.batter_tables[1] if len(parser.batter_tables) >= 2 else [],
         },
-        "score": score,
+        "status": meta["status"],
+        "venue": meta["venue"],
+        "startTime": meta["startTime"],
     }
 
 
@@ -295,19 +328,19 @@ def scrape_day(date_str):
 
     out = {"date": date_str, "games": []}
     for home, away, gnum in games:
-        matchup_path = f"/scores/{yyyy}/{mmdd}/{home}-{away}-{gnum}/"
-        url = f"{BASE}{matchup_path}box.html"
+        url = f"{BASE}/scores/{yyyy}/{mmdd}/{home}-{away}-{gnum}/box.html"
         print(f"[scrape] {url}", file=sys.stderr)
         try:
             html = fetch(url)
-            box = parse_boxscore(html, away, home, matchup_path)
+            box = parse_boxscore(html, away, home)
             box["gameUrl"] = url
             box["awayCode"] = away
             box["homeCode"] = home
             box["gameNum"] = int(gnum)
-            n_pitchers = len(box["away"]["pitchers"]) + len(box["home"]["pitchers"])
-            n_batters = len(box["away"]["batters"]) + len(box["home"]["batters"])
-            print(f"  ✓ {box['away']['team']}@{box['home']['team']}  score={box['score']}  pitchers={n_pitchers}  batters={n_batters}", file=sys.stderr)
+            label = f"{box['away']['team']}@{box['home']['team']}"
+            ar, hr = box["away"]["runs"], box["home"]["runs"]
+            score_str = f"{ar}-{hr}" if ar is not None else "—"
+            print(f"  ✓ {label:<7} {box['status']:<14} {score_str:<6} venue={box['venue']}  start={box['startTime']}", file=sys.stderr)
             out["games"].append(box)
         except Exception as e:
             print(f"  ✗ failed: {e}", file=sys.stderr)

@@ -4,6 +4,9 @@
     {
       "away": {
         "team": "H",
+        "runs": 8,
+        "hits": 9,
+        "errors": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -282,6 +285,9 @@
       },
       "home": {
         "team": "G",
+        "runs": 3,
+        "hits": 11,
+        "errors": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -629,11 +635,9 @@
           }
         ]
       },
-      "score": {
-        "homeRuns": 3,
-        "awayRuns": 8,
-        "venue": "東京ドーム"
-      },
+      "status": "final",
+      "venue": "東京ドーム",
+      "startTime": "18:00",
       "gameUrl": "https://npb.jp/scores/2026/0526/g-h-01/box.html",
       "awayCode": "h",
       "homeCode": "g",
@@ -642,6 +646,9 @@
     {
       "away": {
         "team": "L",
+        "runs": 2,
+        "hits": 9,
+        "errors": 1,
         "pitchers": [
           {
             "decision": "",
@@ -1036,6 +1043,9 @@
       },
       "home": {
         "team": "S",
+        "runs": 1,
+        "hits": 5,
+        "errors": 1,
         "pitchers": [
           {
             "decision": "",
@@ -1370,11 +1380,9 @@
           }
         ]
       },
-      "score": {
-        "homeRuns": 1,
-        "awayRuns": 2,
-        "venue": "神宮"
-      },
+      "status": "final",
+      "venue": "神宮",
+      "startTime": "18:00",
       "gameUrl": "https://npb.jp/scores/2026/0526/s-l-01/box.html",
       "awayCode": "l",
       "homeCode": "s",
@@ -1383,6 +1391,9 @@
     {
       "away": {
         "team": "B",
+        "runs": 7,
+        "hits": 9,
+        "errors": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1571,6 +1582,9 @@
       },
       "home": {
         "team": "DB",
+        "runs": 1,
+        "hits": 3,
+        "errors": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -1866,11 +1880,9 @@
           }
         ]
       },
-      "score": {
-        "homeRuns": 1,
-        "awayRuns": 7,
-        "venue": "横浜"
-      },
+      "status": "final",
+      "venue": "横浜",
+      "startTime": "17:45",
       "gameUrl": "https://npb.jp/scores/2026/0526/db-b-01/box.html",
       "awayCode": "b",
       "homeCode": "db",
@@ -1879,6 +1891,9 @@
     {
       "away": {
         "team": "E",
+        "runs": 0,
+        "hits": 6,
+        "errors": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -2093,6 +2108,9 @@
       },
       "home": {
         "team": "D",
+        "runs": 1,
+        "hits": 6,
+        "errors": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -2279,11 +2297,9 @@
           }
         ]
       },
-      "score": {
-        "homeRuns": 1,
-        "awayRuns": 0,
-        "venue": "バンテリン"
-      },
+      "status": "final",
+      "venue": "バンテリンドーム",
+      "startTime": "18:00",
       "gameUrl": "https://npb.jp/scores/2026/0526/d-e-01/box.html",
       "awayCode": "e",
       "homeCode": "d",
@@ -2292,6 +2308,9 @@
     {
       "away": {
         "team": "F",
+        "runs": 4,
+        "hits": 9,
+        "errors": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -2487,6 +2506,9 @@
       },
       "home": {
         "team": "T",
+        "runs": 0,
+        "hits": 7,
+        "errors": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2795,11 +2817,9 @@
           }
         ]
       },
-      "score": {
-        "homeRuns": 0,
-        "awayRuns": 4,
-        "venue": "甲子園"
-      },
+      "status": "final",
+      "venue": "甲子園",
+      "startTime": "18:00",
       "gameUrl": "https://npb.jp/scores/2026/0526/t-f-01/box.html",
       "awayCode": "f",
       "homeCode": "t",
@@ -2808,6 +2828,9 @@
     {
       "away": {
         "team": "M",
+        "runs": 3,
+        "hits": 10,
+        "errors": 0,
         "pitchers": [
           {
             "decision": "",
@@ -3112,6 +3135,9 @@
       },
       "home": {
         "team": "C",
+        "runs": 1,
+        "hits": 4,
+        "errors": 1,
         "pitchers": [
           {
             "decision": "",
@@ -3388,11 +3414,9 @@
           }
         ]
       },
-      "score": {
-        "homeRuns": 1,
-        "awayRuns": 3,
-        "venue": "マツダ"
-      },
+      "status": "final",
+      "venue": "マツダスタジアム",
+      "startTime": "18:00",
       "gameUrl": "https://npb.jp/scores/2026/0526/c-m-01/box.html",
       "awayCode": "m",
       "homeCode": "c",
