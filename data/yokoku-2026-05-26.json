@@ -1,0 +1,67 @@
+{
+  "date": "2026-05-26",
+  "fetchedAt": "mock-from-boxscore",
+  "source": "synthesized from played boxscore for backtest",
+  "games": [
+    {
+      "home": "G",
+      "homeSP": "則本",
+      "homeSPId": "51055137",
+      "away": "H",
+      "awaySP": "大津",
+      "awaySPId": "01305157",
+      "venue": "東京ドーム",
+      "startTime": "18:00"
+    },
+    {
+      "home": "S",
+      "homeSP": "松本健",
+      "homeSPId": "03105159",
+      "away": "L",
+      "awaySP": "平良",
+      "awaySPId": "31035136",
+      "venue": "神宮",
+      "startTime": "18:00"
+    },
+    {
+      "home": "DB",
+      "homeSP": "平良",
+      "homeSPId": "01905139",
+      "away": "B",
+      "awaySP": "九里",
+      "awaySPId": "71775139",
+      "venue": "横浜",
+      "startTime": "17:45"
+    },
+    {
+      "home": "D",
+      "homeSP": "マラー",
+      "homeSPId": "13915150",
+      "away": "E",
+      "awaySP": "荘司",
+      "awaySPId": "21925157",
+      "venue": "バンテリンドーム",
+      "startTime": "18:00"
+    },
+    {
+      "home": "T",
+      "homeSP": "西勇",
+      "homeSPId": "71275118",
+      "away": "F",
+      "awaySP": "伊藤",
+      "awaySPId": "51355153",
+      "venue": "甲子園",
+      "startTime": "18:00"
+    },
+    {
+      "home": "C",
+      "homeSP": "床田",
+      "homeSPId": "11415134",
+      "away": "M",
+      "awaySP": "ジャクソン",
+      "awaySPId": "43745159",
+      "venue": "マツダスタジアム",
+      "startTime": "18:00"
+    }
+  ]
+}
