@@ -67,7 +67,10 @@ def _poisson_pmf(k, lam):
 
 
 def _poisson_cdf(k, lam):
-    return sum(_poisson_pmf(i, lam) for i in range(0, max(0, int(k)) + 1))
+    """P(X ≤ k) for X ~ Poisson(lam). Returns 0 when k < 0."""
+    if k < 0:
+        return 0.0
+    return sum(_poisson_pmf(i, lam) for i in range(0, int(k) + 1))
 
 
 def calculate_run_line_prob(team_runs, opp_runs, line=1.5):
@@ -152,8 +155,11 @@ def project_lines(home_runs, away_runs):
     run_diff = home_runs - away_runs
     home_win = run_diff_to_home_win_prob(run_diff)
     away_win = 1 - home_win
+    # Home -1.5 covers iff home wins by ≥ 2.
+    # Away +1.5 covers iff away loses by ≤ 1 OR wins — i.e., complement of
+    # home winning by ≥ 2. No push possible at the half-line.
     home_cover_15 = calculate_run_line_prob(home_runs, away_runs, 1.5)
-    away_cover_15 = calculate_run_line_prob(away_runs, home_runs, 1.5)
+    away_cover_15 = 1.0 - home_cover_15
     return {
         "homeExpectedRuns": round(home_runs, 2),
         "awayExpectedRuns": round(away_runs, 2),

@@ -42,10 +42,10 @@
         "awayWinPct": 55.9,
         "homeMl": 115,
         "awayMl": -138,
-        "homeRl15Pct": 24.4,
-        "awayRl15Pct": 32.1,
-        "homeRl15Price": 275,
-        "awayRl15Price": 190
+        "homeRl15Pct": 23.8,
+        "awayRl15Pct": 76.2,
+        "homeRl15Price": 283,
+        "awayRl15Price": -363
       }
     },
     {
@@ -81,10 +81,10 @@
         "awayWinPct": 32.4,
         "homeMl": -231,
         "awayMl": 188,
-        "homeRl15Pct": 41.5,
-        "awayRl15Pct": 18.6,
-        "homeRl15Price": 128,
-        "awayRl15Price": 379
+        "homeRl15Pct": 41.2,
+        "awayRl15Pct": 58.8,
+        "homeRl15Price": 130,
+        "awayRl15Price": -156
       }
     },
     {
@@ -120,10 +120,10 @@
         "awayWinPct": 58.1,
         "homeMl": 126,
         "awayMl": -151,
-        "homeRl15Pct": 23.8,
-        "awayRl15Pct": 34.2,
-        "homeRl15Price": 283,
-        "awayRl15Price": 174
+        "homeRl15Pct": 23.5,
+        "awayRl15Pct": 76.5,
+        "homeRl15Price": 288,
+        "awayRl15Price": -370
       }
     },
     {
@@ -159,10 +159,10 @@
         "awayWinPct": 40.5,
         "homeMl": -161,
         "awayMl": 134,
-        "homeRl15Pct": 34.3,
-        "awayRl15Pct": 20.9,
-        "homeRl15Price": 173,
-        "awayRl15Price": 331
+        "homeRl15Pct": 32.9,
+        "awayRl15Pct": 67.1,
+        "homeRl15Price": 184,
+        "awayRl15Price": -226
       }
     },
     {
@@ -198,10 +198,10 @@
         "awayWinPct": 31.5,
         "homeMl": -241,
         "awayMl": 195,
-        "homeRl15Pct": 41.9,
-        "awayRl15Pct": 16.1,
-        "homeRl15Price": 126,
-        "awayRl15Price": 445
+        "homeRl15Pct": 40.9,
+        "awayRl15Pct": 59.1,
+        "homeRl15Price": 131,
+        "awayRl15Price": -158
       }
     },
     {
@@ -237,10 +237,10 @@
         "awayWinPct": 50.9,
         "homeMl": -105,
         "awayMl": -113,
-        "homeRl15Pct": 27.1,
-        "awayRl15Pct": 28.4,
-        "homeRl15Price": 240,
-        "awayRl15Price": 226
+        "homeRl15Pct": 26.4,
+        "awayRl15Pct": 73.6,
+        "homeRl15Price": 249,
+        "awayRl15Price": -314
       }
     }
   ]
