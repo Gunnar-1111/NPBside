@@ -37,7 +37,7 @@ Same SP_WEIGHTS philosophy (FIP/xFIP/SIERA), but **recalibrated constants** from
 - `LEAGUE_AVG_TOTAL_RUNS = 6.60` (NOT 7.5 as initially planned — NPB is more of a pitcher's league than the initial estimate suggested)
 - `LEAGUE_AVG_RUNS_PER_TEAM = 3.30`
 - Park `runs` factors: derived in `data/park-factors.json` with `_runsCalibration` field per park noting `n` games used
-- `cFIP_npb ≈ 3.10` (vs MLB 3.20) — needs SP rating layer to validate
+- `cFIP_npb = 2.618` (DERIVED from 2024-25 corpus; MLB uses 3.10-3.20). Lower constant reflects NPB's lower run environment. The initial plan-number guess of ~3.10 was significantly off.
 - HR factor and HCA still need empirical derivation (HR requires HR-list parser; HCA requires home/away splits)
 
 Drop `xera` and `hard_hit_pct` weights from SP_WEIGHTS — no Statcast equivalent for NPB. Redistribute weight to FIP / K% / BB%.
