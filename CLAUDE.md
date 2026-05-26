@@ -2,8 +2,8 @@
 
 Sibling project to DugoutSide. Same SP-first architecture; different league, different data feeds, different coefficients.
 
-## Status — scaffold only
-Pre-bootstrap. Park/team tables drafted; data layer not built; no graded games yet.
+## Status — data layer live, engine not yet built
+2024-2025 NPB seasons scraped (1,819 games, 14k pitcher lines, 49k batter lines via `scripts/scrape-day.py` + legacy/modern parser dispatch). Park runs-factors empirically derived from the corpus. Engine layers (power ratings, sim, GBM, AI) still to build.
 
 ## Why NPB
 - Fewer US books take it (mostly Pinnacle + Asian books) → lower public action, softer lines.
@@ -18,11 +18,11 @@ Pre-bootstrap. Park/team tables drafted; data layer not built; no graded games y
 | Season | Mar-Oct | Mar-Oct |
 | Ball | livelier (post-2024 dejuice) | tighter; HR rates ~25-30% lower |
 | DH rule | Universal (2022+) | Pacific only (Central no DH except interleague June) |
-| League avg runs/team/game | ~4.4 | ~3.8 |
-| Typical total | 8.5 | 7.0-7.5 |
-| HCA (runs) | ~0.35 | ~0.30 (slightly less) |
-| Park HR factor range | 0.85-1.25 | tighter — most parks 0.85-1.10 |
-| Notable extreme parks | Coors (1.18 runs, alt) | Koshien (very pitcher), Jingu (very hitter) |
+| League avg runs/team/game | ~4.4 | **~3.30** (empirical, 2024-25, n=1697) |
+| Typical total | 8.5 | **6.60** (empirical, 2024-25; far lower than initial 7.5 estimate) |
+| HCA (runs) | ~0.35 | ~0.30 (not yet empirically validated) |
+| Park runs-factor range | 0.85-1.25 | **0.82-1.18** (empirical, 2024-25) |
+| Notable extreme parks | Coors (1.18 runs, alt) | **Jingu 1.18 (most hitter-friendly)** ; **Koshien 0.82, Vantelin 0.84 (most pitcher-friendly)**. Tokyo Dome NOT a hitter's park anymore (0.90) — reputation is stale. |
 | Bullpen usage | high leverage 9th = closer | similar but more setup specialization |
 | Foreign player limit | none | 4 on roster, 1 on active each game |
 
@@ -33,28 +33,35 @@ Fork DugoutSide's structure 1:1 once data layer exists:
 - Layer 2: ML correction (skip until 300+ graded games)
 - Layer 4: AI qualitative (Claude layer)
 
-Same SP_WEIGHTS philosophy (FIP/xFIP/SIERA), but recalibrate league averages and re-derive park factors from historical data.
+Same SP_WEIGHTS philosophy (FIP/xFIP/SIERA), but **recalibrated constants** from the 2024-25 corpus:
+- `LEAGUE_AVG_TOTAL_RUNS = 6.60` (NOT 7.5 as initially planned — NPB is more of a pitcher's league than the initial estimate suggested)
+- `LEAGUE_AVG_RUNS_PER_TEAM = 3.30`
+- Park `runs` factors: derived in `data/park-factors.json` with `_runsCalibration` field per park noting `n` games used
+- `cFIP_npb ≈ 3.10` (vs MLB 3.20) — needs SP rating layer to validate
+- HR factor and HCA still need empirical derivation (HR requires HR-list parser; HCA requires home/away splits)
+
+Drop `xera` and `hard_hit_pct` weights from SP_WEIGHTS — no Statcast equivalent for NPB. Redistribute weight to FIP / K% / BB%.
 
 ## Open questions before building
-1. **Data feed.** No `pybaseball` for NPB. Candidates:
-   - Scrape NPB.jp (Japanese-only, javascript-heavy, fragile)
-   - delta-graphs.com / 2nd team stats sites (some English coverage, scrape-friendly)
-   - sportsdataio NPB ($)
-   - Sportradar NPB ($$)
-   - 1.02 Essence of Baseball (Japanese sabermetric site)
-   See [notes/data-sources.md](notes/data-sources.md).
-2. **Park factors.** Need 2-3 seasons of game-by-game results to back out factors with reasonable n. Initial table has placeholders.
-3. **Pitcher peripherals.** FIP/xFIP can be computed from raw splits, but Statcast-equivalent (xERA, hard-hit%) doesn't exist for NPB. Will need to substitute simpler peripheral metrics.
-4. **Vegas comparison.** Pinnacle has NPB lines via odds API; offshore books (Bovada, BetOnline) sometimes carry. Hcap consensus equivalent — none.
-5. **Tech stack.** Mirror DugoutSide (Next.js + TS) for code reuse, or start lighter (Python scripts + JSON only) until data is proven?
+1. ~~**Data feed**~~ — RESOLVED. NPB.jp scrape works for both current and historical seasons; two parsers (modern `/scores/` + legacy `/bis/games/`). See `notes/npb-jp-investigation.md`.
+2. ~~**Park factors**~~ — Empirically derived from 2024-25 (n=1697). YoY instability on ~6 parks suggests 3rd season would help; revisit in 12 months.
+3. **Pitcher peripherals.** FIP/xFIP/SIERA computable from raw boxscore data. Statcast-equivalent (xERA, hard-hit%) doesn't exist for NPB; SP_WEIGHTS will drop those weights and redistribute.
+4. **HR park factors.** Legacy parser doesn't capture HR-allowed per pitcher. The HR list lives in `<div id="gmdivhr">` — needs a separate parse. Until then, `hr` factors in park-factors.json remain ROUGH_PRIOR.
+5. **Vegas comparison.** Pinnacle NPB endpoint via the-odds-api.com — not yet wired up.
+6. **Probable SP** — yokoku-sensh URL not yet found.
+7. **Tech stack.** Mirror DugoutSide (Next.js + TS) for code reuse, or stay Python + JSON for the engine layer first?
 
 ## Bootstrap order
-1. Data sources investigation (notes/data-sources.md)
-2. Schedule + boxscore scraper for current season (validate data path)
-3. Historical results scrape (2 seasons minimum for park factors)
-4. Team + pitcher rating builder
-5. Line generator (power ratings → sim → totals/ML/RL)
-6. Comparison vs Pinnacle on live games
+1. ~~Data sources investigation~~ — done (`notes/npb-jp-investigation.md`)
+2. ~~Schedule + boxscore scraper~~ — done (`scripts/scrape-day.py`, modern + legacy parsers)
+3. ~~Historical scrape (2024+2025)~~ — done (`scripts/backfill.py`, 1,819 games)
+4. ~~Park-run-factor calibration~~ — done (`scripts/calibrate-park-factors.py`)
+5. **NEXT: HR-factor parser** (extract HR list from `<div id="gmdivhr">`, calibrate `hr` field)
+6. Probable-SP discovery — find yokoku-sensh URL
+7. Pinnacle NPB odds via the-odds-api.com — for model-vs-market comparison
+8. Team + pitcher rating builder (recompute FIP/xFIP/SIERA from corpus)
+9. Line generator (power ratings → sim → totals/ML/RL)
+10. Comparison vs Pinnacle on live games
 
 ## Repo
 https://github.com/Gunnar-1111/NPBside
