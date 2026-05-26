@@ -7,6 +7,7 @@
         "runs": 5,
         "hits": 10,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -368,6 +369,7 @@
         "runs": 0,
         "hits": 4,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -689,6 +691,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "神宮",
       "startTime": "18:00",
@@ -703,6 +706,7 @@
         "runs": 1,
         "hits": 7,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1010,6 +1014,7 @@
         "runs": 0,
         "hits": 4,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1229,6 +1234,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "甲子園",
       "startTime": "18:00",
@@ -1243,6 +1249,7 @@
         "runs": 1,
         "hits": 10,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1521,6 +1528,7 @@
         "runs": 2,
         "hits": 7,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -1832,6 +1840,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "B",
+          "teamMarker": "オ",
+          "batter": "セデーニョ",
+          "seasonHrNum": 4,
+          "inning": 6,
+          "runs": 1,
+          "oppPitcher": "内"
+        }
+      ],
       "status": "final",
       "venue": "京セラD大阪",
       "startTime": "18:01",
@@ -1846,6 +1865,7 @@
         "runs": 3,
         "hits": 7,
         "errors": 1,
+        "hrs": 2,
         "pitchers": [
           {
             "decision": "",
@@ -2108,6 +2128,7 @@
         "runs": 6,
         "hits": 8,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -2387,6 +2408,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "万波",
+          "seasonHrNum": 2,
+          "inning": 1,
+          "runs": 1,
+          "oppPitcher": "大関"
+        },
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "郡司",
+          "seasonHrNum": 1,
+          "inning": 3,
+          "runs": 1,
+          "oppPitcher": "大関"
+        }
+      ],
       "status": "final",
       "venue": "北九州",
       "startTime": "18:00",

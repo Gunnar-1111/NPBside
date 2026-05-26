@@ -7,6 +7,7 @@
         "runs": 3,
         "hits": 6,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -368,6 +369,7 @@
         "runs": 1,
         "hits": 5,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -788,6 +790,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "S",
+          "teamMarker": "ヤ",
+          "batter": "濱田",
+          "seasonHrNum": 4,
+          "inning": 3,
+          "runs": 1,
+          "oppPitcher": "佐藤柳"
+        }
+      ],
       "status": "final",
       "venue": "マツダ",
       "startTime": "13:30",
@@ -802,6 +815,7 @@
         "runs": 2,
         "hits": 9,
         "errors": 2,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -991,6 +1005,7 @@
         "runs": 3,
         "hits": 7,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1261,6 +1276,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "L",
+          "teamMarker": "西",
+          "batter": "渡部聖",
+          "seasonHrNum": 12,
+          "inning": 8,
+          "runs": 1,
+          "oppPitcher": "古謝"
+        }
+      ],
       "status": "final",
       "venue": "楽天モバイル",
       "startTime": "14:00",
@@ -1275,6 +1301,7 @@
         "runs": 0,
         "hits": 5,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -1512,6 +1539,7 @@
         "runs": 3,
         "hits": 7,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1804,6 +1832,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "ZOZOマリン",
       "startTime": "14:00",

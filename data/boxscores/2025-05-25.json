@@ -7,6 +7,7 @@
         "runs": 2,
         "hits": 10,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -381,6 +382,7 @@
         "runs": 5,
         "hits": 6,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -718,6 +720,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "東京ドーム",
       "startTime": "14:01",
@@ -732,6 +735,7 @@
         "runs": 5,
         "hits": 11,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1023,6 +1027,7 @@
         "runs": 1,
         "hits": 6,
         "errors": 3,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1357,6 +1362,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "バンテリンドーム",
       "startTime": "13:31",
@@ -1371,6 +1377,7 @@
         "runs": 0,
         "hits": 5,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -1678,6 +1685,7 @@
         "runs": 3,
         "hits": 7,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1878,6 +1886,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "マツダ",
       "startTime": "13:31",
@@ -1892,6 +1901,7 @@
         "runs": 1,
         "hits": 7,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -2224,6 +2234,7 @@
         "runs": 1,
         "hits": 5,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -2567,6 +2578,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "楽天モバイル",
       "startTime": "13:00",
@@ -2581,6 +2593,7 @@
         "runs": 8,
         "hits": 13,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -2862,6 +2875,7 @@
         "runs": 0,
         "hits": 7,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -3100,6 +3114,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "L",
+          "teamMarker": "西",
+          "batter": "セデーニョ",
+          "seasonHrNum": 2,
+          "inning": 9,
+          "runs": 1,
+          "oppPitcher": "澤田"
+        }
+      ],
       "status": "final",
       "venue": "ZOZOマリン",
       "startTime": "14:00",
@@ -3114,6 +3139,7 @@
         "runs": 13,
         "hits": 15,
         "errors": 0,
+        "hrs": 2,
         "pitchers": [
           {
             "decision": "",
@@ -3430,6 +3456,7 @@
         "runs": 5,
         "hits": 9,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -3703,6 +3730,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "B",
+          "teamMarker": "オ",
+          "batter": "西川",
+          "seasonHrNum": 2,
+          "inning": 1,
+          "runs": 2,
+          "oppPitcher": "上沢"
+        },
+        {
+          "team": "B",
+          "teamMarker": "オ",
+          "batter": "杉本",
+          "seasonHrNum": 5,
+          "inning": 5,
+          "runs": 3,
+          "oppPitcher": "大山"
+        }
+      ],
       "status": "final",
       "venue": "鹿児島",
       "startTime": "14:01",

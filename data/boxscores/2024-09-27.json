@@ -7,6 +7,7 @@
         "runs": 1,
         "hits": 7,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -365,6 +366,7 @@
         "runs": 3,
         "hits": 9,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -721,6 +723,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "東京ドーム",
       "startTime": "18:00",
@@ -735,6 +738,7 @@
         "runs": 2,
         "hits": 7,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -1195,6 +1199,7 @@
         "runs": 3,
         "hits": 8,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "Ｈ",
@@ -1631,6 +1636,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "T",
+          "teamMarker": "神",
+          "batter": "佐藤輝",
+          "seasonHrNum": 16,
+          "inning": 7,
+          "runs": 1,
+          "oppPitcher": "大瀬良"
+        }
+      ],
       "status": "final",
       "venue": "マツダ",
       "startTime": "18:00",

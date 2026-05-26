@@ -7,6 +7,7 @@
         "runs": 0,
         "hits": 7,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -247,6 +248,7 @@
         "runs": 3,
         "hits": 8,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -447,6 +449,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "横浜",
       "startTime": "18:00",
@@ -461,6 +464,7 @@
         "runs": 5,
         "hits": 9,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -755,6 +759,7 @@
         "runs": 7,
         "hits": 10,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1213,6 +1218,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "T",
+          "teamMarker": "神",
+          "batter": "大山",
+          "seasonHrNum": 6,
+          "inning": 9,
+          "runs": 1,
+          "oppPitcher": "黒原"
+        }
+      ],
       "status": "final",
       "venue": "マツダ",
       "startTime": "18:00",
@@ -1227,6 +1243,7 @@
         "runs": 3,
         "hits": 11,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1438,6 +1455,7 @@
         "runs": 1,
         "hits": 5,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -1714,6 +1732,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "エスコンＦ",
       "startTime": "18:00",
@@ -1728,6 +1747,7 @@
         "runs": 4,
         "hits": 9,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1984,6 +2004,7 @@
         "runs": 0,
         "hits": 4,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2257,6 +2278,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "みずほPayPay",
       "startTime": "18:00",

@@ -7,6 +7,7 @@
         "runs": 1,
         "hits": 7,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -339,6 +340,7 @@
         "runs": 10,
         "hits": 14,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -612,6 +614,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "H",
+          "teamMarker": "ソ",
+          "batter": "山川",
+          "seasonHrNum": 1,
+          "inning": 2,
+          "runs": 3,
+          "oppPitcher": "岩貞"
+        }
+      ],
       "status": "final",
       "venue": "みずほPayPay",
       "startTime": "18:33",

@@ -7,6 +7,7 @@
         "runs": 7,
         "hits": 8,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -419,6 +420,7 @@
         "runs": 4,
         "hits": 7,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -756,6 +758,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "S",
+          "teamMarker": "ヤ",
+          "batter": "サンタナ",
+          "seasonHrNum": 1,
+          "inning": 6,
+          "runs": 1,
+          "oppPitcher": "上茶谷"
+        }
+      ],
       "status": "final",
       "venue": "神宮",
       "startTime": "18:00",
@@ -770,6 +783,7 @@
         "runs": 2,
         "hits": 9,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -1182,6 +1196,7 @@
         "runs": 15,
         "hits": 14,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1468,6 +1483,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "甲子園",
       "startTime": "14:01",
@@ -1482,6 +1498,7 @@
         "runs": 2,
         "hits": 12,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -1843,6 +1860,7 @@
         "runs": 6,
         "hits": 9,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -2148,6 +2166,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "C",
+          "teamMarker": "広",
+          "batter": "宇草",
+          "seasonHrNum": 1,
+          "inning": 7,
+          "runs": 1,
+          "oppPitcher": "ケラー"
+        }
+      ],
       "status": "final",
       "venue": "マツダ",
       "startTime": "14:00",
@@ -2162,6 +2191,7 @@
         "runs": 0,
         "hits": 4,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2370,6 +2400,7 @@
         "runs": 2,
         "hits": 7,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -2570,6 +2601,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "エスコンＦ",
       "startTime": "14:01",
@@ -2584,6 +2616,7 @@
         "runs": 8,
         "hits": 12,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -2846,6 +2879,7 @@
         "runs": 2,
         "hits": 5,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -3135,6 +3169,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "ベルーナドーム",
       "startTime": "14:00",
@@ -3149,6 +3184,7 @@
         "runs": 3,
         "hits": 11,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -3551,6 +3587,7 @@
         "runs": 3,
         "hits": 7,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -3913,6 +3950,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "PayPayドーム",
       "startTime": "14:00",

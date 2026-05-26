@@ -7,6 +7,7 @@
         "runs": null,
         "hits": null,
         "errors": null,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
@@ -15,10 +16,12 @@
         "runs": null,
         "hits": null,
         "errors": null,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
-      "status": "final",
+      "hrList": [],
+      "status": "cancelled_rain",
       "venue": null,
       "startTime": null,
       "format": "legacy",

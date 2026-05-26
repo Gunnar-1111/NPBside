@@ -7,6 +7,7 @@
         "runs": 4,
         "hits": 5,
         "errors": 0,
+        "hrs": 2,
         "pitchers": [
           {
             "decision": "",
@@ -352,6 +353,7 @@
         "runs": 5,
         "hits": 11,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -663,6 +665,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "M",
+          "teamMarker": "ロ",
+          "batter": "ポランコ",
+          "seasonHrNum": 21,
+          "inning": 4,
+          "runs": 2,
+          "oppPitcher": "古謝"
+        },
+        {
+          "team": "M",
+          "teamMarker": "ロ",
+          "batter": "ソト",
+          "seasonHrNum": 21,
+          "inning": 4,
+          "runs": 1,
+          "oppPitcher": "古謝"
+        }
+      ],
       "status": "final",
       "venue": "楽天モバイル",
       "startTime": "18:00",
@@ -677,6 +699,7 @@
         "runs": 3,
         "hits": 9,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -958,6 +981,7 @@
         "runs": 2,
         "hits": 8,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -1266,6 +1290,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "みずほPayPay",
       "startTime": "18:00",

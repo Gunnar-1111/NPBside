@@ -7,6 +7,7 @@
         "runs": 9,
         "hits": 14,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -250,6 +251,7 @@
         "runs": 2,
         "hits": 4,
         "errors": 3,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -590,6 +592,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "B",
+          "teamMarker": "オ",
+          "batter": "杉本",
+          "seasonHrNum": 11,
+          "inning": 7,
+          "runs": 2,
+          "oppPitcher": "今井"
+        }
+      ],
       "status": "final",
       "venue": "京セラD大阪",
       "startTime": "18:00",

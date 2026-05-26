@@ -7,6 +7,7 @@
         "runs": 4,
         "hits": 8,
         "errors": 2,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "Ｈ",
@@ -298,6 +299,7 @@
         "runs": 3,
         "hits": 8,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -667,6 +669,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "G",
+          "teamMarker": "巨",
+          "batter": "岡本和",
+          "seasonHrNum": 6,
+          "inning": 2,
+          "runs": 1,
+          "oppPitcher": "小川"
+        },
+        {
+          "team": "S",
+          "teamMarker": "ヤ",
+          "batter": "長岡",
+          "seasonHrNum": 2,
+          "inning": 4,
+          "runs": 1,
+          "oppPitcher": "菅野"
+        }
+      ],
       "status": "final",
       "venue": "神宮",
       "startTime": "18:00",
@@ -681,6 +703,7 @@
         "runs": 9,
         "hits": 13,
         "errors": 2,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -1058,6 +1081,7 @@
         "runs": 11,
         "hits": 14,
         "errors": 0,
+        "hrs": 3,
         "pitchers": [
           {
             "decision": "",
@@ -1465,6 +1489,44 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "T",
+          "teamMarker": "神",
+          "batter": "近本",
+          "seasonHrNum": 6,
+          "inning": 3,
+          "runs": 4,
+          "oppPitcher": "中川颯"
+        },
+        {
+          "team": "DB",
+          "teamMarker": "デ",
+          "batter": "蝦名",
+          "seasonHrNum": 1,
+          "inning": 8,
+          "runs": 2,
+          "oppPitcher": "岩崎"
+        },
+        {
+          "team": "DB",
+          "teamMarker": "デ",
+          "batter": "筒香",
+          "seasonHrNum": 2,
+          "inning": 8,
+          "runs": 1,
+          "oppPitcher": "岩崎"
+        },
+        {
+          "team": "DB",
+          "teamMarker": "デ",
+          "batter": "牧",
+          "seasonHrNum": 5,
+          "inning": 8,
+          "runs": 1,
+          "oppPitcher": "岡留"
+        }
+      ],
       "status": "final",
       "venue": "横浜",
       "startTime": "14:00",
@@ -1479,6 +1541,7 @@
         "runs": 4,
         "hits": 11,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1786,6 +1849,7 @@
         "runs": 0,
         "hits": 3,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2139,6 +2203,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "マツダ",
       "startTime": "14:00",
@@ -2153,6 +2218,7 @@
         "runs": 0,
         "hits": 3,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2396,6 +2462,7 @@
         "runs": 3,
         "hits": 7,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -2618,6 +2685,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "エスコンＦ",
       "startTime": "14:00",
@@ -2632,6 +2700,7 @@
         "runs": 1,
         "hits": 7,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2840,6 +2909,7 @@
         "runs": 2,
         "hits": 10,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -3062,6 +3132,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "ベルーナドーム",
       "startTime": "14:00",
@@ -3076,6 +3147,7 @@
         "runs": 1,
         "hits": 5,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -3300,6 +3372,7 @@
         "runs": 4,
         "hits": 10,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -3573,6 +3646,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "宮崎",
       "startTime": "13:00",

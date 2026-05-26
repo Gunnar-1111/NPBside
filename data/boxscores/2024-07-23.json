@@ -7,6 +7,7 @@
         "runs": null,
         "hits": 17,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
@@ -15,9 +16,11 @@
         "runs": null,
         "hits": 16,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
+      "hrList": [],
       "status": "final",
       "venue": "エスコンＦ",
       "startTime": "18:41",

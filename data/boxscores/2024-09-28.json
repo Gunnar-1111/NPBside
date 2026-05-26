@@ -7,6 +7,7 @@
         "runs": 2,
         "hits": 4,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -384,6 +385,7 @@
         "runs": 7,
         "hits": 14,
         "errors": 0,
+        "hrs": 2,
         "pitchers": [
           {
             "decision": "○",
@@ -772,6 +774,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "S",
+          "teamMarker": "ヤ",
+          "batter": "サンタナ",
+          "seasonHrNum": 15,
+          "inning": 2,
+          "runs": 3,
+          "oppPitcher": "ビーズリー"
+        },
+        {
+          "team": "S",
+          "teamMarker": "ヤ",
+          "batter": "山田",
+          "seasonHrNum": 13,
+          "inning": 7,
+          "runs": 1,
+          "oppPitcher": "浜地"
+        }
+      ],
       "status": "final",
       "venue": "神宮",
       "startTime": "18:00",
@@ -786,6 +808,7 @@
         "runs": 8,
         "hits": 16,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1045,6 +1068,7 @@
         "runs": 1,
         "hits": 7,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -1350,6 +1374,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "マツダ",
       "startTime": "18:01",
@@ -1364,6 +1389,7 @@
         "runs": 6,
         "hits": 11,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -1696,6 +1722,7 @@
         "runs": 7,
         "hits": 10,
         "errors": 0,
+        "hrs": 3,
         "pitchers": [
           {
             "decision": "",
@@ -2020,6 +2047,44 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "H",
+          "teamMarker": "ソ",
+          "batter": "山川",
+          "seasonHrNum": 34,
+          "inning": 8,
+          "runs": 3,
+          "oppPitcher": "池田"
+        },
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "レイエス",
+          "seasonHrNum": 25,
+          "inning": 3,
+          "runs": 1,
+          "oppPitcher": "東浜"
+        },
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "水谷",
+          "seasonHrNum": 9,
+          "inning": 7,
+          "runs": 1,
+          "oppPitcher": "長谷川"
+        },
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "水野",
+          "seasonHrNum": 7,
+          "inning": 9,
+          "runs": 1,
+          "oppPitcher": "岩井"
+        }
+      ],
       "status": "final",
       "venue": "エスコンＦ",
       "startTime": "14:00",
@@ -2034,6 +2099,7 @@
         "runs": 5,
         "hits": 9,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -2331,6 +2397,7 @@
         "runs": 2,
         "hits": 8,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2575,6 +2642,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "B",
+          "teamMarker": "オ",
+          "batter": "太田",
+          "seasonHrNum": 6,
+          "inning": 5,
+          "runs": 1,
+          "oppPitcher": "田中将"
+        }
+      ],
       "status": "final",
       "venue": "楽天モバイル",
       "startTime": "13:02",
@@ -2589,6 +2667,7 @@
         "runs": 5,
         "hits": 9,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "Ｈ",
@@ -2845,6 +2924,7 @@
         "runs": 1,
         "hits": 5,
         "errors": 2,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -3153,6 +3233,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "M",
+          "teamMarker": "ロ",
+          "batter": "佐藤",
+          "seasonHrNum": 5,
+          "inning": 5,
+          "runs": 3,
+          "oppPitcher": "ボー・タカハシ"
+        }
+      ],
       "status": "final",
       "venue": "ベルーナドーム",
       "startTime": "13:00",

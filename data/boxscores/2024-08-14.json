@@ -7,6 +7,7 @@
         "runs": 0,
         "hits": 7,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -349,6 +350,7 @@
         "runs": 4,
         "hits": 7,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -533,6 +535,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "G",
+          "teamMarker": "巨",
+          "batter": "浅野",
+          "seasonHrNum": 1,
+          "inning": 4,
+          "runs": 4,
+          "oppPitcher": "及川"
+        }
+      ],
       "status": "final",
       "venue": "東京ドーム",
       "startTime": "18:00",
@@ -547,6 +560,7 @@
         "runs": 6,
         "hits": 12,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -1007,6 +1021,7 @@
         "runs": 7,
         "hits": 12,
         "errors": 0,
+        "hrs": 2,
         "pitchers": [
           {
             "decision": "",
@@ -1430,6 +1445,35 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "D",
+          "teamMarker": "中",
+          "batter": "石川昂",
+          "seasonHrNum": 3,
+          "inning": 4,
+          "runs": 1,
+          "oppPitcher": "サイスニード"
+        },
+        {
+          "team": "S",
+          "teamMarker": "ヤ",
+          "batter": "オスナ",
+          "seasonHrNum": 14,
+          "inning": 5,
+          "runs": 3,
+          "oppPitcher": "松木平"
+        },
+        {
+          "team": "S",
+          "teamMarker": "ヤ",
+          "batter": "岩田",
+          "seasonHrNum": 1,
+          "inning": 8,
+          "runs": 2,
+          "oppPitcher": "藤嶋"
+        }
+      ],
       "status": "final",
       "venue": "神宮",
       "startTime": "18:00",
@@ -1444,6 +1488,7 @@
         "runs": 3,
         "hits": 11,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1821,6 +1866,7 @@
         "runs": 4,
         "hits": 9,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -2190,6 +2236,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "C",
+          "teamMarker": "広",
+          "batter": "菊池",
+          "seasonHrNum": 7,
+          "inning": 9,
+          "runs": 3,
+          "oppPitcher": "森原"
+        }
+      ],
       "status": "final",
       "venue": "マツダ",
       "startTime": "18:01",
@@ -2204,6 +2261,7 @@
         "runs": 1,
         "hits": 6,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2479,6 +2537,7 @@
         "runs": 4,
         "hits": 4,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -2733,6 +2792,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "レイエス",
+          "seasonHrNum": 11,
+          "inning": 1,
+          "runs": 1,
+          "oppPitcher": "メルセデス"
+        }
+      ],
       "status": "final",
       "venue": "エスコンＦ",
       "startTime": "18:01",
@@ -2747,6 +2817,7 @@
         "runs": 1,
         "hits": 9,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -3025,6 +3096,7 @@
         "runs": 4,
         "hits": 5,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -3282,6 +3354,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "ベルーナドーム",
       "startTime": "18:00",
@@ -3296,6 +3369,7 @@
         "runs": 6,
         "hits": 10,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -3545,6 +3619,7 @@
         "runs": 1,
         "hits": 4,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -3802,6 +3877,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "京セラD大阪",
       "startTime": "18:00",

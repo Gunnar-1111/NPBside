@@ -7,6 +7,7 @@
         "runs": 5,
         "hits": 11,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -330,6 +331,7 @@
         "runs": 3,
         "hits": 10,
         "errors": 0,
+        "hrs": 2,
         "pitchers": [
           {
             "decision": "●",
@@ -702,6 +704,35 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "DB",
+          "teamMarker": "デ",
+          "batter": "オースティン",
+          "seasonHrNum": 2,
+          "inning": 4,
+          "runs": 1,
+          "oppPitcher": "高橋"
+        },
+        {
+          "team": "S",
+          "teamMarker": "ヤ",
+          "batter": "村上",
+          "seasonHrNum": 11,
+          "inning": 7,
+          "runs": 1,
+          "oppPitcher": "石田健"
+        },
+        {
+          "team": "S",
+          "teamMarker": "ヤ",
+          "batter": "サンタナ",
+          "seasonHrNum": 6,
+          "inning": 7,
+          "runs": 1,
+          "oppPitcher": "石田健"
+        }
+      ],
       "status": "final",
       "venue": "神宮",
       "startTime": "18:00",
@@ -716,6 +747,7 @@
         "runs": 2,
         "hits": 9,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1074,6 +1106,7 @@
         "runs": 1,
         "hits": 8,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -1513,6 +1546,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "マツダ",
       "startTime": "18:00",
@@ -1527,6 +1561,7 @@
         "runs": 9,
         "hits": 14,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -1859,6 +1894,7 @@
         "runs": 3,
         "hits": 12,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -2116,6 +2152,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "B",
+          "teamMarker": "オ",
+          "batter": "若月",
+          "seasonHrNum": 1,
+          "inning": 5,
+          "runs": 2,
+          "oppPitcher": "鈴木"
+        },
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "マルティネス",
+          "seasonHrNum": 5,
+          "inning": 5,
+          "runs": 3,
+          "oppPitcher": "鈴木"
+        }
+      ],
       "status": "final",
       "venue": "エスコンＦ",
       "startTime": "18:00",

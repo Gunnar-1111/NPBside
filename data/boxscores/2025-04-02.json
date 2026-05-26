@@ -7,6 +7,7 @@
         "runs": 4,
         "hits": 7,
         "errors": 1,
+        "hrs": 2,
         "pitchers": [
           {
             "decision": "",
@@ -419,6 +420,7 @@
         "runs": 5,
         "hits": 10,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -823,6 +825,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "C",
+          "teamMarker": "広",
+          "batter": "ファビアン",
+          "seasonHrNum": 1,
+          "inning": 2,
+          "runs": 2,
+          "oppPitcher": "山野"
+        },
+        {
+          "team": "C",
+          "teamMarker": "広",
+          "batter": "末包",
+          "seasonHrNum": 1,
+          "inning": 6,
+          "runs": 2,
+          "oppPitcher": "山野"
+        }
+      ],
       "status": "final",
       "venue": "神宮",
       "startTime": "18:00",
@@ -837,6 +859,7 @@
         "runs": 2,
         "hits": 7,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1077,6 +1100,7 @@
         "runs": 0,
         "hits": 5,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -1398,6 +1422,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "バンテリンドーム",
       "startTime": "18:00",
@@ -1412,6 +1437,7 @@
         "runs": 6,
         "hits": 15,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1939,6 +1965,7 @@
         "runs": 6,
         "hits": 10,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -2464,6 +2491,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "京セラD大阪",
       "startTime": "18:01",
@@ -2478,6 +2506,7 @@
         "runs": 1,
         "hits": 7,
         "errors": 2,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2759,6 +2788,7 @@
         "runs": 3,
         "hits": 6,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "Ｈ",
@@ -3067,6 +3097,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "吉田",
+          "seasonHrNum": 1,
+          "inning": 7,
+          "runs": 1,
+          "oppPitcher": "藤井"
+        }
+      ],
       "status": "final",
       "venue": "エスコンＦ",
       "startTime": "18:32",
@@ -3081,6 +3122,7 @@
         "runs": null,
         "hits": null,
         "errors": null,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
@@ -3089,10 +3131,12 @@
         "runs": null,
         "hits": null,
         "errors": null,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
-      "status": "final",
+      "hrList": [],
+      "status": "cancelled_rain",
       "venue": null,
       "startTime": null,
       "format": "legacy",
@@ -3106,6 +3150,7 @@
         "runs": 3,
         "hits": 9,
         "errors": 3,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -3368,6 +3413,7 @@
         "runs": 2,
         "hits": 8,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -3622,6 +3668,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "B",
+          "teamMarker": "オ",
+          "batter": "西野",
+          "seasonHrNum": 1,
+          "inning": 7,
+          "runs": 2,
+          "oppPitcher": "中森"
+        }
+      ],
       "status": "final",
       "venue": "ZOZOマリン",
       "startTime": "14:00",

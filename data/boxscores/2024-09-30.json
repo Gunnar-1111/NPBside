@@ -7,6 +7,7 @@
         "runs": 2,
         "hits": 9,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -349,6 +350,7 @@
         "runs": 0,
         "hits": 2,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -689,6 +691,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "DB",
+          "teamMarker": "デ",
+          "batter": "宮﨑",
+          "seasonHrNum": 14,
+          "inning": 6,
+          "runs": 2,
+          "oppPitcher": "村上"
+        }
+      ],
       "status": "final",
       "venue": "甲子園",
       "startTime": "18:00",
@@ -703,6 +716,7 @@
         "runs": 2,
         "hits": 6,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -984,6 +998,7 @@
         "runs": 1,
         "hits": 8,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1238,6 +1253,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "M",
+          "teamMarker": "ロ",
+          "batter": "ポランコ",
+          "seasonHrNum": 23,
+          "inning": 7,
+          "runs": 1,
+          "oppPitcher": "早川"
+        }
+      ],
       "status": "final",
       "venue": "楽天モバイル",
       "startTime": "18:01",
@@ -1252,6 +1278,7 @@
         "runs": 0,
         "hits": 3,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -1597,6 +1624,7 @@
         "runs": 8,
         "hits": 8,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1832,6 +1860,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "ベルーナドーム",
       "startTime": "18:00",
@@ -1846,6 +1875,7 @@
         "runs": 0,
         "hits": 8,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2067,6 +2097,7 @@
         "runs": 1,
         "hits": 4,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -2410,6 +2441,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "H",
+          "teamMarker": "ソ",
+          "batter": "栗原",
+          "seasonHrNum": 18,
+          "inning": 7,
+          "runs": 1,
+          "oppPitcher": "山下"
+        }
+      ],
       "status": "final",
       "venue": "みずほPayPay",
       "startTime": "18:00",

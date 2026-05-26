@@ -7,6 +7,7 @@
         "runs": 1,
         "hits": 9,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -314,6 +315,7 @@
         "runs": 2,
         "hits": 9,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -670,6 +672,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "東京ドーム",
       "startTime": "18:00",
@@ -684,6 +687,7 @@
         "runs": 10,
         "hits": 14,
         "errors": 1,
+        "hrs": 2,
         "pitchers": [
           {
             "decision": "",
@@ -1195,6 +1199,7 @@
         "runs": 8,
         "hits": 14,
         "errors": 2,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1634,6 +1639,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "B",
+          "teamMarker": "オ",
+          "batter": "宗",
+          "seasonHrNum": 1,
+          "inning": 1,
+          "runs": 2,
+          "oppPitcher": "小川"
+        },
+        {
+          "team": "B",
+          "teamMarker": "オ",
+          "batter": "太田",
+          "seasonHrNum": 5,
+          "inning": 4,
+          "runs": 3,
+          "oppPitcher": "小川"
+        }
+      ],
       "status": "final",
       "venue": "神宮",
       "startTime": "18:01",
@@ -1648,6 +1673,7 @@
         "runs": 6,
         "hits": 11,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -1990,6 +2016,7 @@
         "runs": 1,
         "hits": 1,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2362,6 +2389,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "M",
+          "teamMarker": "ロ",
+          "batter": "山本",
+          "seasonHrNum": 7,
+          "inning": 3,
+          "runs": 1,
+          "oppPitcher": "ケイ"
+        }
+      ],
       "status": "final",
       "venue": "横浜",
       "startTime": "18:01",
@@ -2376,6 +2414,7 @@
         "runs": 1,
         "hits": 4,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -2613,6 +2652,7 @@
         "runs": 0,
         "hits": 5,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2899,6 +2939,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "バンテリンドーム",
       "startTime": "18:00",
@@ -2913,6 +2954,7 @@
         "runs": 2,
         "hits": 7,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -3290,6 +3332,7 @@
         "runs": 1,
         "hits": 12,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -3592,6 +3635,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "甲子園",
       "startTime": "18:01",
@@ -3606,6 +3650,7 @@
         "runs": 4,
         "hits": 9,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -3865,6 +3910,7 @@
         "runs": 0,
         "hits": 7,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -4167,6 +4213,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "マツダ",
       "startTime": "18:01",

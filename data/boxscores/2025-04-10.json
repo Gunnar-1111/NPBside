@@ -7,6 +7,7 @@
         "runs": 2,
         "hits": 8,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -416,6 +417,7 @@
         "runs": 1,
         "hits": 7,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -855,6 +857,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "バンテリンドーム",
       "startTime": "18:00",
@@ -869,6 +872,7 @@
         "runs": null,
         "hits": null,
         "errors": null,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
@@ -877,9 +881,11 @@
         "runs": null,
         "hits": null,
         "errors": null,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
+      "hrList": [],
       "status": "no_game",
       "venue": null,
       "startTime": null,
@@ -894,6 +900,7 @@
         "runs": 10,
         "hits": 16,
         "errors": 0,
+        "hrs": 2,
         "pitchers": [
           {
             "decision": "○",
@@ -1188,6 +1195,7 @@
         "runs": 0,
         "hits": 3,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -1509,6 +1517,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "水野",
+          "seasonHrNum": 1,
+          "inning": 3,
+          "runs": 3,
+          "oppPitcher": "岸"
+        },
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "伏見",
+          "seasonHrNum": 1,
+          "inning": 8,
+          "runs": 1,
+          "oppPitcher": "今野"
+        }
+      ],
       "status": "final",
       "venue": "楽天モバイル",
       "startTime": "18:00",
@@ -1523,6 +1551,7 @@
         "runs": 1,
         "hits": 8,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1925,6 +1954,7 @@
         "runs": 1,
         "hits": 9,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -2268,6 +2298,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "B",
+          "teamMarker": "オ",
+          "batter": "若月",
+          "seasonHrNum": 1,
+          "inning": 5,
+          "runs": 1,
+          "oppPitcher": "前田純"
+        }
+      ],
       "status": "final",
       "venue": "京セラD大阪",
       "startTime": "18:01",

@@ -7,6 +7,7 @@
         "runs": 2,
         "hits": 8,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -314,6 +315,7 @@
         "runs": 3,
         "hits": 12,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -635,6 +637,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "G",
+          "teamMarker": "巨",
+          "batter": "中山",
+          "seasonHrNum": 2,
+          "inning": 6,
+          "runs": 1,
+          "oppPitcher": "吉村"
+        }
+      ],
       "status": "final",
       "venue": "神宮",
       "startTime": "18:00",
@@ -649,6 +662,7 @@
         "runs": null,
         "hits": null,
         "errors": null,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
@@ -657,10 +671,12 @@
         "runs": null,
         "hits": null,
         "errors": null,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
-      "status": "final",
+      "hrList": [],
+      "status": "cancelled_rain",
       "venue": null,
       "startTime": null,
       "format": "legacy",
@@ -674,6 +690,7 @@
         "runs": 1,
         "hits": 5,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -882,6 +899,7 @@
         "runs": 1,
         "hits": 3,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -1117,6 +1135,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "C",
+          "teamMarker": "広",
+          "batter": "モンテロ",
+          "seasonHrNum": 3,
+          "inning": 2,
+          "runs": 1,
+          "oppPitcher": "ケイ"
+        }
+      ],
       "status": "final",
       "venue": "マツダ",
       "startTime": "18:01",
@@ -1131,6 +1160,7 @@
         "runs": 3,
         "hits": 6,
         "errors": 2,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -1390,6 +1420,7 @@
         "runs": 4,
         "hits": 6,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1647,6 +1678,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "レイエス",
+          "seasonHrNum": 19,
+          "inning": 1,
+          "runs": 3,
+          "oppPitcher": "髙橋光"
+        }
+      ],
       "status": "final",
       "venue": "ベルーナドーム",
       "startTime": "18:00",
@@ -1661,6 +1703,7 @@
         "runs": null,
         "hits": null,
         "errors": null,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
@@ -1669,10 +1712,12 @@
         "runs": null,
         "hits": null,
         "errors": null,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
-      "status": "final",
+      "hrList": [],
+      "status": "cancelled_rain",
       "venue": null,
       "startTime": null,
       "format": "legacy",
@@ -1686,6 +1731,7 @@
         "runs": 2,
         "hits": 7,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1859,6 +1905,7 @@
         "runs": 2,
         "hits": 4,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -2046,6 +2093,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "北九州",
       "startTime": "18:00",

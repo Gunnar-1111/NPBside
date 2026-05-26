@@ -7,6 +7,7 @@
         "runs": 9,
         "hits": 14,
         "errors": 0,
+        "hrs": 2,
         "pitchers": [
           {
             "decision": "○",
@@ -282,6 +283,7 @@
         "runs": 3,
         "hits": 8,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -577,6 +579,35 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "レイエス",
+          "seasonHrNum": 3,
+          "inning": 3,
+          "runs": 2,
+          "oppPitcher": "大関"
+        },
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "水谷",
+          "seasonHrNum": 1,
+          "inning": 4,
+          "runs": 1,
+          "oppPitcher": "松本晴"
+        },
+        {
+          "team": "H",
+          "teamMarker": "ソ",
+          "batter": "野村",
+          "seasonHrNum": 2,
+          "inning": 3,
+          "runs": 1,
+          "oppPitcher": "北山"
+        }
+      ],
       "status": "final",
       "venue": "みずほPayPay",
       "startTime": "14:00",

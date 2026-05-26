@@ -7,6 +7,7 @@
         "runs": 6,
         "hits": 8,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -314,6 +315,7 @@
         "runs": 1,
         "hits": 8,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -734,6 +736,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "S",
+          "teamMarker": "ヤ",
+          "batter": "北村恵",
+          "seasonHrNum": 5,
+          "inning": 4,
+          "runs": 1,
+          "oppPitcher": "斉藤"
+        }
+      ],
       "status": "final",
       "venue": "マツダ",
       "startTime": "18:05",
@@ -748,6 +761,7 @@
         "runs": 6,
         "hits": 8,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1045,6 +1059,7 @@
         "runs": 7,
         "hits": 10,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1404,6 +1419,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "楽天モバイル",
       "startTime": "18:00",
@@ -1418,6 +1434,7 @@
         "runs": 2,
         "hits": 9,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -1731,6 +1748,7 @@
         "runs": 10,
         "hits": 14,
         "errors": 0,
+        "hrs": 4,
         "pitchers": [
           {
             "decision": "",
@@ -2090,6 +2108,53 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "B",
+          "teamMarker": "オ",
+          "batter": "紅林",
+          "seasonHrNum": 9,
+          "inning": 8,
+          "runs": 2,
+          "oppPitcher": "ヘルナンデス"
+        },
+        {
+          "team": "H",
+          "teamMarker": "ソ",
+          "batter": "柳町",
+          "seasonHrNum": 6,
+          "inning": 1,
+          "runs": 2,
+          "oppPitcher": "佐藤"
+        },
+        {
+          "team": "H",
+          "teamMarker": "ソ",
+          "batter": "栗原",
+          "seasonHrNum": 8,
+          "inning": 5,
+          "runs": 4,
+          "oppPitcher": "佐藤"
+        },
+        {
+          "team": "H",
+          "teamMarker": "ソ",
+          "batter": "谷川原",
+          "seasonHrNum": 3,
+          "inning": 5,
+          "runs": 1,
+          "oppPitcher": "佐藤"
+        },
+        {
+          "team": "H",
+          "teamMarker": "ソ",
+          "batter": "柳田",
+          "seasonHrNum": 3,
+          "inning": 6,
+          "runs": 1,
+          "oppPitcher": "山田"
+        }
+      ],
       "status": "final",
       "venue": "みずほPayPay",
       "startTime": "18:00",

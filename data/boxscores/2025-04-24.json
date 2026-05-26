@@ -7,6 +7,7 @@
         "runs": 4,
         "hits": 9,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -368,6 +369,7 @@
         "runs": 2,
         "hits": 11,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -670,6 +672,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "T",
+          "teamMarker": "神",
+          "batter": "森下",
+          "seasonHrNum": 2,
+          "inning": 7,
+          "runs": 2,
+          "oppPitcher": "森原"
+        }
+      ],
       "status": "final",
       "venue": "横浜",
       "startTime": "17:45",

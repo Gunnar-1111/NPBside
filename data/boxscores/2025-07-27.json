@@ -7,6 +7,7 @@
         "runs": 2,
         "hits": 4,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -333,6 +334,7 @@
         "runs": 3,
         "hits": 9,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -603,6 +605,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "D",
+          "teamMarker": "中",
+          "batter": "細川",
+          "seasonHrNum": 7,
+          "inning": 2,
+          "runs": 1,
+          "oppPitcher": "奥川"
+        },
+        {
+          "team": "S",
+          "teamMarker": "ヤ",
+          "batter": "オスナ",
+          "seasonHrNum": 6,
+          "inning": 4,
+          "runs": 1,
+          "oppPitcher": "松葉"
+        }
+      ],
       "status": "final",
       "venue": "神宮",
       "startTime": "18:00",
@@ -617,6 +639,7 @@
         "runs": 1,
         "hits": 7,
         "errors": 3,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -943,6 +966,7 @@
         "runs": 7,
         "hits": 9,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1283,6 +1307,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "甲子園",
       "startTime": "18:01",
@@ -1297,6 +1322,7 @@
         "runs": 6,
         "hits": 12,
         "errors": 2,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "Ｈ",
@@ -1709,6 +1735,7 @@
         "runs": 5,
         "hits": 9,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2132,6 +2159,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "G",
+          "teamMarker": "巨",
+          "batter": "岸田",
+          "seasonHrNum": 3,
+          "inning": 5,
+          "runs": 1,
+          "oppPitcher": "遠藤"
+        }
+      ],
       "status": "final",
       "venue": "マツダ",
       "startTime": "18:00",
@@ -2146,6 +2184,7 @@
         "runs": 5,
         "hits": 10,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -2440,6 +2479,7 @@
         "runs": 4,
         "hits": 12,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -2786,6 +2826,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "M",
+          "teamMarker": "ロ",
+          "batter": "ソト",
+          "seasonHrNum": 9,
+          "inning": 4,
+          "runs": 3,
+          "oppPitcher": "伊藤"
+        }
+      ],
       "status": "final",
       "venue": "エスコンＦ",
       "startTime": "14:01",
@@ -2800,6 +2851,7 @@
         "runs": 1,
         "hits": 4,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -3043,6 +3095,7 @@
         "runs": 4,
         "hits": 10,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -3316,6 +3369,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "L",
+          "teamMarker": "西",
+          "batter": "西川",
+          "seasonHrNum": 5,
+          "inning": 6,
+          "runs": 1,
+          "oppPitcher": "藤井"
+        },
+        {
+          "team": "E",
+          "teamMarker": "楽",
+          "batter": "ボイト",
+          "seasonHrNum": 3,
+          "inning": 6,
+          "runs": 2,
+          "oppPitcher": "渡邉"
+        }
+      ],
       "status": "final",
       "venue": "楽天モバイル",
       "startTime": "17:00",
@@ -3330,6 +3403,7 @@
         "runs": 1,
         "hits": 5,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -3643,6 +3717,7 @@
         "runs": 3,
         "hits": 7,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -3878,6 +3953,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "B",
+          "teamMarker": "オ",
+          "batter": "ディアス",
+          "seasonHrNum": 2,
+          "inning": 8,
+          "runs": 1,
+          "oppPitcher": "大関"
+        }
+      ],
       "status": "final",
       "venue": "みずほPayPay",
       "startTime": "14:00",

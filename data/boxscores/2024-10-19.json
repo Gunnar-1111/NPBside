@@ -7,6 +7,7 @@
         "runs": 1,
         "hits": 3,
         "errors": 1,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -298,6 +299,7 @@
         "runs": 4,
         "hits": 6,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -670,6 +672,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "DB",
+          "teamMarker": "デ",
+          "batter": "戸柱",
+          "seasonHrNum": 1,
+          "inning": 6,
+          "runs": 1,
+          "oppPitcher": "井上"
+        }
+      ],
       "status": "final",
       "venue": "東京ドーム",
       "startTime": "18:00",

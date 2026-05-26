@@ -7,6 +7,7 @@
         "runs": 4,
         "hits": 6,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -282,6 +283,7 @@
         "runs": 1,
         "hits": 10,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -593,6 +595,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "DB",
+          "teamMarker": "デ",
+          "batter": "桑原",
+          "seasonHrNum": 1,
+          "inning": 5,
+          "runs": 1,
+          "oppPitcher": "大津"
+        }
+      ],
       "status": "final",
       "venue": "みずほPayPay",
       "startTime": "18:34",

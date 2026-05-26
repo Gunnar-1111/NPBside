@@ -7,6 +7,7 @@
         "runs": 2,
         "hits": 6,
         "errors": 2,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -349,6 +350,7 @@
         "runs": 1,
         "hits": 6,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -718,6 +720,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "H",
+          "teamMarker": "ソ",
+          "batter": "山川",
+          "seasonHrNum": 2,
+          "inning": 4,
+          "runs": 1,
+          "oppPitcher": "才木"
+        }
+      ],
       "status": "final",
       "venue": "甲子園",
       "startTime": "18:04",

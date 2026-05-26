@@ -7,6 +7,7 @@
         "runs": 2,
         "hits": 5,
         "errors": 2,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -212,6 +213,7 @@
         "runs": 1,
         "hits": 2,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -485,6 +487,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "F",
+          "teamMarker": "日",
+          "batter": "水谷",
+          "seasonHrNum": 9,
+          "inning": 5,
+          "runs": 2,
+          "oppPitcher": "隅田"
+        },
+        {
+          "team": "L",
+          "teamMarker": "西",
+          "batter": "ネビン",
+          "seasonHrNum": 9,
+          "inning": 7,
+          "runs": 1,
+          "oppPitcher": "達"
+        }
+      ],
       "status": "final",
       "venue": "東京ドーム",
       "startTime": "18:01",

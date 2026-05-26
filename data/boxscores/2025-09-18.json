@@ -7,6 +7,7 @@
         "runs": 0,
         "hits": 7,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -384,6 +385,7 @@
         "runs": 5,
         "hits": 8,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -705,6 +707,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "S",
+          "teamMarker": "ヤ",
+          "batter": "山田",
+          "seasonHrNum": 10,
+          "inning": 2,
+          "runs": 1,
+          "oppPitcher": "森田"
+        }
+      ],
       "status": "final",
       "venue": "神宮",
       "startTime": "18:00",
@@ -719,6 +732,7 @@
         "runs": 7,
         "hits": 11,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -1061,6 +1075,7 @@
         "runs": 4,
         "hits": 8,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -1433,6 +1448,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "DB",
+          "teamMarker": "デ",
+          "batter": "筒香",
+          "seasonHrNum": 17,
+          "inning": 5,
+          "runs": 3,
+          "oppPitcher": "涌井"
+        }
+      ],
       "status": "final",
       "venue": "バンテリンドーム",
       "startTime": "18:00",
@@ -1447,6 +1473,7 @@
         "runs": 7,
         "hits": 15,
         "errors": 0,
+        "hrs": 3,
         "pitchers": [
           {
             "decision": "○",
@@ -1891,6 +1918,7 @@
         "runs": 2,
         "hits": 8,
         "errors": 2,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2263,6 +2291,35 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "T",
+          "teamMarker": "神",
+          "batter": "森下",
+          "seasonHrNum": 22,
+          "inning": 3,
+          "runs": 2,
+          "oppPitcher": "髙"
+        },
+        {
+          "team": "T",
+          "teamMarker": "神",
+          "batter": "ヘルナンデス",
+          "seasonHrNum": 1,
+          "inning": 6,
+          "runs": 1,
+          "oppPitcher": "中﨑"
+        },
+        {
+          "team": "T",
+          "teamMarker": "神",
+          "batter": "大山",
+          "seasonHrNum": 10,
+          "inning": 7,
+          "runs": 2,
+          "oppPitcher": "ハーン"
+        }
+      ],
       "status": "final",
       "venue": "マツダ",
       "startTime": "18:00",
@@ -2277,6 +2334,7 @@
         "runs": 1,
         "hits": 3,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -2549,6 +2607,7 @@
         "runs": 2,
         "hits": 9,
         "errors": 3,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -2819,6 +2878,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "ベルーナドーム",
       "startTime": "18:01",
@@ -2833,6 +2893,7 @@
         "runs": 0,
         "hits": 5,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -3070,6 +3131,7 @@
         "runs": 7,
         "hits": 10,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -3308,6 +3370,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "ZOZOマリン",
       "startTime": "18:00",
@@ -3322,6 +3385,7 @@
         "runs": 2,
         "hits": 10,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -3568,6 +3632,7 @@
         "runs": 3,
         "hits": 6,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -3927,6 +3992,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "H",
+          "teamMarker": "ソ",
+          "batter": "栗原",
+          "seasonHrNum": 7,
+          "inning": 8,
+          "runs": 1,
+          "oppPitcher": "古林"
+        }
+      ],
       "status": "final",
       "venue": "みずほPayPay",
       "startTime": "18:01",

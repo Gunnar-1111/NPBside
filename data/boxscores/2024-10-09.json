@@ -7,6 +7,7 @@
         "runs": 2,
         "hits": 10,
         "errors": 2,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -355,6 +356,7 @@
         "runs": 2,
         "hits": 11,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -762,6 +764,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "L",
+          "teamMarker": "西",
+          "batter": "外崎",
+          "seasonHrNum": 7,
+          "inning": 1,
+          "runs": 1,
+          "oppPitcher": "岸"
+        }
+      ],
       "status": "final",
       "venue": "楽天モバイル",
       "startTime": "18:00",

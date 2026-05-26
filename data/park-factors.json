@@ -1,10 +1,10 @@
 {
   "_doc": "NPB park factors. Schema matches DugoutSide (runs, hr, roof, lat, lon, altitudeFt, cfBearingDeg). Values: 1.00 = neutral, >1.00 = hitter-friendly, <1.00 = pitcher-friendly. IMPORTANT — `runs`/`hr` values below are ROUGH PRIORS from public NPB consensus; they need to be back-calibrated from 2-3 seasons of historical results before the engine ships. `cfBearingDeg` (home plate → CF, deg from N clockwise) is TODO until we wire up the weather/wind axis.",
   "_lastUpdated": "2026-05-26",
-  "_calibrationStatus": "DERIVED — runs factor from 2024-2025 corpus",
+  "_calibrationStatus": "DERIVED — runs + HR factors from 2024-2025 corpus",
   "TOKYO_DOME": {
     "runs": 0.896,
-    "hr": 1.15,
+    "hr": 1.093,
     "name": "Tokyo Dome",
     "team": "G",
     "league": "central",
@@ -14,11 +14,12 @@
     "altitudeFt": 50,
     "cfBearingDeg": null,
     "notes": "Classic 'rabbit hutch' — small dimensions, dome air, hitter-friendly. Giants home park since 1988.",
-    "_runsCalibration": "DERIVED 2024-2025 (n=141, avg 5.91 r/g)"
+    "_runsCalibration": "DERIVED 2024-2025 (n=141, avg 5.91 r/g)",
+    "_hrCalibration": "DERIVED 2024-2025 (n=140, avg 1.28 hr/g)"
   },
   "KOSHIEN": {
     "runs": 0.824,
-    "hr": 0.88,
+    "hr": 0.551,
     "name": "Hanshin Koshien Stadium",
     "team": "T",
     "league": "central",
@@ -28,11 +29,12 @@
     "altitudeFt": 10,
     "cfBearingDeg": null,
     "notes": "Famously pitcher-friendly. Huge outfield, sea breeze. Hosts summer high-school tournament; Tigers play road games for ~2 weeks in August.",
-    "_runsCalibration": "DERIVED 2024-2025 (n=133, avg 5.44 r/g)"
+    "_runsCalibration": "DERIVED 2024-2025 (n=133, avg 5.44 r/g)",
+    "_hrCalibration": "DERIVED 2024-2025 (n=132, avg 0.64 hr/g)"
   },
   "YOKOHAMA": {
     "runs": 1.133,
-    "hr": 1.05,
+    "hr": 1.25,
     "name": "Yokohama Stadium",
     "team": "DB",
     "league": "central",
@@ -42,11 +44,12 @@
     "altitudeFt": 10,
     "cfBearingDeg": null,
     "notes": "Slightly hitter-friendly post-2020 dimension change.",
-    "_runsCalibration": "DERIVED 2024-2025 (n=146, avg 7.47 r/g)"
+    "_runsCalibration": "DERIVED 2024-2025 (n=146, avg 7.47 r/g)",
+    "_hrCalibration": "DERIVED 2024-2025 (n=145, avg 1.46 hr/g)"
   },
   "MAZDA": {
     "runs": 0.97,
-    "hr": 0.98,
+    "hr": 0.699,
     "name": "Mazda Stadium",
     "team": "C",
     "league": "central",
@@ -56,11 +59,12 @@
     "altitudeFt": 30,
     "cfBearingDeg": null,
     "notes": "Asymmetric, roughly neutral. Open-air, modest weather influence.",
-    "_runsCalibration": "DERIVED 2024-2025 (n=144, avg 6.40 r/g)"
+    "_runsCalibration": "DERIVED 2024-2025 (n=144, avg 6.40 r/g)",
+    "_hrCalibration": "DERIVED 2024-2025 (n=143, avg 0.82 hr/g)"
   },
   "JINGU": {
     "runs": 1.176,
-    "hr": 1.18,
+    "hr": 1.525,
     "name": "Meiji Jingu Stadium",
     "team": "S",
     "league": "central",
@@ -70,11 +74,12 @@
     "altitudeFt": 150,
     "cfBearingDeg": null,
     "notes": "Small park, hitter-friendly. Highest HR factor in NPB along with Tokyo Dome.",
-    "_runsCalibration": "DERIVED 2024-2025 (n=140, avg 7.76 r/g)"
+    "_runsCalibration": "DERIVED 2024-2025 (n=140, avg 7.76 r/g)",
+    "_hrCalibration": "DERIVED 2024-2025 (n=139, avg 1.78 hr/g)"
   },
   "VANTELIN": {
     "runs": 0.842,
-    "hr": 0.85,
+    "hr": 0.701,
     "name": "Vantelin Dome Nagoya",
     "team": "D",
     "league": "central",
@@ -84,11 +89,12 @@
     "altitudeFt": 30,
     "cfBearingDeg": null,
     "notes": "Pitcher-friendly dome. Deep alleys; lowest HR factor in NPB.",
-    "_runsCalibration": "DERIVED 2024-2025 (n=140, avg 5.56 r/g)"
+    "_runsCalibration": "DERIVED 2024-2025 (n=140, avg 5.56 r/g)",
+    "_hrCalibration": "DERIVED 2024-2025 (n=139, avg 0.82 hr/g)"
   },
   "PAYPAY": {
     "runs": 1.007,
-    "hr": 1.02,
+    "hr": 1.259,
     "name": "Mizuho PayPay Dome",
     "team": "H",
     "league": "pacific",
@@ -98,11 +104,12 @@
     "altitudeFt": 20,
     "cfBearingDeg": null,
     "notes": "Retractable roof. Usually closed (Fukuoka humidity). Roughly neutral.",
-    "_runsCalibration": "DERIVED 2024-2025 (n=146, avg 6.64 r/g)"
+    "_runsCalibration": "DERIVED 2024-2025 (n=146, avg 6.64 r/g)",
+    "_hrCalibration": "DERIVED 2024-2025 (n=146, avg 1.47 hr/g)"
   },
   "ZOZO_MARINE": {
     "runs": 1.07,
-    "hr": 0.92,
+    "hr": 0.963,
     "name": "ZOZO Marine Stadium",
     "team": "M",
     "league": "pacific",
@@ -112,11 +119,12 @@
     "altitudeFt": 20,
     "cfBearingDeg": null,
     "notes": "Coastal, very windy (Tokyo Bay). Pitcher-friendly on most nights; wind direction critical.",
-    "_runsCalibration": "DERIVED 2024-2025 (n=142, avg 7.06 r/g)"
+    "_runsCalibration": "DERIVED 2024-2025 (n=142, avg 7.06 r/g)",
+    "_hrCalibration": "DERIVED 2024-2025 (n=142, avg 1.13 hr/g)"
   },
   "BELLUNA": {
     "runs": 0.913,
-    "hr": 1.0,
+    "hr": 0.778,
     "name": "Belluna Dome",
     "team": "L",
     "league": "pacific",
@@ -126,11 +134,12 @@
     "altitudeFt": 390,
     "cfBearingDeg": null,
     "notes": "Covered open-air — roof exists but walls don't. Treat as open for wind, but rain protected. Highest altitude in NPB (still low).",
-    "_runsCalibration": "DERIVED 2024-2025 (n=134, avg 6.02 r/g)"
+    "_runsCalibration": "DERIVED 2024-2025 (n=134, avg 6.02 r/g)",
+    "_hrCalibration": "DERIVED 2024-2025 (n=134, avg 0.91 hr/g)"
   },
   "RAKUTEN": {
     "runs": 1.017,
-    "hr": 0.95,
+    "hr": 0.823,
     "name": "Rakuten Mobile Park Miyagi",
     "team": "E",
     "league": "pacific",
@@ -140,11 +149,12 @@
     "altitudeFt": 135,
     "cfBearingDeg": null,
     "notes": "Open-air. Slightly pitcher-friendly. Sendai weather can be cool early/late season.",
-    "_runsCalibration": "DERIVED 2024-2025 (n=132, avg 6.71 r/g)"
+    "_runsCalibration": "DERIVED 2024-2025 (n=132, avg 6.71 r/g)",
+    "_hrCalibration": "DERIVED 2024-2025 (n=132, avg 0.96 hr/g)"
   },
   "KYOCERA": {
     "runs": 0.977,
-    "hr": 0.93,
+    "hr": 0.736,
     "name": "Kyocera Dome Osaka",
     "team": "B",
     "league": "pacific",
@@ -154,11 +164,12 @@
     "altitudeFt": 30,
     "cfBearingDeg": null,
     "notes": "Pitcher-friendly dome. Larger dimensions than Tokyo Dome.",
-    "_runsCalibration": "DERIVED 2024-2025 (n=151, avg 6.44 r/g)"
+    "_runsCalibration": "DERIVED 2024-2025 (n=151, avg 6.44 r/g)",
+    "_hrCalibration": "DERIVED 2024-2025 (n=151, avg 0.86 hr/g)"
   },
   "ES_CON": {
     "runs": 1.152,
-    "hr": 1.04,
+    "hr": 1.554,
     "name": "Es Con Field Hokkaido",
     "team": "F",
     "league": "pacific",
@@ -168,7 +179,9 @@
     "altitudeFt": 115,
     "cfBearingDeg": null,
     "notes": "New park (2023). Retractable roof, asymmetric, slightly hitter-friendly so far. Limited sample.",
-    "_runsCalibration": "DERIVED 2024-2025 (n=148, avg 7.60 r/g)"
+    "_runsCalibration": "DERIVED 2024-2025 (n=148, avg 7.60 r/g)",
+    "_hrCalibration": "DERIVED 2024-2025 (n=148, avg 1.82 hr/g)"
   },
-  "_leagueAvgTotalRuns": 6.6
+  "_leagueAvgTotalRuns": 6.6,
+  "_leagueAvgTotalHrs": 1.17
 }

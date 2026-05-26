@@ -7,6 +7,7 @@
         "runs": 3,
         "hits": 7,
         "errors": 3,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -365,6 +366,7 @@
         "runs": 2,
         "hits": 7,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "●",
@@ -769,6 +771,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "S",
+          "teamMarker": "ヤ",
+          "batter": "濱田",
+          "seasonHrNum": 2,
+          "inning": 6,
+          "runs": 1,
+          "oppPitcher": "竹田"
+        },
+        {
+          "team": "DB",
+          "teamMarker": "デ",
+          "batter": "山本",
+          "seasonHrNum": 3,
+          "inning": 6,
+          "runs": 2,
+          "oppPitcher": "山野"
+        }
+      ],
       "status": "final",
       "venue": "横浜",
       "startTime": "18:00",
@@ -783,6 +805,7 @@
         "runs": 5,
         "hits": 13,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "",
@@ -1278,6 +1301,7 @@
         "runs": 4,
         "hits": 13,
         "errors": 0,
+        "hrs": 2,
         "pitchers": [
           {
             "decision": "",
@@ -1685,6 +1709,35 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "G",
+          "teamMarker": "巨",
+          "batter": "キャベッジ",
+          "seasonHrNum": 15,
+          "inning": 3,
+          "runs": 1,
+          "oppPitcher": "髙橋宏"
+        },
+        {
+          "team": "D",
+          "teamMarker": "中",
+          "batter": "細川",
+          "seasonHrNum": 16,
+          "inning": 1,
+          "runs": 2,
+          "oppPitcher": "井上"
+        },
+        {
+          "team": "D",
+          "teamMarker": "中",
+          "batter": "ボスラー",
+          "seasonHrNum": 13,
+          "inning": 1,
+          "runs": 1,
+          "oppPitcher": "井上"
+        }
+      ],
       "status": "final",
       "venue": "バンテリンドーム",
       "startTime": "14:00",
@@ -1699,6 +1752,7 @@
         "runs": 1,
         "hits": 12,
         "errors": 2,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -1974,6 +2028,7 @@
         "runs": 4,
         "hits": 5,
         "errors": 2,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -2365,6 +2420,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "甲子園",
       "startTime": "18:01",
@@ -2379,6 +2435,7 @@
         "runs": 0,
         "hits": 2,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2622,6 +2679,7 @@
         "runs": 4,
         "hits": 8,
         "errors": 0,
+        "hrs": 1,
         "pitchers": [
           {
             "decision": "○",
@@ -2854,6 +2912,17 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "L",
+          "teamMarker": "西",
+          "batter": "西川",
+          "seasonHrNum": 8,
+          "inning": 1,
+          "runs": 1,
+          "oppPitcher": "サモンズ"
+        }
+      ],
       "status": "final",
       "venue": "ベルーナドーム",
       "startTime": "17:00",
@@ -2868,6 +2937,7 @@
         "runs": 1,
         "hits": 10,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -3130,6 +3200,7 @@
         "runs": 3,
         "hits": 8,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "",
@@ -3403,6 +3474,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "京セラD大阪",
       "startTime": "14:01",
@@ -3417,6 +3489,7 @@
         "runs": 1,
         "hits": 4,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -3711,6 +3784,7 @@
         "runs": 2,
         "hits": 5,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -3965,6 +4039,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "みずほPayPay",
       "startTime": "14:00",

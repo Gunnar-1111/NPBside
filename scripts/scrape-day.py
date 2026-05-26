@@ -288,6 +288,60 @@ LEGACY_PITCHER_ROW_RE = re.compile(
     re.DOTALL,
 )
 
+# Legacy HR-list entry. Each HR appears as:
+#   <td class="gmresults">［{team_marker}］ {batter_name} {n}号 ( {inning}回{runs}点 {opp_pitcher} )</td>
+# The brackets are full-width (FF3B / FF3D), not ASCII. Runs is the RBI total
+# on the HR — 1=solo, 2=2-run, 3=3-run, 4=grand slam.
+LEGACY_HR_RE = re.compile(
+    r'<td class="gmresults">'
+    r'\s*［([^］]+)］'           # team marker (full-width brackets)
+    r'\s*([^\s0-9<]+)'           # batter name (stops at whitespace/digit/<)
+    r'\s+(\d+)号'                # season HR number
+    r'\s*\(\s*(\d+)回(\d+)点'    # inning + RBI count
+    r'\s+([^\s)<]+)',            # opposing pitcher
+    re.DOTALL,
+)
+
+# 1-char team markers (inside HR brackets) → team abbr in data/teams.json.
+# Verified against sample of 2024-25 games.
+LEGACY_HR_TEAM_MARKER = {
+    "巨": "G",   # 巨人 (Yomiuri Giants)
+    "神": "T",   # 阪神 (Hanshin Tigers)
+    "デ": "DB",  # DeNA (Yokohama DeNA BayStars)
+    "広": "C",   # 広島 (Hiroshima Carp)
+    "ヤ": "S",   # ヤクルト (Yakult Swallows)
+    "中": "D",   # 中日 (Chunichi Dragons)
+    "ソ": "H",   # ソフトバンク (Fukuoka SoftBank Hawks)
+    "ロ": "M",   # ロッテ (Chiba Lotte Marines)
+    "西": "L",   # 西武 (Saitama Seibu Lions)
+    "楽": "E",   # 楽天 (Tohoku Rakuten Golden Eagles)
+    "オ": "B",   # オリックス (Orix Buffaloes)
+    "日": "F",   # 日本ハム (Hokkaido Nippon-Ham Fighters)
+}
+
+
+def parse_legacy_hr_list(html):
+    """Extract HR list from <div id="gmdivhr">.
+
+    Returns list of dicts: {team, batter, seasonHrNum, inning, runs, oppPitcher}.
+    Each entry's `team` is the our team abbr (G/T/DB/etc.) mapped from the marker.
+    """
+    hrs = []
+    for m in LEGACY_HR_RE.finditer(html):
+        marker = m.group(1).strip()
+        team = LEGACY_HR_TEAM_MARKER.get(marker)
+        hrs.append({
+            "team": team,
+            "teamMarker": marker,
+            "batter": m.group(2).strip(),
+            "seasonHrNum": int(m.group(3)),
+            "inning": int(m.group(4)),
+            "runs": int(m.group(5)),  # 1 = solo, 4 = grand slam
+            "oppPitcher": m.group(6).strip(),
+        })
+    return hrs
+
+
 # Legacy batter row — 8 columns: pos, name, AB, H, RBI, BB, HBP, K
 LEGACY_BATTER_ROW_RE = re.compile(
     r'<tr class="gmstats">'
@@ -429,23 +483,44 @@ def parse_legacy_boxscore(html, away_code, home_code):
         away_pitchers = _parse_legacy_pitcher_table(tables_with_stats[2])
         home_pitchers = _parse_legacy_pitcher_table(tables_with_stats[3])
 
+    # HR list (separately parsed; HR-allowed isn't in the pitcher table).
+    hr_list = parse_legacy_hr_list(html)
+    away_abbr = TEAM_CODE_MAP.get(away_code, away_code.upper())
+    home_abbr = TEAM_CODE_MAP.get(home_code, home_code.upper())
+    away_hrs = sum(1 for h in hr_list if h["team"] == away_abbr)
+    home_hrs = sum(1 for h in hr_list if h["team"] == home_abbr)
+
+    # Also detect rained-out games whose status didn't match my earlier markers.
+    # The legacy format uses class="gmout">雨天中止 (no 【】 brackets).
+    if 'class="gmout">雨天中止' in html:
+        status = "cancelled_rain"
+    elif 'class="gmout">ノーゲーム' in html:
+        status = "no_game"
+    elif 'class="gmout">' in html and status == "final":
+        # Any other 'gmout' marker (suspended, postponed) — mark unknown
+        # to surface for review rather than silently passing as final.
+        status = "unplayed_other"
+
     return {
         "away": {
-            "team": TEAM_CODE_MAP.get(away_code, away_code.upper()),
+            "team": away_abbr,
             "runs": team_runs.get(away_code),
             "hits": away_hits,
             "errors": away_errors,
+            "hrs": away_hrs,
             "pitchers": away_pitchers,
             "batters": away_batters,
         },
         "home": {
-            "team": TEAM_CODE_MAP.get(home_code, home_code.upper()),
+            "team": home_abbr,
             "runs": team_runs.get(home_code),
             "hits": home_hits,
             "errors": home_errors,
+            "hrs": home_hrs,
             "pitchers": home_pitchers,
             "batters": home_batters,
         },
+        "hrList": hr_list,
         "status": status,
         "venue": venue,
         "startTime": start_time,

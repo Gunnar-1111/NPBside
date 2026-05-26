@@ -7,6 +7,7 @@
         "runs": null,
         "hits": 5,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
@@ -15,9 +16,11 @@
         "runs": null,
         "hits": 9,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [],
         "batters": []
       },
+      "hrList": [],
       "status": "final",
       "venue": "京セラD大阪",
       "startTime": "18:35",

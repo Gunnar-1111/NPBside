@@ -7,6 +7,7 @@
         "runs": 2,
         "hits": 4,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -298,6 +299,7 @@
         "runs": 5,
         "hits": 9,
         "errors": 0,
+        "hrs": 2,
         "pitchers": [
           {
             "decision": "○",
@@ -584,6 +586,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "DB",
+          "teamMarker": "デ",
+          "batter": "梶原",
+          "seasonHrNum": 1,
+          "inning": 3,
+          "runs": 2,
+          "oppPitcher": "高梨"
+        },
+        {
+          "team": "DB",
+          "teamMarker": "デ",
+          "batter": "山本",
+          "seasonHrNum": 3,
+          "inning": 6,
+          "runs": 1,
+          "oppPitcher": "高梨"
+        }
+      ],
       "status": "final",
       "venue": "横浜",
       "startTime": "18:00",
@@ -598,6 +620,7 @@
         "runs": 2,
         "hits": 10,
         "errors": 0,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -975,6 +998,7 @@
         "runs": 9,
         "hits": 12,
         "errors": 0,
+        "hrs": 2,
         "pitchers": [
           {
             "decision": "○",
@@ -1226,6 +1250,26 @@
           }
         ]
       },
+      "hrList": [
+        {
+          "team": "D",
+          "teamMarker": "中",
+          "batter": "細川",
+          "seasonHrNum": 15,
+          "inning": 1,
+          "runs": 3,
+          "oppPitcher": "又木"
+        },
+        {
+          "team": "D",
+          "teamMarker": "中",
+          "batter": "木下",
+          "seasonHrNum": 2,
+          "inning": 1,
+          "runs": 2,
+          "oppPitcher": "又木"
+        }
+      ],
       "status": "final",
       "venue": "バンテリンドーム",
       "startTime": "18:00",
@@ -1240,6 +1284,7 @@
         "runs": 6,
         "hits": 16,
         "errors": 1,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "○",
@@ -1633,6 +1678,7 @@
         "runs": 3,
         "hits": 5,
         "errors": 2,
+        "hrs": 0,
         "pitchers": [
           {
             "decision": "●",
@@ -2021,6 +2067,7 @@
           }
         ]
       },
+      "hrList": [],
       "status": "final",
       "venue": "京セラD大阪",
       "startTime": "18:02",
