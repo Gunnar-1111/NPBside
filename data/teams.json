@@ -1,0 +1,20 @@
+{
+  "_doc": "NPB teams. Abbreviations use the single-letter NPB convention (matches NPB.jp). 'parkAbbr' points into park-factors.json. 'mascot' is the colloquial English name used in US betting markets.",
+  "_lastUpdated": "2026-05-26",
+  "central": [
+    { "abbr": "G",  "name": "Yomiuri Giants",            "city": "Tokyo",     "parkAbbr": "TOKYO_DOME",  "founded": 1934 },
+    { "abbr": "T",  "name": "Hanshin Tigers",            "city": "Nishinomiya","parkAbbr": "KOSHIEN",    "founded": 1935 },
+    { "abbr": "DB", "name": "Yokohama DeNA BayStars",    "city": "Yokohama",  "parkAbbr": "YOKOHAMA",    "founded": 1950 },
+    { "abbr": "C",  "name": "Hiroshima Toyo Carp",       "city": "Hiroshima", "parkAbbr": "MAZDA",       "founded": 1949 },
+    { "abbr": "S",  "name": "Tokyo Yakult Swallows",     "city": "Tokyo",     "parkAbbr": "JINGU",       "founded": 1950 },
+    { "abbr": "D",  "name": "Chunichi Dragons",          "city": "Nagoya",    "parkAbbr": "VANTELIN",    "founded": 1936 }
+  ],
+  "pacific": [
+    { "abbr": "H",  "name": "Fukuoka SoftBank Hawks",    "city": "Fukuoka",   "parkAbbr": "PAYPAY",      "founded": 1938 },
+    { "abbr": "M",  "name": "Chiba Lotte Marines",       "city": "Chiba",     "parkAbbr": "ZOZO_MARINE", "founded": 1950 },
+    { "abbr": "L",  "name": "Saitama Seibu Lions",       "city": "Tokorozawa","parkAbbr": "BELLUNA",     "founded": 1950 },
+    { "abbr": "E",  "name": "Tohoku Rakuten Golden Eagles","city": "Sendai",  "parkAbbr": "RAKUTEN",     "founded": 2004 },
+    { "abbr": "B",  "name": "Orix Buffaloes",            "city": "Osaka",     "parkAbbr": "KYOCERA",     "founded": 1936 },
+    { "abbr": "F",  "name": "Hokkaido Nippon-Ham Fighters","city": "Kitahiroshima","parkAbbr": "ES_CON",  "founded": 1946 }
+  ]
+}
