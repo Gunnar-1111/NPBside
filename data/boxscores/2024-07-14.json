@@ -1,0 +1,3018 @@
+{
+  "date": "2024-07-14",
+  "games": [
+    {
+      "away": {
+        "team": "DB",
+        "runs": 6,
+        "hits": 8,
+        "errors": 0,
+        "pitchers": [
+          {
+            "decision": "○",
+            "pitcher": {
+              "id": null,
+              "name": "ケイ"
+            },
+            "ip": "8",
+            "bf": "29",
+            "h": "2",
+            "hr": null,
+            "bb": "5",
+            "hbp": "0",
+            "k": "6",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "山﨑"
+            },
+            "ip": "1",
+            "bf": "3",
+            "h": "0",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          }
+        ],
+        "batters": [
+          {
+            "order": "1",
+            "position": "(右)",
+            "batter": {
+              "id": null,
+              "name": "梶原"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "2",
+            "position": "(一)",
+            "batter": {
+              "id": null,
+              "name": "オースティン"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2"
+          },
+          {
+            "order": "3",
+            "position": "一",
+            "batter": {
+              "id": null,
+              "name": "京田"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "4",
+            "position": "(左)",
+            "batter": {
+              "id": null,
+              "name": "佐野"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "2",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "5",
+            "position": "左",
+            "batter": {
+              "id": null,
+              "name": "関根"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "6",
+            "position": "(二)",
+            "batter": {
+              "id": null,
+              "name": "牧"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "7",
+            "position": "(三)",
+            "batter": {
+              "id": null,
+              "name": "宮﨑"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "2",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "8",
+            "position": "三",
+            "batter": {
+              "id": null,
+              "name": "柴田"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "9",
+            "position": "(捕)",
+            "batter": {
+              "id": null,
+              "name": "山本"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "10",
+            "position": "(中)",
+            "batter": {
+              "id": null,
+              "name": "桑原"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "11",
+            "position": "(遊)",
+            "batter": {
+              "id": null,
+              "name": "森敬"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "12",
+            "position": "(投)",
+            "batter": {
+              "id": null,
+              "name": "ケイ"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "3"
+          },
+          {
+            "order": "13",
+            "position": "打",
+            "batter": {
+              "id": null,
+              "name": "度会"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "14",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "山﨑"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          }
+        ]
+      },
+      "home": {
+        "team": "G",
+        "runs": 0,
+        "hits": 2,
+        "errors": 1,
+        "pitchers": [
+          {
+            "decision": "●",
+            "pitcher": {
+              "id": null,
+              "name": "菅野"
+            },
+            "ip": "5",
+            "bf": "21",
+            "h": "5",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "5",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "4",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "畠"
+            },
+            "ip": "3",
+            "bf": "10",
+            "h": "1",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "3",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "1",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "平内"
+            },
+            "ip": "1",
+            "bf": "5",
+            "h": "2",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "1",
+            "pitches": null
+          }
+        ],
+        "batters": [
+          {
+            "order": "1",
+            "position": "(右)",
+            "batter": {
+              "id": null,
+              "name": "丸"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "2",
+            "position": "(二)",
+            "batter": {
+              "id": null,
+              "name": "吉川"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "3",
+            "position": "(中)",
+            "batter": {
+              "id": null,
+              "name": "ヘルナンデス"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "4",
+            "position": "(三)一",
+            "batter": {
+              "id": null,
+              "name": "岡本和"
+            },
+            "ab": "2",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "2",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "5",
+            "position": "(一)捕",
+            "batter": {
+              "id": null,
+              "name": "大城卓"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "6",
+            "position": "(左)",
+            "batter": {
+              "id": null,
+              "name": "若林"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2"
+          },
+          {
+            "order": "7",
+            "position": "(捕)",
+            "batter": {
+              "id": null,
+              "name": "小林"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "8",
+            "position": "打三",
+            "batter": {
+              "id": null,
+              "name": "坂本"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "9",
+            "position": "(遊)",
+            "batter": {
+              "id": null,
+              "name": "門脇"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "10",
+            "position": "(投)",
+            "batter": {
+              "id": null,
+              "name": "菅野"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "11",
+            "position": "打",
+            "batter": {
+              "id": null,
+              "name": "立岡"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "12",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "畠"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "13",
+            "position": "打",
+            "batter": {
+              "id": null,
+              "name": "長野"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "14",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "平内"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          }
+        ]
+      },
+      "status": "final",
+      "venue": "東京ドーム",
+      "startTime": "14:00",
+      "format": "legacy",
+      "gameUrl": "https://npb.jp/bis/2024/games/s2024071401288.html",
+      "awayCode": "db",
+      "homeCode": "g"
+    },
+    {
+      "away": {
+        "team": "T",
+        "runs": 6,
+        "hits": 9,
+        "errors": 1,
+        "pitchers": [
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "西勇"
+            },
+            "ip": "6",
+            "bf": "26",
+            "h": "5",
+            "hr": null,
+            "bb": "2",
+            "hbp": "1",
+            "k": "2",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "1",
+            "pitches": null
+          },
+          {
+            "decision": "Ｈ",
+            "pitcher": {
+              "id": null,
+              "name": "桐敷"
+            },
+            "ip": "1",
+            "bf": "5",
+            "h": "2",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "Ｈ",
+            "pitcher": {
+              "id": null,
+              "name": "ゲラ"
+            },
+            "ip": "1",
+            "bf": "4",
+            "h": "1",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "○",
+            "pitcher": {
+              "id": null,
+              "name": "石井"
+            },
+            "ip": "1",
+            "bf": "3",
+            "h": "0",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "加治屋"
+            },
+            "ip": "0.1",
+            "bf": "4",
+            "h": "2",
+            "hr": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "1",
+            "pitches": null
+          },
+          {
+            "decision": "Ｓ",
+            "pitcher": {
+              "id": null,
+              "name": "岩崎"
+            },
+            "ip": "0.2",
+            "bf": "2",
+            "h": "0",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          }
+        ],
+        "batters": [
+          {
+            "order": "1",
+            "position": "(中)",
+            "batter": {
+              "id": null,
+              "name": "近本"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "2",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "2",
+            "position": "(二)",
+            "batter": {
+              "id": null,
+              "name": "中野"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "3",
+            "position": "(右)",
+            "batter": {
+              "id": null,
+              "name": "野口"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "1",
+            "k": "0"
+          },
+          {
+            "order": "4",
+            "position": "走右左",
+            "batter": {
+              "id": null,
+              "name": "植田"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "1",
+            "rbi": "3",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "5",
+            "position": "(三)",
+            "batter": {
+              "id": null,
+              "name": "佐藤輝"
+            },
+            "ab": "5",
+            "r": null,
+            "h": "2",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2"
+          },
+          {
+            "order": "6",
+            "position": "(一)",
+            "batter": {
+              "id": null,
+              "name": "大山"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "2",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "7",
+            "position": "(左)",
+            "batter": {
+              "id": null,
+              "name": "前川"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "8",
+            "position": "走右",
+            "batter": {
+              "id": null,
+              "name": "島田"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "9",
+            "position": "(捕)",
+            "batter": {
+              "id": null,
+              "name": "梅野"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "10",
+            "position": "(遊)",
+            "batter": {
+              "id": null,
+              "name": "小幡"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "11",
+            "position": "(投)",
+            "batter": {
+              "id": null,
+              "name": "西勇"
+            },
+            "ab": "2",
+            "r": null,
+            "h": "1",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "12",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "桐敷"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "13",
+            "position": "打",
+            "batter": {
+              "id": null,
+              "name": "渡邉"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "14",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "ゲラ"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "15",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "石井"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "16",
+            "position": "打",
+            "batter": {
+              "id": null,
+              "name": "原口"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "1",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "17",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "加治屋"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "18",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "岩崎"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          }
+        ]
+      },
+      "home": {
+        "team": "D",
+        "runs": 2,
+        "hits": 10,
+        "errors": 1,
+        "pitchers": [
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "松葉"
+            },
+            "ip": "6",
+            "bf": "22",
+            "h": "3",
+            "hr": null,
+            "bb": "3",
+            "hbp": "1",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "1",
+            "pitches": null
+          },
+          {
+            "decision": "Ｈ",
+            "pitcher": {
+              "id": null,
+              "name": "清水"
+            },
+            "ip": "1",
+            "bf": "3",
+            "h": "1",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "Ｈ",
+            "pitcher": {
+              "id": null,
+              "name": "藤嶋"
+            },
+            "ip": "1",
+            "bf": "3",
+            "h": "0",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "Ｈ",
+            "pitcher": {
+              "id": null,
+              "name": "松山"
+            },
+            "ip": "1",
+            "bf": "4",
+            "h": "1",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "●",
+            "pitcher": {
+              "id": null,
+              "name": "橋本"
+            },
+            "ip": "0.1",
+            "bf": "4",
+            "h": "2",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "岩嵜"
+            },
+            "ip": "0.1",
+            "bf": "5",
+            "h": "2",
+            "hr": null,
+            "bb": "2",
+            "hbp": "0",
+            "k": "0",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "2",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "福"
+            },
+            "ip": "0.1",
+            "bf": "1",
+            "h": "0",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          }
+        ],
+        "batters": [
+          {
+            "order": "1",
+            "position": "(右)",
+            "batter": {
+              "id": null,
+              "name": "岡林"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "2",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "藤嶋"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "3",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "松山"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "4",
+            "position": "打",
+            "batter": {
+              "id": null,
+              "name": "大島"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "5",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "橋本"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "6",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "岩嵜"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "7",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "福"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "8",
+            "position": "(遊)",
+            "batter": {
+              "id": null,
+              "name": "山本"
+            },
+            "ab": "5",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2"
+          },
+          {
+            "order": "9",
+            "position": "(中)",
+            "batter": {
+              "id": null,
+              "name": "カリステ"
+            },
+            "ab": "5",
+            "r": null,
+            "h": "3",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "10",
+            "position": "(一)",
+            "batter": {
+              "id": null,
+              "name": "福永"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "11",
+            "position": "(左)",
+            "batter": {
+              "id": null,
+              "name": "細川"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "1",
+            "k": "2"
+          },
+          {
+            "order": "12",
+            "position": "(三)",
+            "batter": {
+              "id": null,
+              "name": "高橋周"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "3",
+            "rbi": "1",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "13",
+            "position": "走",
+            "batter": {
+              "id": null,
+              "name": "樋口"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "14",
+            "position": "(二)右",
+            "batter": {
+              "id": null,
+              "name": "板山"
+            },
+            "ab": "5",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2"
+          },
+          {
+            "order": "15",
+            "position": "(捕)",
+            "batter": {
+              "id": null,
+              "name": "木下"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "16",
+            "position": "捕",
+            "batter": {
+              "id": null,
+              "name": "加藤匠"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "17",
+            "position": "打",
+            "batter": {
+              "id": null,
+              "name": "石川昂"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "18",
+            "position": "(投)",
+            "batter": {
+              "id": null,
+              "name": "松葉"
+            },
+            "ab": "2",
+            "r": null,
+            "h": "1",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "19",
+            "position": "投",
+            "batter": {
+              "id": null,
+              "name": "清水"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "20",
+            "position": "打二",
+            "batter": {
+              "id": null,
+              "name": "田中"
+            },
+            "ab": "2",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          }
+        ]
+      },
+      "status": "final",
+      "venue": "バンテリンドーム",
+      "startTime": "13:30",
+      "format": "legacy",
+      "gameUrl": "https://npb.jp/bis/2024/games/s2024071401289.html",
+      "awayCode": "t",
+      "homeCode": "d"
+    },
+    {
+      "away": {
+        "team": "S",
+        "runs": null,
+        "hits": null,
+        "errors": null,
+        "pitchers": [],
+        "batters": []
+      },
+      "home": {
+        "team": "C",
+        "runs": null,
+        "hits": null,
+        "errors": null,
+        "pitchers": [],
+        "batters": []
+      },
+      "status": "final",
+      "venue": null,
+      "startTime": null,
+      "format": "legacy",
+      "gameUrl": "https://npb.jp/bis/2024/games/s2024071401290.html",
+      "awayCode": "s",
+      "homeCode": "c"
+    },
+    {
+      "away": {
+        "team": "H",
+        "runs": 1,
+        "hits": 6,
+        "errors": 0,
+        "pitchers": [
+          {
+            "decision": "●",
+            "pitcher": {
+              "id": null,
+              "name": "モイネロ"
+            },
+            "ip": "6",
+            "bf": "23",
+            "h": "4",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "5",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "2",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "尾形"
+            },
+            "ip": "1",
+            "bf": "4",
+            "h": "2",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "1",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "長谷川"
+            },
+            "ip": "1",
+            "bf": "3",
+            "h": "0",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          }
+        ],
+        "batters": [
+          {
+            "order": "1",
+            "position": "(二)",
+            "batter": {
+              "id": null,
+              "name": "川瀬"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "2",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "2",
+            "position": "(遊)",
+            "batter": {
+              "id": null,
+              "name": "今宮"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "2",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "3",
+            "position": "(三)",
+            "batter": {
+              "id": null,
+              "name": "栗原"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "4",
+            "position": "(指)",
+            "batter": {
+              "id": null,
+              "name": "山川"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "5",
+            "position": "(左)",
+            "batter": {
+              "id": null,
+              "name": "近藤"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "6",
+            "position": "(一)",
+            "batter": {
+              "id": null,
+              "name": "中村晃"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2"
+          },
+          {
+            "order": "7",
+            "position": "(右)",
+            "batter": {
+              "id": null,
+              "name": "正木"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2"
+          },
+          {
+            "order": "8",
+            "position": "走中",
+            "batter": {
+              "id": null,
+              "name": "周東"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "9",
+            "position": "(中)右",
+            "batter": {
+              "id": null,
+              "name": "柳町"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2"
+          },
+          {
+            "order": "10",
+            "position": "(捕)",
+            "batter": {
+              "id": null,
+              "name": "甲斐"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2"
+          }
+        ]
+      },
+      "home": {
+        "team": "F",
+        "runs": 3,
+        "hits": 6,
+        "errors": 1,
+        "pitchers": [
+          {
+            "decision": "○",
+            "pitcher": {
+              "id": null,
+              "name": "伊藤"
+            },
+            "ip": "7",
+            "bf": "27",
+            "h": "6",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "8",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "1",
+            "pitches": null
+          },
+          {
+            "decision": "Ｈ",
+            "pitcher": {
+              "id": null,
+              "name": "池田"
+            },
+            "ip": "1",
+            "bf": "3",
+            "h": "0",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "Ｓ",
+            "pitcher": {
+              "id": null,
+              "name": "杉浦"
+            },
+            "ip": "1",
+            "bf": "3",
+            "h": "0",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          }
+        ],
+        "batters": [
+          {
+            "order": "1",
+            "position": "(左)",
+            "batter": {
+              "id": null,
+              "name": "水谷"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "2",
+            "position": "中",
+            "batter": {
+              "id": null,
+              "name": "松本剛"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "3",
+            "position": "(右)",
+            "batter": {
+              "id": null,
+              "name": "万波"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2"
+          },
+          {
+            "order": "4",
+            "position": "(三)一",
+            "batter": {
+              "id": null,
+              "name": "郡司"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "5",
+            "position": "(指)",
+            "batter": {
+              "id": null,
+              "name": "レイエス"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "6",
+            "position": "(二)",
+            "batter": {
+              "id": null,
+              "name": "石井"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "7",
+            "position": "(一)",
+            "batter": {
+              "id": null,
+              "name": "野村"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "8",
+            "position": "走三",
+            "batter": {
+              "id": null,
+              "name": "中島卓也"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "9",
+            "position": "(遊)",
+            "batter": {
+              "id": null,
+              "name": "上川畑"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "10",
+            "position": "(捕)",
+            "batter": {
+              "id": null,
+              "name": "伏見"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "11",
+            "position": "(中)左",
+            "batter": {
+              "id": null,
+              "name": "淺間"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          }
+        ]
+      },
+      "status": "final",
+      "venue": "エスコンＦ",
+      "startTime": "13:01",
+      "format": "legacy",
+      "gameUrl": "https://npb.jp/bis/2024/games/s2024071401650.html",
+      "awayCode": "h",
+      "homeCode": "f"
+    },
+    {
+      "away": {
+        "team": "L",
+        "runs": 2,
+        "hits": 9,
+        "errors": 1,
+        "pitchers": [
+          {
+            "decision": "●",
+            "pitcher": {
+              "id": null,
+              "name": "隅田"
+            },
+            "ip": "7.1",
+            "bf": "32",
+            "h": "9",
+            "hr": null,
+            "bb": "2",
+            "hbp": "0",
+            "k": "4",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "4",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "松本"
+            },
+            "ip": "0.2",
+            "bf": "1",
+            "h": "0",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          }
+        ],
+        "batters": [
+          {
+            "order": "1",
+            "position": "(遊)",
+            "batter": {
+              "id": null,
+              "name": "源田"
+            },
+            "ab": "5",
+            "r": null,
+            "h": "2",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "2",
+            "position": "(中)",
+            "batter": {
+              "id": null,
+              "name": "西川"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "3",
+            "position": "(一)",
+            "batter": {
+              "id": null,
+              "name": "野村大"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "4",
+            "position": "(左)",
+            "batter": {
+              "id": null,
+              "name": "岸"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "5",
+            "position": "(三)",
+            "batter": {
+              "id": null,
+              "name": "山村"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "2",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "6",
+            "position": "(指)",
+            "batter": {
+              "id": null,
+              "name": "栗山"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "7",
+            "position": "(二)",
+            "batter": {
+              "id": null,
+              "name": "外崎"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "8",
+            "position": "(右)",
+            "batter": {
+              "id": null,
+              "name": "松原"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2"
+          },
+          {
+            "order": "9",
+            "position": "(捕)",
+            "batter": {
+              "id": null,
+              "name": "古賀"
+            },
+            "ab": "2",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "10",
+            "position": "打",
+            "batter": {
+              "id": null,
+              "name": "鈴木"
+            },
+            "ab": "1",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          }
+        ]
+      },
+      "home": {
+        "team": "E",
+        "runs": 4,
+        "hits": 9,
+        "errors": 0,
+        "pitchers": [
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "藤井"
+            },
+            "ip": "5.1",
+            "bf": "21",
+            "h": "5",
+            "hr": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "2",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "2",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "渡辺翔"
+            },
+            "ip": "0.2",
+            "bf": "4",
+            "h": "1",
+            "hr": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "0",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "Ｈ",
+            "pitcher": {
+              "id": null,
+              "name": "鈴木翔"
+            },
+            "ip": "1",
+            "bf": "4",
+            "h": "1",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "3",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "○",
+            "pitcher": {
+              "id": null,
+              "name": "酒居"
+            },
+            "ip": "1",
+            "bf": "4",
+            "h": "1",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "Ｓ",
+            "pitcher": {
+              "id": null,
+              "name": "則本"
+            },
+            "ip": "1",
+            "bf": "4",
+            "h": "1",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          }
+        ],
+        "batters": [
+          {
+            "order": "1",
+            "position": "(右)",
+            "batter": {
+              "id": null,
+              "name": "小郷"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "2",
+            "rbi": "3",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "2",
+            "position": "(左)",
+            "batter": {
+              "id": null,
+              "name": "中島"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "3",
+            "position": "(中)",
+            "batter": {
+              "id": null,
+              "name": "辰己"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "4",
+            "position": "(指)",
+            "batter": {
+              "id": null,
+              "name": "浅村"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "5",
+            "position": "走指",
+            "batter": {
+              "id": null,
+              "name": "山田"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "6",
+            "position": "(三)",
+            "batter": {
+              "id": null,
+              "name": "鈴木大"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2"
+          },
+          {
+            "order": "7",
+            "position": "(一)",
+            "batter": {
+              "id": null,
+              "name": "フランコ"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "8",
+            "position": "(二)",
+            "batter": {
+              "id": null,
+              "name": "小深田"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "9",
+            "position": "(遊)",
+            "batter": {
+              "id": null,
+              "name": "村林"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "10",
+            "position": "(捕)",
+            "batter": {
+              "id": null,
+              "name": "太田"
+            },
+            "ab": "2",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          }
+        ]
+      },
+      "status": "final",
+      "venue": "楽天モバイル",
+      "startTime": "13:00",
+      "format": "legacy",
+      "gameUrl": "https://npb.jp/bis/2024/games/s2024071401651.html",
+      "awayCode": "l",
+      "homeCode": "e"
+    },
+    {
+      "away": {
+        "team": "B",
+        "runs": 5,
+        "hits": 7,
+        "errors": 0,
+        "pitchers": [
+          {
+            "decision": "○",
+            "pitcher": {
+              "id": null,
+              "name": "齋藤"
+            },
+            "ip": "5",
+            "bf": "20",
+            "h": "2",
+            "hr": null,
+            "bb": "3",
+            "hbp": "0",
+            "k": "3",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "1",
+            "pitches": null
+          },
+          {
+            "decision": "Ｈ",
+            "pitcher": {
+              "id": null,
+              "name": "鈴木"
+            },
+            "ip": "1.2",
+            "bf": "6",
+            "h": "1",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "山田"
+            },
+            "ip": "1",
+            "bf": "4",
+            "h": "1",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "吉田"
+            },
+            "ip": "0.1",
+            "bf": "1",
+            "h": "0",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "ペルドモ"
+            },
+            "ip": "1",
+            "bf": "4",
+            "h": "1",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          }
+        ],
+        "batters": [
+          {
+            "order": "1",
+            "position": "(三)",
+            "batter": {
+              "id": null,
+              "name": "大里"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "3",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "2",
+            "position": "(二)",
+            "batter": {
+              "id": null,
+              "name": "太田"
+            },
+            "ab": "5",
+            "r": null,
+            "h": "2",
+            "rbi": "2",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "3",
+            "position": "(捕)",
+            "batter": {
+              "id": null,
+              "name": "森"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "4",
+            "position": "(左)",
+            "batter": {
+              "id": null,
+              "name": "西川"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "1",
+            "rbi": "2",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "5",
+            "position": "中",
+            "batter": {
+              "id": null,
+              "name": "杉澤"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "6",
+            "position": "(遊)",
+            "batter": {
+              "id": null,
+              "name": "紅林"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "7",
+            "position": "(右)",
+            "batter": {
+              "id": null,
+              "name": "杉本"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "3"
+          },
+          {
+            "order": "8",
+            "position": "右",
+            "batter": {
+              "id": null,
+              "name": "渡部"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "9",
+            "position": "(指)",
+            "batter": {
+              "id": null,
+              "name": "トーマス"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "10",
+            "position": "(一)",
+            "batter": {
+              "id": null,
+              "name": "頓宮"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "11",
+            "position": "一",
+            "batter": {
+              "id": null,
+              "name": "山足"
+            },
+            "ab": "0",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "12",
+            "position": "(中)左",
+            "batter": {
+              "id": null,
+              "name": "福田"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "0"
+          }
+        ]
+      },
+      "home": {
+        "team": "M",
+        "runs": 1,
+        "hits": 5,
+        "errors": 0,
+        "pitchers": [
+          {
+            "decision": "●",
+            "pitcher": {
+              "id": null,
+              "name": "田中晴"
+            },
+            "ip": "5",
+            "bf": "21",
+            "h": "4",
+            "hr": null,
+            "bb": "2",
+            "hbp": "0",
+            "k": "4",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "4",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "国吉"
+            },
+            "ip": "1",
+            "bf": "4",
+            "h": "0",
+            "hr": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "0",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "コルデロ"
+            },
+            "ip": "1",
+            "bf": "6",
+            "h": "2",
+            "hr": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "1",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "岩下"
+            },
+            "ip": "1",
+            "bf": "3",
+            "h": "0",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          },
+          {
+            "decision": "",
+            "pitcher": {
+              "id": null,
+              "name": "廣畑"
+            },
+            "ip": "1",
+            "bf": "4",
+            "h": "1",
+            "hr": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0",
+            "wp": null,
+            "bk": null,
+            "r": null,
+            "er": "0",
+            "pitches": null
+          }
+        ],
+        "batters": [
+          {
+            "order": "1",
+            "position": "(中)",
+            "batter": {
+              "id": null,
+              "name": "髙部"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "2",
+            "position": "(遊)",
+            "batter": {
+              "id": null,
+              "name": "小川"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "2",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "3",
+            "position": "(二)",
+            "batter": {
+              "id": null,
+              "name": "藤岡"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "4",
+            "position": "(一)",
+            "batter": {
+              "id": null,
+              "name": "ソト"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "1",
+            "rbi": "1",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "5",
+            "position": "(指)",
+            "batter": {
+              "id": null,
+              "name": "ポランコ"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "6",
+            "position": "(捕)",
+            "batter": {
+              "id": null,
+              "name": "佐藤"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "2",
+            "rbi": "0",
+            "sb": null,
+            "bb": "1",
+            "hbp": "0",
+            "k": "0"
+          },
+          {
+            "order": "7",
+            "position": "(左)",
+            "batter": {
+              "id": null,
+              "name": "岡"
+            },
+            "ab": "4",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "8",
+            "position": "(三)",
+            "batter": {
+              "id": null,
+              "name": "安田"
+            },
+            "ab": "2",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "2"
+          },
+          {
+            "order": "9",
+            "position": "打三",
+            "batter": {
+              "id": null,
+              "name": "中村奨"
+            },
+            "ab": "2",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          },
+          {
+            "order": "10",
+            "position": "(右)",
+            "batter": {
+              "id": null,
+              "name": "藤原"
+            },
+            "ab": "3",
+            "r": null,
+            "h": "0",
+            "rbi": "0",
+            "sb": null,
+            "bb": "0",
+            "hbp": "0",
+            "k": "1"
+          }
+        ]
+      },
+      "status": "final",
+      "venue": "ZOZOマリン",
+      "startTime": "17:00",
+      "format": "legacy",
+      "gameUrl": "https://npb.jp/bis/2024/games/s2024071401652.html",
+      "awayCode": "b",
+      "homeCode": "m"
+    }
+  ]
+}

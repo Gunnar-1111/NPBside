@@ -1,0 +1,30 @@
+{
+  "date": "2024-10-07",
+  "games": [
+    {
+      "away": {
+        "team": "F",
+        "runs": null,
+        "hits": null,
+        "errors": null,
+        "pitchers": [],
+        "batters": []
+      },
+      "home": {
+        "team": "E",
+        "runs": null,
+        "hits": null,
+        "errors": null,
+        "pitchers": [],
+        "batters": []
+      },
+      "status": "final",
+      "venue": null,
+      "startTime": null,
+      "format": "legacy",
+      "gameUrl": "https://npb.jp/bis/2024/games/s2024100701975.html",
+      "awayCode": "f",
+      "homeCode": "e"
+    }
+  ]
+}

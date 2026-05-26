@@ -1,0 +1,30 @@
+{
+  "date": "2024-07-24",
+  "games": [
+    {
+      "away": {
+        "team": "PL",
+        "runs": null,
+        "hits": 28,
+        "errors": 1,
+        "pitchers": [],
+        "batters": []
+      },
+      "home": {
+        "team": "CL",
+        "runs": null,
+        "hits": 16,
+        "errors": 1,
+        "pitchers": [],
+        "batters": []
+      },
+      "status": "final",
+      "venue": "神宮",
+      "startTime": "18:32",
+      "format": "legacy",
+      "gameUrl": "https://npb.jp/bis/2024/games/s2024072401949.html",
+      "awayCode": "pl",
+      "homeCode": "cl"
+    }
+  ]
+}

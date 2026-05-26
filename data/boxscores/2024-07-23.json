@@ -1,0 +1,30 @@
+{
+  "date": "2024-07-23",
+  "games": [
+    {
+      "away": {
+        "team": "CL",
+        "runs": null,
+        "hits": 17,
+        "errors": 1,
+        "pitchers": [],
+        "batters": []
+      },
+      "home": {
+        "team": "PL",
+        "runs": null,
+        "hits": 16,
+        "errors": 0,
+        "pitchers": [],
+        "batters": []
+      },
+      "status": "final",
+      "venue": "エスコンＦ",
+      "startTime": "18:41",
+      "format": "legacy",
+      "gameUrl": "https://npb.jp/bis/2024/games/s2024072301948.html",
+      "awayCode": "cl",
+      "homeCode": "pl"
+    }
+  ]
+}
