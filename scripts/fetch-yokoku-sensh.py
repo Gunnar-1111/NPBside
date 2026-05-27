@@ -14,8 +14,13 @@ for each pitcher, which lets us disambiguate the name-collisions in
 data/pitcher-ratings.json (伊藤 / 髙橋 / 平良) going forward.
 
 Usage:
-    python3 scripts/fetch-yokoku-sensh.py             # print to stdout
-    python3 scripts/fetch-yokoku-sensh.py --write     # save data/yokoku-{date}.json
+    python3 scripts/fetch-yokoku-sensh.py                          # default: label as local-today+1, print to stdout
+    python3 scripts/fetch-yokoku-sensh.py --write                  # save data/yokoku-{label}.json
+    python3 scripts/fetch-yokoku-sensh.py 2026-05-29 --write       # explicit label (use when MST↔JST drift makes local-today+1 wrong)
+
+Caveat: the npb.jp page always serves JST "tomorrow" — the date arg controls
+the file label only. A mismatch warning fires if your label doesn't match the
+JST-tomorrow the page is actually serving.
 """
 
 import datetime as dt
@@ -128,9 +133,24 @@ def parse_yokoku(html):
 
 def main():
     write = "--write" in sys.argv
+    # First positional arg in YYYY-MM-DD form overrides the auto-computed label.
+    date_args = [a for a in sys.argv[1:] if re.fullmatch(r"\d{4}-\d{2}-\d{2}", a)]
+    if date_args:
+        target_date = date_args[0]
+    else:
+        target_date = (dt.date.today() + dt.timedelta(days=1)).isoformat()
+
+    # Sanity check: the npb.jp page always serves JST-tomorrow. Warn if the
+    # requested label disagrees with what we expect the page to contain.
+    jst_now = dt.datetime.utcnow() + dt.timedelta(hours=9)
+    jst_tomorrow = (jst_now.date() + dt.timedelta(days=1)).isoformat()
+    if target_date != jst_tomorrow:
+        print(f"WARN: label {target_date} != JST-tomorrow {jst_tomorrow} — "
+              f"npb.jp page always serves JST-tomorrow; the file will be labeled "
+              f"{target_date} but contain {jst_tomorrow} data.", file=sys.stderr)
+
     html = fetch(BASE + "/")
     games = parse_yokoku(html)
-    target_date = (dt.date.today() + dt.timedelta(days=1)).isoformat()
 
     out = {
         "date": target_date,
