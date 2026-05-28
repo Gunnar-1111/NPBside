@@ -1,0 +1,13 @@
+{
+  "date": "2026-05-29",
+  "source": "user-provided book prices (unspecified sportsbook); captured 2026-05-28 (US morning, before the 5am ET / 18:00 JST first pitch)",
+  "note": "Book ML is for the favorite only (we don't have the dog price separately). Total is the posted O/U line.",
+  "games": [
+    { "away": "G",  "home": "F",  "fav": "F",  "favMl": -145, "total": 7.5 },
+    { "away": "S",  "home": "E",  "fav": "E",  "favMl": -120, "total": 6.0 },
+    { "away": "DB", "home": "L",  "fav": "L",  "favMl": -155, "total": 5.5 },
+    { "away": "T",  "home": "M",  "fav": "T",  "favMl": -260, "total": 6.5 },
+    { "away": "D",  "home": "B",  "fav": "B",  "favMl": -145, "total": 7.0 },
+    { "away": "C",  "home": "H",  "fav": "H",  "favMl": -200, "total": 7.0 }
+  ]
+}
