@@ -65,11 +65,11 @@ def main():
         book = {(g["away"], g["home"]): g for g in bk["games"]}
 
     rows = []
-    side_w, side_l = 0, 0
+    side_w, side_l, side_p = 0, 0, 0
     rl_home_w, rl_home_l = 0, 0
     total_err = 0.0
     total_n = 0
-    book_side_w, book_side_l = 0, 0
+    book_side_w, book_side_l, book_side_p = 0, 0, 0
     head_to_head = {"we_only": 0, "book_only": 0, "both_right": 0, "both_wrong": 0}
 
     for entry in lines["games"]:
@@ -84,12 +84,16 @@ def main():
         actual_total = ar + hr
         L = entry["lines"]
 
-        # Side
+        # Side — a level game is a moneyline push (NPB games can end tied)
+        is_tie = ar == hr
         model_fav = away if L["awayWinPct"] > 50 else home
-        actual_winner = away if ar > hr else home
-        side_ok = model_fav == actual_winner
-        if side_ok: side_w += 1
-        else: side_l += 1
+        actual_winner = None if is_tie else (away if ar > hr else home)
+        if is_tie:
+            side_result = "PUSH"; side_p += 1
+        elif model_fav == actual_winner:
+            side_result = "WIN"; side_w += 1
+        else:
+            side_result = "LOSS"; side_l += 1
 
         # Total
         total_diff = actual_total - L["total"]
@@ -105,15 +109,22 @@ def main():
 
         # Book comparison
         book_g = book.get((away, home))
-        book_side_ok = None
+        book_side_result = None
         if book_g:
-            book_side_ok = book_g["fav"] == actual_winner
-            if book_side_ok: book_side_w += 1
-            else: book_side_l += 1
-            if side_ok and book_side_ok: head_to_head["both_right"] += 1
-            elif side_ok and not book_side_ok: head_to_head["we_only"] += 1
-            elif not side_ok and book_side_ok: head_to_head["book_only"] += 1
-            else: head_to_head["both_wrong"] += 1
+            if is_tie:
+                book_side_result = "PUSH"; book_side_p += 1
+            elif book_g["fav"] == actual_winner:
+                book_side_result = "WIN"; book_side_w += 1
+            else:
+                book_side_result = "LOSS"; book_side_l += 1
+            # Head-to-head counts decided games only — a push is no-action for both.
+            if not is_tie:
+                we_ok = side_result == "WIN"
+                bk_ok = book_side_result == "WIN"
+                if we_ok and bk_ok: head_to_head["both_right"] += 1
+                elif we_ok and not bk_ok: head_to_head["we_only"] += 1
+                elif not we_ok and bk_ok: head_to_head["book_only"] += 1
+                else: head_to_head["both_wrong"] += 1
 
         rows.append({
             "matchup": f"{TEAM_NAMES.get(away,away)} @ {TEAM_NAMES.get(home,home)}",
@@ -122,14 +133,14 @@ def main():
             "modelFav": TEAM_NAMES.get(model_fav, model_fav),
             "modelFavMl": L["awayMl"] if L["awayWinPct"] > 50 else L["homeMl"],
             "modelTotal": L["total"],
-            "sideOk": side_ok,
+            "sideResult": side_result,
             "totalDiff": round(total_diff, 1),
             "totalSide": total_side,
             "rlOutcome": rl_call,
             "bookFav": TEAM_NAMES.get(book_g["fav"], book_g["fav"]) if book_g else None,
             "bookFavMl": book_g["favMl"] if book_g else None,
             "bookTotal": book_g["total"] if book_g else None,
-            "bookSideOk": book_side_ok,
+            "bookSideResult": book_side_result,
         })
 
     # Print
@@ -138,16 +149,18 @@ def main():
           f"{'Book fav':<10} {'Bk ML':>6} {'Bk T':>5}  {'Bk side':>7}")
     print("─" * 130)
     for r in rows:
-        side_str = "WIN" if r["sideOk"] else "LOSS"
+        side_str = r["sideResult"]
         td = f"+{r['totalDiff']:.1f}" if r["totalDiff"] > 0 else f"{r['totalDiff']:.1f}"
-        book_side_str = ("WIN" if r["bookSideOk"] else "LOSS") if r["bookSideOk"] is not None else "—"
+        book_side_str = r["bookSideResult"] or "—"
         print(f"{r['matchup']:<24}  {r['actual']:<9}  {r['modelFav']:<10} {fmt_ml(r['modelFavMl']):>7} {r['modelTotal']:>5.1f}  {side_str:>5}  {td:>6}  "
               f"{r['bookFav'] or '—':<10} {fmt_ml(r['bookFavMl']):>6} {(r['bookTotal'] or 0):>5.1f}  {book_side_str:>7}")
 
     print()
-    print(f"NPBSide: {side_w}/{side_w+side_l} sides   Total MAE: {total_err / total_n:.2f} r/g")
+    push_note = f" ({side_p} push)" if side_p else ""
+    print(f"NPBSide: {side_w}/{side_w+side_l} sides{push_note}   Total MAE: {total_err / total_n:.2f} r/g")
     if book:
-        print(f"Book:    {book_side_w}/{book_side_w+book_side_l} sides   "
+        bpush_note = f" ({book_side_p} push)" if book_side_p else ""
+        print(f"Book:    {book_side_w}/{book_side_w+book_side_l} sides{bpush_note}   "
               f"(both right: {head_to_head['both_right']}, we only: {head_to_head['we_only']}, "
               f"book only: {head_to_head['book_only']}, both wrong: {head_to_head['both_wrong']})")
 
@@ -156,8 +169,8 @@ def main():
         out_path.write_text(json.dumps({
             "date": date_str,
             "summary": {
-                "model": {"sides": f"{side_w}-{side_l}", "totalMaeR": round(total_err / total_n, 2) if total_n else None},
-                "book": {"sides": f"{book_side_w}-{book_side_l}"} if book else None,
+                "model": {"sides": f"{side_w}-{side_l}-{side_p}", "totalMaeR": round(total_err / total_n, 2) if total_n else None},
+                "book": {"sides": f"{book_side_w}-{book_side_l}-{book_side_p}"} if book else None,
                 "headToHead": head_to_head if book else None,
             },
             "games": rows,
