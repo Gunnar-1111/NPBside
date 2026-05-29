@@ -32,7 +32,7 @@ REPO = Path(__file__).parent.parent
 # starting-point estimates with TODOs to calibrate).
 LEAGUE_AVG_PER_TEAM = 3.30       # DERIVED (6.60 / 2)
 LEAGUE_AVG_TOTAL = 6.60          # DERIVED
-HCA_RUNS = 0.30                  # not yet derived — placeholder
+HCA_RUNS = 0.11                  # DERIVED: home-away run diff over 2024-25 corpus (n=1753, +0.113); was 0.30 plan-number
 WIN_DIVISOR = 2.9                # NPB-scaled pythagorean divisor; calibrate later
 VIG = 0.045                      # standard ~4.5% hold (MLB convention)
 

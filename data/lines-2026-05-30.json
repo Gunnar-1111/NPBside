@@ -4,7 +4,7 @@
   "constants": {
     "LEAGUE_AVG_PER_TEAM": 3.3,
     "LEAGUE_AVG_TOTAL": 6.6,
-    "HCA_RUNS": 0.3,
+    "HCA_RUNS": 0.11,
     "WIN_DIVISOR": 2.9,
     "VIG": 0.045
   },
@@ -33,19 +33,19 @@
       "startTime": "14:00",
       "weather": "くもり",
       "lines": {
-        "homeExpectedRuns": 4.38,
-        "awayExpectedRuns": 3.62,
+        "homeExpectedRuns": 4.28,
+        "awayExpectedRuns": 3.72,
         "total": 8.0,
         "totalRaw": 8.0,
-        "runDiff": 0.76,
-        "homeWinPct": 64.6,
-        "awayWinPct": 35.4,
-        "homeMl": -201,
-        "awayMl": 165,
-        "homeRl15Pct": 39.2,
-        "awayRl15Pct": 60.8,
-        "homeRl15Price": 141,
-        "awayRl15Price": -170
+        "runDiff": 0.57,
+        "homeWinPct": 61.1,
+        "awayWinPct": 38.9,
+        "homeMl": -172,
+        "awayMl": 142,
+        "homeRl15Pct": 36.7,
+        "awayRl15Pct": 63.3,
+        "homeRl15Price": 156,
+        "awayRl15Price": -190
       }
     },
     {
@@ -72,19 +72,19 @@
       "startTime": "14:00",
       "weather": "晴れ",
       "lines": {
-        "homeExpectedRuns": 3.54,
-        "awayExpectedRuns": 2.79,
+        "homeExpectedRuns": 3.45,
+        "awayExpectedRuns": 2.89,
         "total": 6.5,
         "totalRaw": 6.33,
-        "runDiff": 0.75,
-        "homeWinPct": 64.4,
-        "awayWinPct": 35.6,
-        "homeMl": -199,
-        "awayMl": 164,
-        "homeRl15Pct": 37.6,
-        "awayRl15Pct": 62.4,
-        "homeRl15Price": 150,
-        "awayRl15Price": -182
+        "runDiff": 0.56,
+        "homeWinPct": 60.9,
+        "awayWinPct": 39.1,
+        "homeMl": -171,
+        "awayMl": 141,
+        "homeRl15Pct": 34.8,
+        "awayRl15Pct": 65.2,
+        "homeRl15Price": 169,
+        "awayRl15Price": -207
       }
     },
     {
@@ -111,19 +111,19 @@
       "startTime": "14:00",
       "weather": "晴れ",
       "lines": {
-        "homeExpectedRuns": 2.7,
-        "awayExpectedRuns": 2.63,
+        "homeExpectedRuns": 2.6,
+        "awayExpectedRuns": 2.72,
         "total": 5.5,
         "totalRaw": 5.32,
-        "runDiff": 0.07,
-        "homeWinPct": 51.4,
-        "awayWinPct": 48.6,
-        "homeMl": -115,
-        "awayMl": -103,
-        "homeRl15Pct": 26.1,
-        "awayRl15Pct": 73.9,
-        "homeRl15Price": 252,
-        "awayRl15Price": -318
+        "runDiff": -0.12,
+        "homeWinPct": 47.6,
+        "awayWinPct": 52.4,
+        "homeMl": 100,
+        "awayMl": -120,
+        "homeRl15Pct": 23.5,
+        "awayRl15Pct": 76.5,
+        "homeRl15Price": 288,
+        "awayRl15Price": -370
       }
     },
     {
@@ -150,19 +150,19 @@
       "startTime": "14:00",
       "weather": "晴れ時々くもり",
       "lines": {
-        "homeExpectedRuns": 2.89,
-        "awayExpectedRuns": 3.82,
+        "homeExpectedRuns": 2.79,
+        "awayExpectedRuns": 3.92,
         "total": 6.5,
         "totalRaw": 6.71,
-        "runDiff": -0.94,
-        "homeWinPct": 32.2,
-        "awayWinPct": 67.8,
-        "homeMl": 190,
-        "awayMl": -233,
-        "homeRl15Pct": 16.9,
-        "awayRl15Pct": 83.1,
-        "homeRl15Price": 423,
-        "awayRl15Price": -584
+        "runDiff": -1.13,
+        "homeWinPct": 29.0,
+        "awayWinPct": 71.0,
+        "homeMl": 220,
+        "awayMl": -273,
+        "homeRl15Pct": 15.0,
+        "awayRl15Pct": 85.0,
+        "homeRl15Price": 478,
+        "awayRl15Price": -682
       }
     },
     {
@@ -189,19 +189,19 @@
       "startTime": "14:00",
       "weather": "晴れ",
       "lines": {
-        "homeExpectedRuns": 3.29,
-        "awayExpectedRuns": 2.93,
+        "homeExpectedRuns": 3.2,
+        "awayExpectedRuns": 3.02,
         "total": 6.0,
         "totalRaw": 6.22,
-        "runDiff": 0.36,
-        "homeWinPct": 57.2,
-        "awayWinPct": 42.8,
-        "homeMl": -146,
-        "awayMl": 121,
-        "homeRl15Pct": 31.9,
-        "awayRl15Pct": 68.1,
-        "homeRl15Price": 193,
-        "awayRl15Price": -237
+        "runDiff": 0.17,
+        "homeWinPct": 53.5,
+        "awayWinPct": 46.5,
+        "homeMl": -125,
+        "awayMl": 104,
+        "homeRl15Pct": 29.2,
+        "awayRl15Pct": 70.8,
+        "homeRl15Price": 217,
+        "awayRl15Price": -270
       }
     },
     {
@@ -228,19 +228,19 @@
       "startTime": "14:00",
       "weather": "晴れ",
       "lines": {
-        "homeExpectedRuns": 3.96,
-        "awayExpectedRuns": 3.23,
+        "homeExpectedRuns": 3.86,
+        "awayExpectedRuns": 3.32,
         "total": 7.0,
         "totalRaw": 7.19,
-        "runDiff": 0.73,
-        "homeWinPct": 64.1,
-        "awayWinPct": 35.9,
-        "homeMl": -197,
-        "awayMl": 162,
-        "homeRl15Pct": 38.2,
-        "awayRl15Pct": 61.8,
-        "homeRl15Price": 147,
-        "awayRl15Price": -178
+        "runDiff": 0.54,
+        "homeWinPct": 60.6,
+        "awayWinPct": 39.4,
+        "homeMl": -168,
+        "awayMl": 139,
+        "homeRl15Pct": 35.5,
+        "awayRl15Pct": 64.5,
+        "homeRl15Price": 164,
+        "awayRl15Price": -200
       }
     }
   ]
