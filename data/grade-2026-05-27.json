@@ -1,0 +1,116 @@
+{
+  "date": "2026-05-27",
+  "summary": {
+    "model": {
+      "sides": "3-2-1",
+      "totalMaeR": 1.92
+    },
+    "book": {
+      "sides": "2-3-1"
+    },
+    "headToHead": {
+      "we_only": 1,
+      "book_only": 0,
+      "both_right": 2,
+      "both_wrong": 2
+    }
+  },
+  "games": [
+    {
+      "matchup": "Hawks @ Giants",
+      "actual": "1-5",
+      "actualTotal": 6,
+      "modelFav": "Hawks",
+      "modelFavMl": -138,
+      "modelTotal": 6.5,
+      "sideResult": "LOSS",
+      "totalDiff": -0.5,
+      "totalSide": "UNDER",
+      "rlOutcome": "home -1.5 covered",
+      "bookFav": "Hawks",
+      "bookFavMl": -120,
+      "bookTotal": 6.5,
+      "bookSideResult": "LOSS"
+    },
+    {
+      "matchup": "Lions @ Swallows",
+      "actual": "2-2",
+      "actualTotal": 4,
+      "modelFav": "Swallows",
+      "modelFavMl": -231,
+      "modelTotal": 7.5,
+      "sideResult": "PUSH",
+      "totalDiff": -3.5,
+      "totalSide": "UNDER",
+      "rlOutcome": "away +1.5 covered",
+      "bookFav": "Swallows",
+      "bookFavMl": -125,
+      "bookTotal": 7.0,
+      "bookSideResult": "PUSH"
+    },
+    {
+      "matchup": "Buffaloes @ BayStars",
+      "actual": "5-2",
+      "actualTotal": 7,
+      "modelFav": "Buffaloes",
+      "modelFavMl": -151,
+      "modelTotal": 7.5,
+      "sideResult": "WIN",
+      "totalDiff": -0.5,
+      "totalSide": "UNDER",
+      "rlOutcome": "away +1.5 covered",
+      "bookFav": "Buffaloes",
+      "bookFavMl": -155,
+      "bookTotal": 7.0,
+      "bookSideResult": "WIN"
+    },
+    {
+      "matchup": "Eagles @ Dragons",
+      "actual": "2-7",
+      "actualTotal": 9,
+      "modelFav": "Dragons",
+      "modelFavMl": -161,
+      "modelTotal": 5.5,
+      "sideResult": "WIN",
+      "totalDiff": 3.5,
+      "totalSide": "OVER",
+      "rlOutcome": "home -1.5 covered",
+      "bookFav": "Dragons",
+      "bookFavMl": -130,
+      "bookTotal": 7.0,
+      "bookSideResult": "WIN"
+    },
+    {
+      "matchup": "Fighters @ Tigers",
+      "actual": "5-2",
+      "actualTotal": 7,
+      "modelFav": "Tigers",
+      "modelFavMl": -241,
+      "modelTotal": 6.0,
+      "sideResult": "LOSS",
+      "totalDiff": 1.0,
+      "totalSide": "OVER",
+      "rlOutcome": "away +1.5 covered",
+      "bookFav": "Tigers",
+      "bookFavMl": -110,
+      "bookTotal": 6.0,
+      "bookSideResult": "LOSS"
+    },
+    {
+      "matchup": "Marines @ Carp",
+      "actual": "5-4",
+      "actualTotal": 9,
+      "modelFav": "Marines",
+      "modelFavMl": -113,
+      "modelTotal": 6.5,
+      "sideResult": "WIN",
+      "totalDiff": 2.5,
+      "totalSide": "OVER",
+      "rlOutcome": "away +1.5 covered",
+      "bookFav": "Carp",
+      "bookFavMl": -155,
+      "bookTotal": 6.5,
+      "bookSideResult": "LOSS"
+    }
+  ]
+}
