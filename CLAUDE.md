@@ -20,7 +20,7 @@ Sibling project to DugoutSide. Same SP-first architecture; different league, dif
 | DH rule | Universal (2022+) | Pacific only (Central no DH except interleague June) |
 | League avg runs/team/game | ~4.4 | **~3.30** (empirical, 2024-25, n=1697) |
 | Typical total | 8.5 | **6.60** (empirical, 2024-25; far lower than initial 7.5 estimate) |
-| HCA (runs) | ~0.35 | ~0.30 (not yet empirically validated) |
+| HCA (runs) | ~0.35 | **0.11** (DERIVED, 2024-25 corpus n=1753; home win rate 53.9%) |
 | Park runs-factor range | 0.85-1.25 | **0.82-1.18** (empirical, 2024-25) |
 | Notable extreme parks | Coors (1.18 runs, alt) | **Jingu 1.18 (most hitter-friendly)** ; **Koshien 0.82, Vantelin 0.84 (most pitcher-friendly)**. Tokyo Dome NOT a hitter's park anymore (0.90) — reputation is stale. |
 | Bullpen usage | high leverage 9th = closer | similar but more setup specialization |
@@ -38,7 +38,8 @@ Same SP_WEIGHTS philosophy (FIP/xFIP/SIERA), but **recalibrated constants** from
 - `LEAGUE_AVG_RUNS_PER_TEAM = 3.30`
 - Park `runs` factors: derived in `data/park-factors.json` with `_runsCalibration` field per park noting `n` games used
 - `cFIP_npb = 2.618` (DERIVED from 2024-25 corpus; MLB uses 3.10-3.20). Lower constant reflects NPB's lower run environment. The initial plan-number guess of ~3.10 was significantly off.
-- HR factor and HCA still need empirical derivation (HR requires HR-list parser; HCA requires home/away splits)
+- `HCA_RUNS = 0.11` (DERIVED from 2024-25 corpus: mean home−away run diff +0.113 over n=1753; home win rate 53.9%). Replaced the 0.30 plan-number, which was ~2.7× too high and was inflating home-favorite ML. Shipped 5/29 (commit 84da93e) — see chalk-tilt watchlist; A/B cut the home-favorite gap vs book +3.5pp→+0.9pp with no side-accuracy cost.
+- HR factor still needs empirical derivation (requires HR-list parser from `<div id="gmdivhr">`)
 
 Drop `xera` and `hard_hit_pct` weights from SP_WEIGHTS — no Statcast equivalent for NPB. Redistribute weight to FIP / K% / BB%.
 
