@@ -1,5 +1,5 @@
 import Link from "next/link";
-import lines from "../../data/lines-2026-05-27.json";
+import lines from "../../data/lines-2026-05-30.json";
 import teamsData from "../../data/teams.json";
 
 type TeamInfo = {
