@@ -1,5 +1,6 @@
 import Link from "next/link";
-import lines from "../../data/lines-2026-05-30.json";
+import { readdirSync, readFileSync } from "fs";
+import path from "path";
 import teamsData from "../../data/teams.json";
 
 type TeamInfo = {
@@ -9,7 +10,62 @@ type TeamInfo = {
   parkAbbr: string;
 };
 
-type GameLine = (typeof lines.games)[number];
+type GameLine = {
+  away: string;
+  home: string;
+  venue: string | null;
+  startTime: string | null;
+  weather: string | null;
+  parkRunsFactor: number;
+  awaySP: string;
+  awaySPFound: boolean;
+  awaySPRating: number;
+  awayOffense: number;
+  homeSP: string;
+  homeSPFound: boolean;
+  homeSPRating: number;
+  homeOffense: number;
+  lines: {
+    awayMl: number;
+    homeMl: number;
+    awayWinPct: number;
+    homeWinPct: number;
+    total: number;
+    awayExpectedRuns: number;
+    homeExpectedRuns: number;
+    awayRl15Price: number;
+    awayRl15Pct: number;
+    homeRl15Price: number;
+    homeRl15Pct: number;
+  };
+};
+
+type LinesFile = {
+  date: string;
+  games: GameLine[];
+  constants: {
+    LEAGUE_AVG_TOTAL: number;
+    LEAGUE_AVG_PER_TEAM: number;
+    HCA_RUNS: number;
+    WIN_DIVISOR: number;
+    VIG: number;
+  };
+};
+
+// Build-time: pick the newest data/lines-YYYY-MM-DD.json. Filenames are
+// zero-padded ISO dates, so a lexical sort is chronological. Adding a new
+// slate file and pushing is enough to update the board — no code change.
+function loadLatestLines(): LinesFile {
+  const dir = path.join(process.cwd(), "data");
+  const files = readdirSync(dir)
+    .filter((f) => /^lines-\d{4}-\d{2}-\d{2}\.json$/.test(f))
+    .sort();
+  if (files.length === 0) throw new Error("no data/lines-*.json files found");
+  const latest = files[files.length - 1];
+  return JSON.parse(readFileSync(path.join(dir, latest), "utf-8")) as LinesFile;
+}
+
+const lines = loadLatestLines();
 
 const allTeams: TeamInfo[] = [
   ...(teamsData as { central: TeamInfo[] }).central,
