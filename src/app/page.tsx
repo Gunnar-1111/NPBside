@@ -228,6 +228,8 @@ export default function Home() {
         <p className="text-[11px] text-white/40 font-mono mt-3">
           LEAGUE_AVG derived from 2024-25 corpus (n=1697); HCA + win-divisor are plan-numbers pending calibration.{" "}
           <Link href="/teams" className="text-amber-500/80 hover:text-amber-500">Teams &amp; parks →</Link>
+          {" · "}
+          <Link href="/results" className="text-amber-500/80 hover:text-amber-500">Results vs book →</Link>
         </p>
       </section>
     </main>
