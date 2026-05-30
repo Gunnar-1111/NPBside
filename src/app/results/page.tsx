@@ -44,6 +44,30 @@ function parseSides(s: string | undefined): [number, number, number] {
   return [w, l, p];
 }
 
+// A "flip" is a game where our favorite differs from the book's. road = we
+// made the AWAY team favorite (the leak-prone direction in DugoutSide); home =
+// we made the HOME team favorite. result is from OUR side's perspective: WIN =
+// our flip favorite covered the ML, LOSS = the book's favorite won.
+type FlipType = "road" | "home";
+type Flip = {
+  date: string;
+  matchup: string;
+  ourFav: string;
+  bookFav: string;
+  ourMl: number;
+  bookMl: number | null;
+  type: FlipType;
+  result: GameGrade["sideResult"];
+};
+
+function flipRecord(arr: Flip[]): { w: number; l: number; p: number } {
+  return {
+    w: arr.filter((f) => f.result === "WIN").length,
+    l: arr.filter((f) => f.result === "LOSS").length,
+    p: arr.filter((f) => f.result === "PUSH").length,
+  };
+}
+
 // Build-time: load every graded day, newest first.
 function loadGrades(): Grade[] {
   const dir = path.join(process.cwd(), "data");
@@ -79,6 +103,7 @@ export default function Results() {
   let weOnly = 0, bookOnly = 0, bothRight = 0, bothWrong = 0;
   const modelErrs: number[] = [];
   const bookErrs: number[] = [];
+  const flips: Flip[] = [];
 
   for (const g of grades) {
     const [w, l, p] = parseSides(g.summary.model.sides);
@@ -96,8 +121,30 @@ export default function Results() {
     for (const game of g.games) {
       modelErrs.push(Math.abs(game.modelTotal - game.actualTotal));
       if (game.bookTotal != null) bookErrs.push(Math.abs(game.bookTotal - game.actualTotal));
+      // Flip = our favorite differs from the book's. Classify by whether our
+      // favorite is the away (road) or home team — matchup is "Away @ Home".
+      if (game.bookFav && game.modelFav !== game.bookFav) {
+        const [away = "", home = ""] = game.matchup.split(" @ ").map((s) => s.trim());
+        const type: FlipType = game.modelFav === away ? "road" : home === game.modelFav ? "home" : "road";
+        flips.push({
+          date: g.date,
+          matchup: game.matchup,
+          ourFav: game.modelFav,
+          bookFav: game.bookFav,
+          ourMl: game.modelFavMl,
+          bookMl: game.bookFavMl,
+          type,
+          result: game.sideResult,
+        });
+      }
     }
   }
+
+  const roadFlips = flips.filter((f) => f.type === "road");
+  const homeFlips = flips.filter((f) => f.type === "home");
+  const allRec = flipRecord(flips);
+  const roadRec = flipRecord(roadFlips);
+  const homeRec = flipRecord(homeFlips);
 
   const modelMae = modelErrs.length ? modelErrs.reduce((a, b) => a + b, 0) / modelErrs.length : 0;
   const bookMae = bookErrs.length ? bookErrs.reduce((a, b) => a + b, 0) / bookErrs.length : 0;
@@ -151,6 +198,75 @@ export default function Results() {
         — <span className="text-green-500">we only</span> = our side won &amp; book&apos;s lost; <span className="text-red-400">book only</span> = the reverse.
         Disagreement games are the cleanest test of whether the model leads the book.
       </p>
+
+      {/* Flip breakdown — disagreements split by road vs home favorite */}
+      <section className="mb-8">
+        <div className="flex items-baseline gap-3 mb-3">
+          <h2 className="text-lg font-semibold">Flip breakdown</h2>
+          <span className="font-mono text-[11px] text-white/40">our side&apos;s record when our favorite ≠ the book&apos;s</span>
+        </div>
+        {flips.length === 0 ? (
+          <div className="rounded-2xl p-5 bg-[#1a2235]/60 border border-white/5 font-mono text-sm text-white/50">
+            No flips graded yet — every day we agreed with the book on the favorite.
+          </div>
+        ) : (
+          <>
+            <div className="grid sm:grid-cols-3 gap-3 mb-4">
+              {([
+                { label: "All flips", rec: allRec, n: flips.length, hint: "every favorite disagreement" },
+                { label: "Road flips", rec: roadRec, n: roadFlips.length, hint: "we made the away team fav" },
+                { label: "Home flips", rec: homeRec, n: homeFlips.length, hint: "we made the home team fav" },
+              ] as const).map((c) => {
+                const wp = winPct(c.rec.w, c.rec.l);
+                return (
+                  <div key={c.label} className="rounded-2xl p-5 bg-[#1a2235]/60 border border-white/5">
+                    <div className="text-[10px] uppercase text-white/40 font-mono tracking-wider">{c.label}</div>
+                    <div className="font-mono text-2xl mt-1">
+                      <span className={c.n === 0 ? "text-white/40" : wp >= 50 ? "text-green-500" : "text-red-400"}>
+                        {c.rec.w}-{c.rec.l}{c.rec.p ? `-${c.rec.p}` : ""}
+                      </span>
+                      {c.n > 0 && <span className="text-white/30 text-base"> · {wp.toFixed(0)}%</span>}
+                    </div>
+                    <div className="font-mono text-[11px] text-white/40 mt-1">{c.n} game{c.n === 1 ? "" : "s"} · {c.hint}</div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="rounded-2xl bg-[#1a2235]/60 border border-white/5 overflow-x-auto">
+              <table className="w-full text-sm font-mono border-collapse">
+                <thead>
+                  <tr className="text-[10px] uppercase text-white/40 tracking-wider text-left border-b border-white/10">
+                    <th className="py-2 px-4 font-normal">Date</th>
+                    <th className="py-2 px-2 font-normal">Matchup</th>
+                    <th className="py-2 px-2 font-normal">Type</th>
+                    <th className="py-2 px-2 font-normal">Our fav</th>
+                    <th className="py-2 px-2 font-normal">Book fav</th>
+                    <th className="py-2 px-4 font-normal text-center">Our side</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {flips.map((f, i) => (
+                    <tr key={i} className="border-b border-white/5 last:border-0">
+                      <td className="py-2 px-4 text-white/60">{f.date}</td>
+                      <td className="py-2 px-2 text-white/70">{f.matchup}</td>
+                      <td className="py-2 px-2">
+                        <span className={f.type === "road" ? "text-amber-400/90" : "text-white/50"}>{f.type}</span>
+                      </td>
+                      <td className="py-2 px-2">{f.ourFav} <span className="text-white/40">{fmtML(f.ourMl)}</span></td>
+                      <td className="py-2 px-2 text-white/60">{f.bookFav} <span className="text-white/40">{fmtML(f.bookMl)}</span></td>
+                      <td className="py-2 px-4 text-center"><ResultCell r={f.result} /></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-[11px] text-white/40 font-mono mt-2 leading-relaxed">
+              <span className="text-amber-400/90">Road flips</span> are the leak-prone direction — the model overrating an away team into a favorite the book keeps at home.
+              A sub-50% road-flip record over a real sample is the signal to add a flip gate (as DugoutSide did).
+            </p>
+          </>
+        )}
+      </section>
 
       {/* Per-day breakdown */}
       <section className="space-y-3">
