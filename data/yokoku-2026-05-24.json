@@ -1,0 +1,73 @@
+{
+  "date": "2026-05-24",
+  "fetchedAt": "mock-from-boxscore",
+  "source": "synthesized from boxscore for backtest",
+  "games": [
+    {
+      "home": "G",
+      "homeSP": "竹丸",
+      "homeSPId": "71275152",
+      "away": "T",
+      "awaySP": "才木",
+      "awaySPId": "41745134",
+      "venue": "東京ドーム",
+      "startTime": "14:00",
+      "weather": null
+    },
+    {
+      "home": "DB",
+      "homeSP": "石田裕",
+      "homeSPId": "21125159",
+      "away": "S",
+      "awaySP": "奥川",
+      "awaySPId": "31735151",
+      "venue": "横浜",
+      "startTime": "14:00",
+      "weather": null
+    },
+    {
+      "home": "D",
+      "homeSP": "髙橋宏",
+      "homeSPId": "61265153",
+      "away": "C",
+      "awaySP": "岡本",
+      "awaySPId": "91595150",
+      "venue": "バンテリンドーム",
+      "startTime": "13:30",
+      "weather": null
+    },
+    {
+      "home": "E",
+      "homeSP": "藤井",
+      "homeSPId": "71875153",
+      "away": "M",
+      "awaySP": "ロング",
+      "awaySPId": "03905152",
+      "venue": "楽天モバイル",
+      "startTime": "13:00",
+      "weather": null
+    },
+    {
+      "home": "L",
+      "homeSP": "ワイナンス",
+      "homeSPId": "23925152",
+      "away": "B",
+      "awaySP": "山岡",
+      "awaySPId": "83185134",
+      "venue": "ベルーナドーム",
+      "startTime": "13:01",
+      "weather": null
+    },
+    {
+      "home": "H",
+      "homeSP": "前田悠",
+      "homeSPId": "13115159",
+      "away": "F",
+      "awaySP": "北山",
+      "awaySPId": "51755155",
+      "venue": "みずほPayPay",
+      "startTime": "14:00",
+      "weather": null
+    }
+  ]
+}

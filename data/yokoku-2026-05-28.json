@@ -1,0 +1,73 @@
+{
+  "date": "2026-05-28",
+  "fetchedAt": "2026-05-27T13:46Z (reconstructed from lines file)",
+  "source": "https://npb.jp/ (reconstructed)",
+  "games": [
+    {
+      "home": "G",
+      "homeSP": "田中 将大",
+      "homeSPId": "11215114",
+      "away": "H",
+      "awaySP": "Ｃ．スチュワートJr.",
+      "awaySPId": "53755138",
+      "venue": "東京ドーム",
+      "startTime": "18:00",
+      "weather": "くもり"
+    },
+    {
+      "home": "S",
+      "homeSP": "小川 泰弘",
+      "homeSPId": "11515137",
+      "away": "L",
+      "awaySP": "武内 夏暉",
+      "awaySPId": "51255159",
+      "venue": "神　宮",
+      "startTime": "18:00",
+      "weather": "くもり"
+    },
+    {
+      "home": "DB",
+      "homeSP": "東 克樹",
+      "homeSPId": "51155136",
+      "away": "B",
+      "awaySP": "Ａ．エスピノーザ",
+      "awaySPId": "43545159",
+      "venue": "横　浜",
+      "startTime": "17:45",
+      "weather": "くもり"
+    },
+    {
+      "home": "D",
+      "homeSP": "金丸 夢斗",
+      "homeSPId": "61565150",
+      "away": "E",
+      "awaySP": "瀧中 瞭太",
+      "awaySPId": "31235151",
+      "venue": "バンテリンドーム",
+      "startTime": "18:00",
+      "weather": "雨のちくもり"
+    },
+    {
+      "home": "T",
+      "homeSP": "木下 里都",
+      "homeSPId": "41745150",
+      "away": "F",
+      "awaySP": "福島 蓮",
+      "awaySPId": "81685155",
+      "venue": "甲子園",
+      "startTime": "18:00",
+      "weather": "くもりのち一時雨"
+    },
+    {
+      "home": "C",
+      "homeSP": "鈴木 健矢",
+      "homeSPId": "61065151",
+      "away": "M",
+      "awaySP": "廣池 康志郎",
+      "awaySPId": "81685150",
+      "venue": "マツダスタジアム",
+      "startTime": "18:00",
+      "weather": "くもり"
+    }
+  ]
+}
