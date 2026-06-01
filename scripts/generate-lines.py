@@ -23,6 +23,7 @@ Usage:
 
 import json
 import math
+import re
 import sys
 from pathlib import Path
 
@@ -94,20 +95,28 @@ def lookup_pitcher_rating(ratings, name, player_id=None):
     if not name:
         return None
     name_clean = name.replace("　", " ").strip()
+    # Strip a leading foreign-name initial like "Ａ．" / "K." (full- or half-width
+    # letter + period). Katakana imports are keyed by bare surname in the legacy
+    # ratings (ジャクソン, マラー), but yokoku serves them as "Ａ．ジャクソン" — without
+    # this strip they fall through to a 0.00 default. (Jackson −0.219, Maller +0.163.)
+    m = re.match(r"^[A-Za-zＡ-Ｚａ-ｚ][.．]\s*(.+)$", name_clean)
+    if m:
+        name_clean = m.group(1).strip()
     parts = name_clean.split()
     surname = parts[0] if parts else name_clean
     given = parts[1] if len(parts) > 1 else ""
 
-    # Try exact, full-width-space, surname, surname+first-given-kanji
     candidates = [
         name_clean,
         name_clean.replace(" ", "　"),
         name_clean.replace(" ", ""),
-        surname,
     ]
     if given:
-        # `加藤貴` (surname + first char of given name)
+        # `松本健`, `加藤貴` (surname + first kanji of given name). This is MORE
+        # specific than the bare surname, so try it BEFORE surname-only — bare
+        # surname collides (松本 健吾 → 松本健 +0.12, not the ambiguous 松本 −1.76).
         candidates.append(surname + given[0])
+    candidates.append(surname)
     for c in candidates:
         if c in ratings:
             return ratings[c]
