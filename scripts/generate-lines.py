@@ -163,6 +163,23 @@ def shrink_rating(rating, ip):
     return rating * weight
 
 
+# Fallback if the ratings file predates the derived gap (build re-derives it).
+RELIEF_START_GAP_FALLBACK = 0.17
+
+
+def relief_start_penalty(sp, gap):
+    """Runs to dock an SP's rating for relief-inflation when he's starting.
+
+    A pitcher whose rating was built largely on relief innings (平良 海馬 6 GS /
+    109 IP; 則本 a full bullpen convert) posts better rates than he would as a
+    starter. Dock the rating by his relief share × the league relief→start FIP
+    gap. A pure starter (reliefShare ≈ 0) is untouched.
+    """
+    if not sp:
+        return 0.0
+    return sp.get("reliefShare", 0.0) * gap
+
+
 def project_game(home_sp_rating, away_sp_rating,
                  home_off_rating, away_off_rating,
                  park_runs_factor, hca=HCA_RUNS):
@@ -229,6 +246,8 @@ def main():
     pitchers_by_team = ratings_data.get("pitchersByTeam", {})
     id_map_path = REPO / "data" / "pitcher-id-map.json"
     id_map = json.load(open(id_map_path))["ids"] if id_map_path.exists() else {}
+    relief_start_gap = ratings_data.get("_league", {}).get(
+        "reliefStartFipGap", RELIEF_START_GAP_FALLBACK)
     team_offense_path = REPO / "data" / "team-offense-ratings.json"
     team_offense = json.load(open(team_offense_path))["teams"] if team_offense_path.exists() else {}
 
@@ -238,11 +257,15 @@ def main():
                                         g.get("homeSPId"), g.get("home"), id_map)
         away_sp = lookup_pitcher_rating(pitchers, pitchers_by_team, g["awaySP"],
                                         g.get("awaySPId"), g.get("away"), id_map)
+        # Relief→start penalty: dock a relief-inflated rating before shrinking, so
+        # a bullpen arm making a start isn't priced on his (easier) relief rates.
+        home_pen = relief_start_penalty(home_sp, relief_start_gap)
+        away_pen = relief_start_penalty(away_sp, relief_start_gap)
+        home_rating_raw = (home_sp["rating"] if home_sp else 0.0) - home_pen
+        away_rating_raw = (away_sp["rating"] if away_sp else 0.0) - away_pen
         # Shrink rating by IP — a 5-IP rookie with a fluky -4.0 FIP shouldn't
         # produce a -1100 ML. Reverts to league average (0) when IP is small.
-        home_rating_raw = home_sp["rating"] if home_sp else 0.0
         home_ip = home_sp["ip"] if home_sp else 0.0
-        away_rating_raw = away_sp["rating"] if away_sp else 0.0
         away_ip = away_sp["ip"] if away_sp else 0.0
         home_rating = shrink_rating(home_rating_raw, home_ip)
         away_rating = shrink_rating(away_rating_raw, away_ip)
@@ -274,6 +297,8 @@ def main():
             "homeSPId": g.get("homeSPId"),
             "homeSPRating": round(home_rating, 3),
             "homeSPRatingRaw": round(home_rating_raw, 3),
+            "homeSPReliefShare": round(home_sp.get("reliefShare", 0.0), 3) if home_sp else None,
+            "homeSPReliefPenalty": round(home_pen, 3),
             "homeSPIp": home_ip,
             "homeSPFound": home_sp is not None,
             "homeOffense": round(home_off, 3),
@@ -281,6 +306,8 @@ def main():
             "awaySPId": g.get("awaySPId"),
             "awaySPRating": round(away_rating, 3),
             "awaySPRatingRaw": round(away_rating_raw, 3),
+            "awaySPReliefShare": round(away_sp.get("reliefShare", 0.0), 3) if away_sp else None,
+            "awaySPReliefPenalty": round(away_pen, 3),
             "awaySPIp": away_ip,
             "awaySPFound": away_sp is not None,
             "awayOffense": round(away_off, 3),

@@ -95,9 +95,14 @@ def collect(seasons=CORPUS_SEASONS):
         "outs": 0, "bf": 0, "h": 0, "bb": 0, "hbp": 0, "k": 0, "er": 0,
         "hr_allowed": 0, "appearances": 0, "starts": 0,
         "wins": 0, "losses": 0, "saves": 0, "holds": 0,
+        "outs_rel": 0,  # outs thrown in a relief role (appearance where idx>0)
         "teams": set(),
     }
     appear = defaultdict(factory)
+    # League-wide FIP components split by role, to DERIVE the relief→start penalty:
+    # relievers post better rates than starters (no times-through-order, max-effort
+    # short bursts), so a relief-heavy rating over-credits a pitcher in a start.
+    role_totals = {"GS": defaultdict(int), "REL": defaultdict(int)}
     # Same aggregation, but keyed by (name, team). Splits surname collisions
     # across teams — e.g. 平良 拳太郎 (DeNA SP) vs 平良 海馬 (Seibu RP) were being
     # merged into one bogus 平良 entry. Different teams ⇒ different pitchers.
@@ -117,6 +122,7 @@ def collect(seasons=CORPUS_SEASONS):
                 continue
             n_games += 1
             pitcher_team = {}  # name -> team within this game, for HR attribution
+            pitcher_role = {}  # name -> "GS"/"REL" within this game, for role splits
             for side in ("away", "home"):
                 team = g[side]["team"]
                 pitchers = g[side]["pitchers"] or []
@@ -127,7 +133,17 @@ def collect(seasons=CORPUS_SEASONS):
                     outs = parse_ip_to_outs(p.get("ip"))
                     if outs is None:
                         continue
+                    role = "GS" if idx == 0 else "REL"
                     pitcher_team[pname] = team
+                    pitcher_role[pname] = role
+                    rt = role_totals[role]
+                    rt["outs"] += outs
+                    rt["bb"] += safe_int(p.get("bb"))
+                    rt["hbp"] += safe_int(p.get("hbp"))
+                    rt["k"] += safe_int(p.get("k"))
+                    if role == "REL":
+                        appear[pname]["outs_rel"] += outs
+                        appear_team[(pname, team)]["outs_rel"] += outs
                     span = team_date_span[pname][team]
                     if span[0] is None or game_date < span[0]:
                         span[0] = game_date
@@ -166,8 +182,11 @@ def collect(seasons=CORPUS_SEASONS):
                     t = pitcher_team.get(pn)
                     if t is not None:
                         appear_team[(pn, t)]["hr_allowed"] += 1
+                    r = pitcher_role.get(pn)
+                    if r is not None:
+                        role_totals[r]["hr"] += 1
 
-    return appear, appear_team, team_date_span, n_games
+    return appear, appear_team, team_date_span, role_totals, n_games
 
 
 def compute_league_averages(pitchers):
@@ -223,6 +242,7 @@ def compute_pitcher_metrics(p, cFipNpb, league_era):
         "kPct": round(k / bf, 4) if bf else None,
         "bbPct": round(bb / bf, 4) if bf else None,
         "hr9": round(hr * 9 / ip, 3),
+        "reliefShare": round(p.get("outs_rel", 0) / outs, 3) if outs else 0.0,
         "appearances": p["appearances"],
         "starts": p["starts"],
         "wins": p["wins"],
@@ -257,12 +277,24 @@ def main():
         seasons = set(sys.argv[sys.argv.index("--seasons") + 1].split(","))
 
     print(f"[build-pitcher-ratings] aggregating corpus (seasons {sorted(seasons)})...", file=sys.stderr)
-    pitchers, pitchers_team, team_date_span, n_games = collect(seasons)
+    pitchers, pitchers_team, team_date_span, role_totals, n_games = collect(seasons)
     print(f"  {n_games} final games, {len(pitchers)} distinct pitchers", file=sys.stderr)
 
     league = compute_league_averages(pitchers)
     cFip = league["cFipNpb"]
     league_era = league["era"]
+
+    # DERIVE the relief→start FIP gap: how many runs of FIP the league loses
+    # moving from a relief role to a starting role. cFIP cancels in the gap, so
+    # it's purely the difference in FIP-cores. Used downstream to dock a relief-
+    # heavy pitcher's rating in proportion to his relief share when he starts.
+    def fip_core(t):
+        ip_r = outs_to_ip(t["outs"])
+        return ((13 * t["hr"] + 3 * (t["bb"] + t["hbp"]) - 2 * t["k"]) / ip_r) if ip_r else 0.0
+    gs_fip_core, rel_fip_core = fip_core(role_totals["GS"]), fip_core(role_totals["REL"])
+    league["reliefStartFipGap"] = round(gs_fip_core - rel_fip_core, 3)
+    print(f"  relief→start FIP gap (DERIVED): {league['reliefStartFipGap']:+.3f} "
+          f"(GS core {gs_fip_core:.2f} vs REL core {rel_fip_core:.2f})", file=sys.stderr)
     print(f"\nLeague (full corpus):", file=sys.stderr)
     print(f"  total IP {league['ip']:.0f},  ERA {league_era},  K% {league['kPct']:.3f},  BB% {league['bbPct']:.3f}", file=sys.stderr)
     print(f"  cFIP_npb derived: {cFip}  (MLB FanGraphs uses ~3.10-3.20)", file=sys.stderr)
