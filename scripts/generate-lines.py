@@ -83,43 +83,68 @@ def calculate_run_line_prob(team_runs, opp_runs, line=1.5):
     return prob
 
 
-def lookup_pitcher_rating(ratings, name, player_id=None):
-    """Best-effort match against the pitcher-ratings map.
+def name_candidates(name):
+    """Ordered normalized forms of a yokoku name, most→least specific.
 
-    Legacy ratings are keyed by display name (no IDs). Yokoku names use
-    a regular space between surname and given name; legacy keys are
-    either bare surname or surname + first kanji of given name (e.g.
-    `加藤貴` for Kato Takayuki). Try several normalizations in order
-    of specificity.
+    Yokoku names use a regular space between surname and given name; legacy
+    ratings keys are bare surname or surname + first kanji of given name (e.g.
+    `加藤貴` for Kato Takayuki). A leading foreign initial ("Ａ．"/"K.") is
+    stripped so katakana imports keyed by bare surname (ジャクソン, マラー) match.
     """
     if not name:
-        return None
+        return []
     name_clean = name.replace("　", " ").strip()
-    # Strip a leading foreign-name initial like "Ａ．" / "K." (full- or half-width
-    # letter + period). Katakana imports are keyed by bare surname in the legacy
-    # ratings (ジャクソン, マラー), but yokoku serves them as "Ａ．ジャクソン" — without
-    # this strip they fall through to a 0.00 default. (Jackson −0.219, Maller +0.163.)
     m = re.match(r"^[A-Za-zＡ-Ｚａ-ｚ][.．]\s*(.+)$", name_clean)
     if m:
         name_clean = m.group(1).strip()
     parts = name_clean.split()
     surname = parts[0] if parts else name_clean
     given = parts[1] if len(parts) > 1 else ""
-
     candidates = [
         name_clean,
         name_clean.replace(" ", "　"),
         name_clean.replace(" ", ""),
     ]
     if given:
-        # `松本健`, `加藤貴` (surname + first kanji of given name). This is MORE
-        # specific than the bare surname, so try it BEFORE surname-only — bare
-        # surname collides (松本 健吾 → 松本健 +0.12, not the ambiguous 松本 −1.76).
+        # `松本健`, `加藤貴` — surname+first given kanji is MORE specific than the
+        # bare surname, so try it BEFORE surname-only (松本 健吾 → 松本健 +0.12, not
+        # the ambiguous bare 松本 −1.76).
         candidates.append(surname + given[0])
     candidates.append(surname)
+    seen, out = set(), []
     for c in candidates:
-        if c in ratings:
-            return ratings[c]
+        if c not in seen:
+            seen.add(c); out.append(c)
+    return out
+
+
+def lookup_pitcher_rating(by_name, by_team, name, player_id=None, team=None, id_map=None):
+    """Resolve a pitcher to a rating, collision-safe.
+
+    Order of preference:
+      1. ID-keyed — the yokoku playerId maps (via data/pitcher-id-map.json) to a
+         canonical `pitchersByTeam` key. Authoritative; immune to surname clashes.
+      2. Team-aware — `name|TEAM` in pitchersByTeam splits same-surname pitchers
+         across teams (平良 拳太郎 DeNA vs 平良 海馬 Seibu).
+      3. Legacy name-only — bare display-name key (may be a merged collision).
+    """
+    if player_id and id_map:
+        entry = id_map.get(str(player_id))
+        if entry and entry.get("key"):
+            key = entry["key"]
+            if key in by_team:
+                return by_team[key]
+            if key in by_name:
+                return by_name[key]
+    cands = name_candidates(name)
+    if team:
+        for c in cands:
+            k = f"{c}|{team}"
+            if k in by_team:
+                return by_team[k]
+    for c in cands:
+        if c in by_name:
+            return by_name[c]
     return None
 
 
@@ -201,13 +226,18 @@ def main():
     parks = json.load(open(REPO / "data" / "park-factors.json"))
     yokoku = json.load(open(yokoku_path))
     pitchers = ratings_data["pitchers"]
+    pitchers_by_team = ratings_data.get("pitchersByTeam", {})
+    id_map_path = REPO / "data" / "pitcher-id-map.json"
+    id_map = json.load(open(id_map_path))["ids"] if id_map_path.exists() else {}
     team_offense_path = REPO / "data" / "team-offense-ratings.json"
     team_offense = json.load(open(team_offense_path))["teams"] if team_offense_path.exists() else {}
 
     lines_out = []
     for g in yokoku["games"]:
-        home_sp = lookup_pitcher_rating(pitchers, g["homeSP"])
-        away_sp = lookup_pitcher_rating(pitchers, g["awaySP"])
+        home_sp = lookup_pitcher_rating(pitchers, pitchers_by_team, g["homeSP"],
+                                        g.get("homeSPId"), g.get("home"), id_map)
+        away_sp = lookup_pitcher_rating(pitchers, pitchers_by_team, g["awaySP"],
+                                        g.get("awaySPId"), g.get("away"), id_map)
         # Shrink rating by IP — a 5-IP rookie with a fluky -4.0 FIP shouldn't
         # produce a -1100 ML. Reverts to league average (0) when IP is small.
         home_rating_raw = home_sp["rating"] if home_sp else 0.0

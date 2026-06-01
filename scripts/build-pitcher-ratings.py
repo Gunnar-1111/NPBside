@@ -36,6 +36,15 @@ OUT = REPO / "data" / "pitcher-ratings.json"
 # random spot-starters. Tune up to ~80 IP once the engine actually consumes it.
 MIN_IP_QUALIFIED = 30
 
+# Seasons that define the rating corpus. We pool 2024-25 (full prior seasons)
+# with 2026 (current season, in progress) so ratings reflect current form and
+# 2026 debutants/imports get rated at all instead of defaulting to league avg.
+# Pooling is IP-weighted, so a thin 2026 sample barely moves an established
+# pitcher; debutants with few IP are then regressed by shrink_rating downstream
+# (REGRESSION_IP=50). The filter exists so the build is deterministic (the dir
+# also holds non-NPB / stray files) — override via e.g. `--seasons 2024,2025`.
+CORPUS_SEASONS = {"2024", "2025", "2026"}
+
 
 def parse_ip_to_outs(ip_str):
     """Convert NPB IP encoding to outs.
@@ -78,24 +87,36 @@ def safe_int(v):
         return 0
 
 
-def collect():
-    """Walk boxscores, aggregate per-pitcher stats."""
+def collect(seasons=CORPUS_SEASONS):
+    """Walk boxscores, aggregate per-pitcher stats (seasons filter by filename year)."""
     # appearances = every game pitcher pitched in
     # starts = appearance where pitcher was first in his team's box (NPB convention)
-    appear = defaultdict(lambda: {
+    factory = lambda: {
         "outs": 0, "bf": 0, "h": 0, "bb": 0, "hbp": 0, "k": 0, "er": 0,
         "hr_allowed": 0, "appearances": 0, "starts": 0,
         "wins": 0, "losses": 0, "saves": 0, "holds": 0,
         "teams": set(),
-    })
+    }
+    appear = defaultdict(factory)
+    # Same aggregation, but keyed by (name, team). Splits surname collisions
+    # across teams — e.g. 平良 拳太郎 (DeNA SP) vs 平良 海馬 (Seibu RP) were being
+    # merged into one bogus 平良 entry. Different teams ⇒ different pitchers.
+    appear_team = defaultdict(factory)
+    # name -> team -> [min_date, max_date], to tell a true two-person collision
+    # (concurrent stints on two teams) from a trade (one person, sequential).
+    team_date_span = defaultdict(lambda: defaultdict(lambda: [None, None]))
     n_games = 0
 
     for f in sorted(glob.glob(str(BOX_DIR / "*.json"))):
+        if Path(f).name[:4] not in seasons:
+            continue
+        game_date = Path(f).name[:10]  # YYYY-MM-DD
         d = json.load(open(f))
         for g in d["games"]:
             if g.get("status") != "final":
                 continue
             n_games += 1
+            pitcher_team = {}  # name -> team within this game, for HR attribution
             for side in ("away", "home"):
                 team = g[side]["team"]
                 pitchers = g[side]["pitchers"] or []
@@ -106,35 +127,47 @@ def collect():
                     outs = parse_ip_to_outs(p.get("ip"))
                     if outs is None:
                         continue
-                    a = appear[pname]
-                    a["outs"] += outs
-                    a["bf"] += safe_int(p.get("bf"))
-                    a["h"] += safe_int(p.get("h"))
-                    a["bb"] += safe_int(p.get("bb"))
-                    a["hbp"] += safe_int(p.get("hbp"))
-                    a["k"] += safe_int(p.get("k"))
-                    a["er"] += safe_int(p.get("er"))
-                    a["appearances"] += 1
-                    if idx == 0:  # starter (first in team's box)
-                        a["starts"] += 1
-                    a["teams"].add(team)
+                    pitcher_team[pname] = team
+                    span = team_date_span[pname][team]
+                    if span[0] is None or game_date < span[0]:
+                        span[0] = game_date
+                    if span[1] is None or game_date > span[1]:
+                        span[1] = game_date
                     decision = (p.get("decision") or "").strip()
-                    if decision == "○":
-                        a["wins"] += 1
-                    elif decision == "●":
-                        a["losses"] += 1
-                    elif decision in ("S", "Ｓ"):
-                        a["saves"] += 1
-                    elif decision in ("H", "Ｈ"):
-                        a["holds"] += 1
+                    # Tally into both the name-only and (name, team) aggregates.
+                    for a in (appear[pname], appear_team[(pname, team)]):
+                        a["outs"] += outs
+                        a["bf"] += safe_int(p.get("bf"))
+                        a["h"] += safe_int(p.get("h"))
+                        a["bb"] += safe_int(p.get("bb"))
+                        a["hbp"] += safe_int(p.get("hbp"))
+                        a["k"] += safe_int(p.get("k"))
+                        a["er"] += safe_int(p.get("er"))
+                        a["appearances"] += 1
+                        if idx == 0:  # starter (first in team's box)
+                            a["starts"] += 1
+                        a["teams"].add(team)
+                        if decision == "○":
+                            a["wins"] += 1
+                        elif decision == "●":
+                            a["losses"] += 1
+                        elif decision in ("S", "Ｓ"):
+                            a["saves"] += 1
+                        elif decision in ("H", "Ｈ"):
+                            a["holds"] += 1
 
-            # Attribute HRs from the HR list
+            # Attribute HRs from the HR list to both aggregates. The team comes
+            # from who the pitcher pitched for in THIS game, so the (name, team)
+            # split gets the HRs charged to the right pitcher.
             for hr in g.get("hrList", []) or []:
                 pn = hr.get("oppPitcher")
                 if pn and pn in appear:
                     appear[pn]["hr_allowed"] += 1
+                    t = pitcher_team.get(pn)
+                    if t is not None:
+                        appear_team[(pn, t)]["hr_allowed"] += 1
 
-    return appear, n_games
+    return appear, appear_team, team_date_span, n_games
 
 
 def compute_league_averages(pitchers):
@@ -200,11 +233,31 @@ def compute_pitcher_metrics(p, cFipNpb, league_era):
     }
 
 
+def is_true_collision(team_spans):
+    """True iff a name's per-team date spans OVERLAP — meaning two different
+    people pitched for two teams in the same window (e.g. 平良 Kentaro/DeNA &
+    Kaima/Seibu, both active 2024-25). A trade is sequential (disjoint spans:
+    Kuri Hiroshima-2024 → Orix-2025) and is the SAME person — don't split him.
+    """
+    spans = [s for s in team_spans.values() if s[0] and s[1]]
+    if len(spans) < 2:
+        return False
+    spans.sort(key=lambda s: s[0])
+    # If any later stint starts on/before an earlier stint ends, they overlap.
+    for i in range(1, len(spans)):
+        if spans[i][0] <= max(s[1] for s in spans[:i]):
+            return True
+    return False
+
+
 def main():
     write = "--write" in sys.argv
+    seasons = CORPUS_SEASONS
+    if "--seasons" in sys.argv:
+        seasons = set(sys.argv[sys.argv.index("--seasons") + 1].split(","))
 
-    print("[build-pitcher-ratings] aggregating corpus...", file=sys.stderr)
-    pitchers, n_games = collect()
+    print(f"[build-pitcher-ratings] aggregating corpus (seasons {sorted(seasons)})...", file=sys.stderr)
+    pitchers, pitchers_team, team_date_span, n_games = collect(seasons)
     print(f"  {n_games} final games, {len(pitchers)} distinct pitchers", file=sys.stderr)
 
     league = compute_league_averages(pitchers)
@@ -223,6 +276,31 @@ def main():
         m["name"] = name
         m["teams"] = sorted(p["teams"])
         out[name] = m
+
+    # Per-(name, team) records — ONLY for surname collisions, i.e. names that
+    # appear across multiple teams (平良 = DeNA's Kentaro + Seibu's Kaima). Single
+    # -team pitchers are left out: their name-only entry is already correct and
+    # identical, and emitting a split would only risk a tiny HR-attribution drift
+    # (the name-only path occasionally over-credits an HR via global name match).
+    # Restricting to collisions keeps the blast radius to exactly what's broken.
+    collision_names = {
+        name for name, p in pitchers.items()
+        if len(p["teams"]) > 1 and is_true_collision(team_date_span[name])
+    }
+    traded = sum(1 for name, p in pitchers.items()
+                 if len(p["teams"]) > 1 and name not in collision_names)
+    out_by_team = {}
+    for (name, team), p in pitchers_team.items():
+        if name not in collision_names:
+            continue
+        m = compute_pitcher_metrics(p, cFip, league_era)
+        if m is None:
+            continue
+        m["name"] = name
+        m["team"] = team
+        out_by_team[f"{name}|{team}"] = m
+    print(f"  {len(collision_names)} true collisions split into {len(out_by_team)} entries "
+          f"({traded} multi-team names kept merged as trades)", file=sys.stderr)
 
     # Qualified starters: starts >= 5 AND IP >= MIN_IP_QUALIFIED
     qualified_starters = sorted(
@@ -248,8 +326,8 @@ def main():
 
     if write:
         OUT.write_text(json.dumps({
-            "_doc": "Per-pitcher ratings from 2024-2025 NPB corpus. `rating` is league-avg ERA minus pitcher FIP (positive=better). HR allowed attributed via HR list's oppPitcher field. Names are plain-text kanji/katakana — legacy NPB.jp pages don't expose player IDs.",
-            "_lastUpdated": "2026-05-26",
+            "_doc": "Per-pitcher ratings from 2024-2025 NPB corpus. `rating` is league-avg ERA minus pitcher FIP (positive=better). HR allowed attributed via HR list's oppPitcher field. Names are plain-text kanji/katakana — legacy NPB.jp pages don't expose player IDs. `pitchers` is keyed by display name (may merge same-surname pitchers across teams); `pitchersByTeam` is keyed 'name|TEAM' and splits those collisions — prefer it when the team is known (see data/pitcher-id-map.json for yokoku playerId → name/team).",
+            "_lastUpdated": "2026-06-01",
             "_corpus": {
                 "games": n_games,
                 "distinctPitchers": len(pitchers),
@@ -259,6 +337,7 @@ def main():
             "_cFipNpb": cFip,
             "_minIpQualified": MIN_IP_QUALIFIED,
             "pitchers": out,
+            "pitchersByTeam": out_by_team,
             "qualifiedStartersRanked": [
                 {"name": m["name"], "rating": m["rating"], "fip": m["fip"], "ip": m["ip"],
                  "starts": m["starts"], "teams": m["teams"]}

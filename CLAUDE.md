@@ -37,7 +37,7 @@ Same SP_WEIGHTS philosophy (FIP/xFIP/SIERA), but **recalibrated constants** from
 - `LEAGUE_AVG_TOTAL_RUNS = 6.60` (NOT 7.5 as initially planned — NPB is more of a pitcher's league than the initial estimate suggested)
 - `LEAGUE_AVG_RUNS_PER_TEAM = 3.30`
 - Park `runs` factors: derived in `data/park-factors.json` with `_runsCalibration` field per park noting `n` games used
-- `cFIP_npb = 2.618` (DERIVED from 2024-25 corpus; MLB uses 3.10-3.20). Lower constant reflects NPB's lower run environment. The initial plan-number guess of ~3.10 was significantly off.
+- `cFIP_npb ≈ 2.65` (DERIVED; MLB uses 3.10-3.20). Lower constant reflects NPB's lower run environment. The initial plan-number guess of ~3.10 was significantly off. Re-derived on every `build-pitcher-ratings.py` run for self-consistency: 2.618 on the 2024-25 corpus, 2.648 once 2026 in-season games were pooled in (6/1). Per-pitcher ratings (`pitcher-ratings.json`) now pool 2024-25-26 so current-season form is reflected and 2026 debutants get rated; park/HCA constants below remain 2024-25-derived.
 - `HCA_RUNS = 0.11` (DERIVED from 2024-25 corpus: mean home−away run diff +0.113 over n=1753; home win rate 53.9%). Replaced the 0.30 plan-number, which was ~2.7× too high and was inflating home-favorite ML. Shipped 5/29 (commit 84da93e) — see chalk-tilt watchlist; A/B cut the home-favorite gap vs book +3.5pp→+0.9pp with no side-accuracy cost.
 - HR factor still needs empirical derivation (requires HR-list parser from `<div id="gmdivhr">`)
 

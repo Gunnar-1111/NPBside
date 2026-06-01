@@ -1,0 +1,455 @@
+{
+  "_doc": "yokoku playerId → pitcher identity + ratings key. `key` indexes pitcher-ratings.json pitchersByTeam (preferred) or pitchers. Built from data/yokoku-*.json by scripts/build-pitcher-id-map.py.",
+  "ids": {
+    "71275152": {
+      "name": "竹丸 和幸",
+      "team": "G",
+      "key": "竹丸",
+      "teamSplit": false
+    },
+    "41745134": {
+      "name": "才木 浩人",
+      "team": "T",
+      "key": "才木|T",
+      "teamSplit": true
+    },
+    "21125159": {
+      "name": "石田裕",
+      "team": "DB",
+      "key": "石田裕",
+      "teamSplit": false
+    },
+    "31735151": {
+      "name": "奥川 恭伸",
+      "team": "S",
+      "key": "奥川",
+      "teamSplit": false
+    },
+    "61265153": {
+      "name": "髙橋 宏斗",
+      "team": "D",
+      "key": "髙橋宏",
+      "teamSplit": false
+    },
+    "91595150": {
+      "name": "岡本 駿",
+      "team": "C",
+      "key": "岡本",
+      "teamSplit": false
+    },
+    "71875153": {
+      "name": "藤井 聖",
+      "team": "E",
+      "key": "藤井|E",
+      "teamSplit": true
+    },
+    "03905152": {
+      "name": "Ｓ．ロング",
+      "team": "M",
+      "key": "ロング",
+      "teamSplit": false
+    },
+    "23925152": {
+      "name": "Ａ．ワイナンス",
+      "team": "L",
+      "key": "ワイナンス",
+      "teamSplit": false
+    },
+    "83185134": {
+      "name": "山岡",
+      "team": "B",
+      "key": "山岡",
+      "teamSplit": false
+    },
+    "13115159": {
+      "name": "前田悠",
+      "team": "H",
+      "key": "前田悠",
+      "teamSplit": false
+    },
+    "51755155": {
+      "name": "北山 亘基",
+      "team": "F",
+      "key": "北山",
+      "teamSplit": false
+    },
+    "51055137": {
+      "name": "則本 昂大",
+      "team": "G",
+      "key": "則本",
+      "teamSplit": false
+    },
+    "01305157": {
+      "name": "大津 亮介",
+      "team": "H",
+      "key": "大津",
+      "teamSplit": false
+    },
+    "03105159": {
+      "name": "松本 健吾",
+      "team": "S",
+      "key": "松本健",
+      "teamSplit": false
+    },
+    "31035136": {
+      "name": "平良 海馬",
+      "team": "L",
+      "key": "平良|L",
+      "teamSplit": true
+    },
+    "01905139": {
+      "name": "平良 拳太郎",
+      "team": "DB",
+      "key": "平良|DB",
+      "teamSplit": true
+    },
+    "71775139": {
+      "name": "九里 亜蓮",
+      "team": "B",
+      "key": "九里",
+      "teamSplit": false
+    },
+    "13915150": {
+      "name": "Ｋ．マラー",
+      "team": "D",
+      "key": "マラー",
+      "teamSplit": false
+    },
+    "21925157": {
+      "name": "荘司 康誠",
+      "team": "E",
+      "key": "荘司|E",
+      "teamSplit": true
+    },
+    "71275118": {
+      "name": "西 勇輝",
+      "team": "T",
+      "key": "西勇",
+      "teamSplit": false
+    },
+    "51355153": {
+      "name": "伊藤 大海",
+      "team": "F",
+      "key": "伊藤|F",
+      "teamSplit": true
+    },
+    "11415134": {
+      "name": "床田 寛樹",
+      "team": "C",
+      "key": "床田",
+      "teamSplit": false
+    },
+    "43745159": {
+      "name": "Ａ．ジャクソン",
+      "team": "M",
+      "key": "ジャクソン",
+      "teamSplit": false
+    },
+    "41045138": {
+      "name": "戸郷 翔征",
+      "team": "G",
+      "key": "戸郷",
+      "teamSplit": false
+    },
+    "33735155": {
+      "name": "Ａ．アルメンタ",
+      "team": "H",
+      "key": "アルメンタ",
+      "teamSplit": false
+    },
+    "51055132": {
+      "name": "高橋 奎二",
+      "team": "S",
+      "key": "高橋|S",
+      "teamSplit": true
+    },
+    "53155138": {
+      "name": "渡邉 勇太朗",
+      "team": "L",
+      "key": "渡邉",
+      "teamSplit": false
+    },
+    "41045150": {
+      "name": "篠木 健太郎",
+      "team": "DB",
+      "key": "篠木",
+      "teamSplit": false
+    },
+    "81985157": {
+      "name": "曽谷 龍平",
+      "team": "B",
+      "key": "曽谷",
+      "teamSplit": false
+    },
+    "21925152": {
+      "name": "櫻井 頼之介",
+      "team": "D",
+      "key": "櫻井",
+      "teamSplit": false
+    },
+    "21725159": {
+      "name": "古謝 樹",
+      "team": "E",
+      "key": "古謝",
+      "teamSplit": false
+    },
+    "41345136": {
+      "name": "大竹 耕太郎",
+      "team": "T",
+      "key": "大竹",
+      "teamSplit": false
+    },
+    "41545132": {
+      "name": "加藤 貴之",
+      "team": "F",
+      "key": "加藤貴",
+      "teamSplit": false
+    },
+    "93395155": {
+      "name": "森 翔平",
+      "team": "C",
+      "key": "森",
+      "teamSplit": false
+    },
+    "73175152": {
+      "name": "毛利 海大",
+      "team": "M",
+      "key": "毛利",
+      "teamSplit": false
+    },
+    "11215114": {
+      "name": "田中 将大",
+      "team": "G",
+      "key": "田中|G",
+      "teamSplit": true
+    },
+    "53755138": {
+      "name": "Ｃ．スチュワートJr.",
+      "team": "H",
+      "key": null,
+      "teamSplit": false
+    },
+    "11515137": {
+      "name": "小川 泰弘",
+      "team": "S",
+      "key": "小川",
+      "teamSplit": false
+    },
+    "51255159": {
+      "name": "武内 夏暉",
+      "team": "L",
+      "key": "武内",
+      "teamSplit": false
+    },
+    "51155136": {
+      "name": "東 克樹",
+      "team": "DB",
+      "key": "東|DB",
+      "teamSplit": true
+    },
+    "43545159": {
+      "name": "Ａ．エスピノーザ",
+      "team": "B",
+      "key": "エスピノーザ",
+      "teamSplit": false
+    },
+    "61565150": {
+      "name": "金丸 夢斗",
+      "team": "D",
+      "key": "金丸",
+      "teamSplit": false
+    },
+    "31235151": {
+      "name": "瀧中 瞭太",
+      "team": "E",
+      "key": "瀧中",
+      "teamSplit": false
+    },
+    "41745150": {
+      "name": "木下 里都",
+      "team": "T",
+      "key": "木下",
+      "teamSplit": false
+    },
+    "81685155": {
+      "name": "福島 蓮",
+      "team": "F",
+      "key": "福島",
+      "teamSplit": false
+    },
+    "61065151": {
+      "name": "鈴木 健矢",
+      "team": "C",
+      "key": "鈴木|C",
+      "teamSplit": true
+    },
+    "81685150": {
+      "name": "廣池 康志郎",
+      "team": "M",
+      "key": "廣池",
+      "teamSplit": false
+    },
+    "01205155": {
+      "name": "達 孝太",
+      "team": "F",
+      "key": "達",
+      "teamSplit": false
+    },
+    "51355151": {
+      "name": "井上 温大",
+      "team": "G",
+      "key": "井上",
+      "teamSplit": false
+    },
+    "91795114": {
+      "name": "岸 孝之",
+      "team": "E",
+      "key": "岸",
+      "teamSplit": false
+    },
+    "63365153": {
+      "name": "山野 太一",
+      "team": "S",
+      "key": "山野",
+      "teamSplit": false
+    },
+    "71075130": {
+      "name": "髙橋 光成",
+      "team": "L",
+      "key": "髙橋光成",
+      "teamSplit": false
+    },
+    "11015152": {
+      "name": "島田 舜也",
+      "team": "DB",
+      "key": "島田",
+      "teamSplit": false
+    },
+    "01005157": {
+      "name": "田中 晴也",
+      "team": "M",
+      "key": "田中|M",
+      "teamSplit": true
+    },
+    "91095136": {
+      "name": "髙橋 遥人",
+      "team": "T",
+      "key": "髙橋",
+      "teamSplit": false
+    },
+    "03505152": {
+      "name": "Ｓ．ジェリー",
+      "team": "B",
+      "key": "ジェリー",
+      "teamSplit": false
+    },
+    "63165134": {
+      "name": "柳 裕也",
+      "team": "D",
+      "key": "柳",
+      "teamSplit": false
+    },
+    "01505151": {
+      "name": "大関 友久",
+      "team": "H",
+      "key": "大関",
+      "teamSplit": false
+    },
+    "41245151": {
+      "name": "玉村 昇悟",
+      "team": "C",
+      "key": "玉村",
+      "teamSplit": false
+    },
+    "51155130": {
+      "name": "有原 航平",
+      "team": "F",
+      "key": "有原",
+      "teamSplit": false
+    },
+    "31635159": {
+      "name": "西舘 勇陽",
+      "team": "G",
+      "key": "西舘",
+      "teamSplit": false
+    },
+    "31835153": {
+      "name": "早川 隆久",
+      "team": "E",
+      "key": "早川|E",
+      "teamSplit": true
+    },
+    "21925139": {
+      "name": "高梨 裕稔",
+      "team": "S",
+      "key": "高梨|S",
+      "teamSplit": true
+    },
+    "21025155": {
+      "name": "隅田 知一郎",
+      "team": "L",
+      "key": "隅田",
+      "teamSplit": false
+    },
+    "91295159": {
+      "name": "武田 陸玖",
+      "team": "DB",
+      "key": "武田",
+      "teamSplit": false
+    },
+    "21525116": {
+      "name": "唐川 侑己",
+      "team": "M",
+      "key": "唐川",
+      "teamSplit": false
+    },
+    "13315153": {
+      "name": "村上 頌樹",
+      "team": "T",
+      "key": "村上",
+      "teamSplit": false
+    },
+    "41045136": {
+      "name": "田嶋 大樹",
+      "team": "B",
+      "key": "田嶋大",
+      "teamSplit": false
+    },
+    "11515133": {
+      "name": "大野 雄大",
+      "team": "D",
+      "key": "大野|D",
+      "teamSplit": true
+    },
+    "71875157": {
+      "name": "前田 純",
+      "team": "H",
+      "key": "前田純",
+      "teamSplit": false
+    },
+    "53155151": {
+      "name": "森下 暢仁",
+      "team": "C",
+      "key": "森下",
+      "teamSplit": false
+    },
+    "61365136": {
+      "name": "尾形 崇斗",
+      "team": "DB",
+      "key": "尾形",
+      "teamSplit": false
+    },
+    "61065159": {
+      "name": "髙島 泰都",
+      "team": "B",
+      "key": "髙島",
+      "teamSplit": false
+    },
+    "23525152": {
+      "name": "徐 若熙",
+      "team": "H",
+      "key": "徐",
+      "teamSplit": false
+    }
+  }
+}
