@@ -1,0 +1,12 @@
+{
+  "date": "2026-06-03",
+  "source": "user-provided book lines",
+  "games": [
+    {"away": "B", "home": "G", "fav": "G", "favMl": -110, "total": 6.5},
+    {"away": "F", "home": "C", "fav": "F", "favMl": -135, "total": 6.5},
+    {"away": "L", "home": "T", "fav": "T", "favMl": -150, "total": 5.5},
+    {"away": "E", "home": "DB", "fav": "DB", "favMl": -140, "total": 6.5},
+    {"away": "M", "home": "S", "fav": "S", "favMl": -140, "total": 6.5},
+    {"away": "H", "home": "D", "fav": "H", "favMl": -150, "total": 6.5}
+  ]
+}

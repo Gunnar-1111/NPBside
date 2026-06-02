@@ -34,7 +34,13 @@ REPO = Path(__file__).parent.parent
 LEAGUE_AVG_PER_TEAM = 3.30       # DERIVED (6.60 / 2)
 LEAGUE_AVG_TOTAL = 6.60          # DERIVED
 HCA_RUNS = 0.11                  # DERIVED: home-away run diff over 2024-25 corpus (n=1753, +0.113); was 0.30 plan-number
-WIN_DIVISOR = 2.9                # NPB-scaled pythagorean divisor; calibrate later
+WIN_DIVISOR = 5.4                # DERIVED 6/2: logistic fit of team-season run-margin
+                                 # vs win% over the 2024-26 corpus (24 team-seasons;
+                                 # grid-search 5.4, logit-regression 5.38). The old 2.9
+                                 # was ~2x too steep — the bulk of the chalk-tilt. A
+                                 # divisor change is monotonic (can't flip favorites /
+                                 # change side picks), so it only flattens over-heavy
+                                 # chalk. Residual chalk = run-diff/SP-spread, separate.
 VIG = 0.045                      # standard ~4.5% hold (MLB convention)
 
 # Floors so MLs don't blow up on absurd projections
