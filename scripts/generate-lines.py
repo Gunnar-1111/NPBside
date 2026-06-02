@@ -163,6 +163,33 @@ def shrink_rating(rating, ip):
     return rating * weight
 
 
+# Relief innings are WEAK evidence for a STARTING rating — a bullpen arm's rate
+# stats reflect one-time-through, max-effort outings, not turning a lineup over
+# 2-3 times. So discount relief innings when computing the IP sample weight: a
+# small-sample, relief-heavy arm making a spot start regresses hard toward league
+# average instead of carrying its inflated relief rating into the line.
+#
+# This is distinct from relief_start_penalty (which docks the rating LEVEL for
+# role bias); here we down-weight the SAMPLE so the shrink does its job. A pure
+# starter (reliefShare ≈ 0) is untouched — zero slate-wide collateral.
+#
+# Worked example — 木下 里都 (5/28 Koshien spot start): 17.7 IP, 77% relief.
+#   before: weight 17.7/(17.7+50)=0.26 → rating ~+0.30 → Tigers -251 (book -120)
+#   after:  effIp 17.7×(1−0.774)=4.0, weight 4.0/54.0=0.074 → rating ~+0.07
+RELIEF_IP_DISCOUNT = 1.0  # fraction of relief innings discarded from the shrink sample
+
+
+def effective_starter_ip(ip, relief_share):
+    """IP weighted as evidence for a STARTING rating — relief innings discounted.
+
+    A pure starter (relief_share≈0) returns ip unchanged; a pure reliever
+    (relief_share≈1) returns ~0, forcing the rating to league average.
+    """
+    if not ip or ip <= 0:
+        return 0.0
+    return ip * (1.0 - RELIEF_IP_DISCOUNT * (relief_share or 0.0))
+
+
 # Fallback if the ratings file predates the derived gap (build re-derives it).
 RELIEF_START_GAP_FALLBACK = 0.17
 
@@ -265,10 +292,14 @@ def main():
         away_rating_raw = (away_sp["rating"] if away_sp else 0.0) - away_pen
         # Shrink rating by IP — a 5-IP rookie with a fluky -4.0 FIP shouldn't
         # produce a -1100 ML. Reverts to league average (0) when IP is small.
+        # Relief innings are discounted from the sample (effective_starter_ip) so
+        # a relief-heavy arm making a spot start regresses hard toward 0.
         home_ip = home_sp["ip"] if home_sp else 0.0
         away_ip = away_sp["ip"] if away_sp else 0.0
-        home_rating = shrink_rating(home_rating_raw, home_ip)
-        away_rating = shrink_rating(away_rating_raw, away_ip)
+        home_share = home_sp.get("reliefShare", 0.0) if home_sp else 0.0
+        away_share = away_sp.get("reliefShare", 0.0) if away_sp else 0.0
+        home_rating = shrink_rating(home_rating_raw, effective_starter_ip(home_ip, home_share))
+        away_rating = shrink_rating(away_rating_raw, effective_starter_ip(away_ip, away_share))
 
         # Team offense rating (positive = better offense than league avg)
         home_off = team_offense.get(g["home"], {}).get("offenseRating", 0.0)
