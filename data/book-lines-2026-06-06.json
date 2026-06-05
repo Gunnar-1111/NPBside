@@ -1,0 +1,48 @@
+{
+  "date": "2026-06-06",
+  "source": "User-provided opening lines 6/6 (Giants/Fighters/Hawks/Lions/Tigers/Buffaloes favorites)",
+  "games": [
+    {
+      "away": "M",
+      "home": "G",
+      "fav": "G",
+      "favMl": -140,
+      "total": 6.0
+    },
+    {
+      "away": "F",
+      "home": "S",
+      "fav": "F",
+      "favMl": -120,
+      "total": 7.0
+    },
+    {
+      "away": "H",
+      "home": "DB",
+      "fav": "H",
+      "favMl": -160,
+      "total": 7.5
+    },
+    {
+      "away": "L",
+      "home": "D",
+      "fav": "L",
+      "favMl": -125,
+      "total": 6.5
+    },
+    {
+      "away": "E",
+      "home": "T",
+      "fav": "T",
+      "favMl": -185,
+      "total": 5.5
+    },
+    {
+      "away": "B",
+      "home": "C",
+      "fav": "B",
+      "favMl": -130,
+      "total": 6.5
+    }
+  ]
+}
