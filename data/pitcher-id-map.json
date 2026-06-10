@@ -14,7 +14,7 @@
       "teamSplit": true
     },
     "21125159": {
-      "name": "石田裕",
+      "name": "石田 裕太郎",
       "team": "DB",
       "key": "石田裕",
       "teamSplit": false
@@ -62,7 +62,7 @@
       "teamSplit": false
     },
     "13115159": {
-      "name": "前田悠",
+      "name": "前田 悠伍",
       "team": "H",
       "key": "前田悠",
       "teamSplit": false
@@ -170,9 +170,9 @@
       "teamSplit": false
     },
     "41045150": {
-      "name": "篠木 健太郎",
-      "team": "DB",
-      "key": "篠木",
+      "name": "福島 蓮",
+      "team": "F",
+      "key": "福島",
       "teamSplit": false
     },
     "81985157": {
@@ -226,7 +226,7 @@
     "53755138": {
       "name": "Ｃ．スチュワートJr.",
       "team": "H",
-      "key": null,
+      "key": "スチュワート・ジュニア",
       "teamSplit": false
     },
     "11515137": {
@@ -272,9 +272,9 @@
       "teamSplit": false
     },
     "81685155": {
-      "name": "福島 蓮",
-      "team": "F",
-      "key": "福島",
+      "name": "山野 太一",
+      "team": "S",
+      "key": "山野",
       "teamSplit": false
     },
     "61065151": {
@@ -284,9 +284,9 @@
       "teamSplit": true
     },
     "81685150": {
-      "name": "廣池 康志郎",
-      "team": "M",
-      "key": "廣池",
+      "name": "井上 温大",
+      "team": "G",
+      "key": "井上",
       "teamSplit": false
     },
     "01205155": {
@@ -302,21 +302,21 @@
       "teamSplit": false
     },
     "91795114": {
-      "name": "岸 孝之",
-      "team": "E",
-      "key": "岸",
+      "name": "髙橋 遥人",
+      "team": "T",
+      "key": "髙橋",
       "teamSplit": false
     },
     "63365153": {
-      "name": "山野 太一",
-      "team": "S",
-      "key": "山野",
+      "name": "廣池 康志郎",
+      "team": "M",
+      "key": "廣池",
       "teamSplit": false
     },
     "71075130": {
-      "name": "髙橋 光成",
-      "team": "L",
-      "key": "髙橋光成",
+      "name": "柳 裕也",
+      "team": "D",
+      "key": "柳",
       "teamSplit": false
     },
     "11015152": {
@@ -332,33 +332,33 @@
       "teamSplit": true
     },
     "91095136": {
-      "name": "髙橋 遥人",
-      "team": "T",
-      "key": "髙橋",
+      "name": "髙橋 光成",
+      "team": "L",
+      "key": "髙橋光成",
       "teamSplit": false
     },
     "03505152": {
-      "name": "Ｓ．ジェリー",
-      "team": "B",
-      "key": "ジェリー",
+      "name": "玉村 昇悟",
+      "team": "C",
+      "key": "玉村",
       "teamSplit": false
     },
     "63165134": {
-      "name": "柳 裕也",
-      "team": "D",
-      "key": "柳",
-      "teamSplit": false
-    },
-    "01505151": {
       "name": "大関 友久",
       "team": "H",
       "key": "大関",
       "teamSplit": false
     },
+    "01505151": {
+      "name": "篠木 健太郎",
+      "team": "DB",
+      "key": "篠木",
+      "teamSplit": false
+    },
     "41245151": {
-      "name": "玉村 昇悟",
-      "team": "C",
-      "key": "玉村",
+      "name": "岸 孝之",
+      "team": "E",
+      "key": "岸",
       "teamSplit": false
     },
     "51155130": {
@@ -449,6 +449,72 @@
       "name": "徐 若熙",
       "team": "H",
       "key": "徐",
+      "teamSplit": false
+    },
+    "41845157": {
+      "name": "松本 晴",
+      "team": "H",
+      "key": "松本晴",
+      "teamSplit": false
+    },
+    "53355152": {
+      "name": "Ｆ．ウィットリー",
+      "team": "G",
+      "key": null,
+      "teamSplit": false
+    },
+    "21825130": {
+      "name": "山﨑 福也",
+      "team": "F",
+      "key": "山﨑福",
+      "teamSplit": false
+    },
+    "81985159": {
+      "name": "庄司 陽斗",
+      "team": "DB",
+      "key": null,
+      "teamSplit": false
+    },
+    "31635110": {
+      "name": "涌井 秀章",
+      "team": "D",
+      "key": "涌井",
+      "teamSplit": false
+    },
+    "63165159": {
+      "name": "宮國 凌空",
+      "team": "B",
+      "key": null,
+      "teamSplit": false
+    },
+    "83785159": {
+      "name": "孫 易磊",
+      "team": "F",
+      "key": "孫",
+      "teamSplit": false
+    },
+    "43545152": {
+      "name": "Ｆ．ターノック",
+      "team": "C",
+      "key": "ターノック",
+      "teamSplit": false
+    },
+    "11515138": {
+      "name": "小島 和哉",
+      "team": "M",
+      "key": "小島",
+      "teamSplit": false
+    },
+    "77575159": {
+      "name": "下川 隼佑",
+      "team": "S",
+      "key": "下川",
+      "teamSplit": false
+    },
+    "71375153": {
+      "name": "伊藤 将司",
+      "team": "T",
+      "key": "伊藤将",
       "teamSplit": false
     }
   }

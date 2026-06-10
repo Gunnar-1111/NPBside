@@ -53,6 +53,17 @@ def name_candidates(name):
     return out
 
 
+# Manual playerId → ratings key overrides, for foreign pitchers whose yokoku
+# display name (e.g. 'Ｃ．スチュワートJr.') can't be name-matched to the corpus
+# boxscore name (e.g. 'スチュワート・ジュニア'). Keyed by stable playerId so it
+# survives name-format drift. Only add an entry when the rating EXISTS in
+# pitcher-ratings.json but resolve_key() misses it — not for pitchers absent
+# from the corpus (those should stay unresolved).
+MANUAL_KEY_BY_ID = {
+    "53755138": "スチュワート・ジュニア",  # Ｃ．スチュワートJr. (H)
+}
+
+
 def resolve_key(name, team, by_team, by_name):
     """Resolve (name, team) → a ratings key. Prefer 'name|TEAM', then bare name."""
     for c in name_candidates(name):
@@ -84,6 +95,10 @@ def main():
                 if not pid or not name:
                     continue
                 key, team_split = resolve_key(name, team, by_team, by_name)
+                # Manual override for names automated matching can't bridge.
+                manual = MANUAL_KEY_BY_ID.get(str(pid))
+                if manual and manual in by_name:
+                    key, team_split = manual, False
                 # Latest yokoku wins (names/teams are stable; trades update here).
                 id_map[str(pid)] = {
                     "name": name,

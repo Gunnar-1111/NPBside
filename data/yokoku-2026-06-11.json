@@ -1,0 +1,74 @@
+{
+  "date": "2026-06-11",
+  "fetchedAt": "2026-06-10T13:26:43.826936Z",
+  "source": "https://npb.jp/  (third tab_content / 明日の予告先発)",
+  "note": "Probable SPs for the next day's slate. Includes player IDs not present in historical legacy boxscores.",
+  "games": [
+    {
+      "home": "F",
+      "homeSP": "孫 易磊",
+      "homeSPId": "83785159",
+      "away": "DB",
+      "awaySP": "東 克樹",
+      "awaySPId": "51155136",
+      "venue": "エスコンＦ",
+      "startTime": "18:00",
+      "weather": "くもり時々晴れ"
+    },
+    {
+      "home": "E",
+      "homeSP": "瀧中 瞭太",
+      "homeSPId": "31235151",
+      "away": "G",
+      "awaySP": "田中 将大",
+      "awaySPId": "11215114",
+      "venue": "楽天モバイル",
+      "startTime": "18:00",
+      "weather": "晴れ"
+    },
+    {
+      "home": "L",
+      "homeSP": "平良 海馬",
+      "homeSPId": "31035136",
+      "away": "C",
+      "awaySP": "Ｆ．ターノック",
+      "awaySPId": "43545152",
+      "venue": "ベルーナドーム",
+      "startTime": "18:00",
+      "weather": "くもり"
+    },
+    {
+      "home": "M",
+      "homeSP": "小島 和哉",
+      "homeSPId": "11515138",
+      "away": "D",
+      "awaySP": "金丸 夢斗",
+      "awaySPId": "61565150",
+      "venue": "ZOZOマリン",
+      "startTime": "18:00",
+      "weather": "くもり"
+    },
+    {
+      "home": "B",
+      "homeSP": "Ａ．エスピノーザ",
+      "homeSPId": "43545159",
+      "away": "S",
+      "awaySP": "下川 隼佑",
+      "awaySPId": "77575159",
+      "venue": "京セラD大阪",
+      "startTime": "18:00",
+      "weather": "晴れのち時々くもり"
+    },
+    {
+      "home": "H",
+      "homeSP": "Ｃ．スチュワートJr.",
+      "homeSPId": "53755138",
+      "away": "T",
+      "awaySP": "伊藤 将司",
+      "awaySPId": "71375153",
+      "venue": "みずほPayPay",
+      "startTime": "18:00",
+      "weather": "晴れ"
+    }
+  ]
+}

@@ -3118,6 +3118,34 @@
         "M"
       ]
     },
+    "ターノック": {
+      "ip": 33.0,
+      "bf": 141,
+      "h": 32,
+      "hr": 0,
+      "bb": 10,
+      "hbp": 2,
+      "k": 33,
+      "er": 12,
+      "era": 3.273,
+      "fip": 1.739,
+      "kPct": 0.234,
+      "bbPct": 0.0709,
+      "hr9": 0.0,
+      "reliefShare": 0.0,
+      "appearances": 6,
+      "starts": 6,
+      "wins": 0,
+      "losses": 2,
+      "saves": 0,
+      "holds": 0,
+      "rating": 1.135,
+      "name": "ターノック",
+      "teams": [
+        "C"
+      ],
+      "source": "2026-only new import (33.0 IP, npb.jp id 43545152); manual fill 6/10 pending corpus rescrape"
+    },
     "スチュワート・ジュニア": {
       "ip": 134.0,
       "bf": 547,
