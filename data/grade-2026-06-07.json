@@ -1,0 +1,93 @@
+{
+  "date": "2026-06-07",
+  "summary": {
+    "model": {
+      "sides": "4-0-1",
+      "totalMaeR": 1.1
+    },
+    "book": null,
+    "headToHead": null
+  },
+  "games": [
+    {
+      "matchup": "Marines @ Giants",
+      "actual": "2-2",
+      "actualTotal": 4,
+      "modelFav": "Giants",
+      "modelFavMl": -125,
+      "modelTotal": 6.0,
+      "sideResult": "PUSH",
+      "totalDiff": -2.0,
+      "totalSide": "UNDER",
+      "rlOutcome": "away +1.5 covered",
+      "bookFav": null,
+      "bookFavMl": null,
+      "bookTotal": null,
+      "bookSideResult": null
+    },
+    {
+      "matchup": "Fighters @ Swallows",
+      "actual": "7-1",
+      "actualTotal": 8,
+      "modelFav": "Fighters",
+      "modelFavMl": -205,
+      "modelTotal": 8.0,
+      "sideResult": "WIN",
+      "totalDiff": 0.0,
+      "totalSide": "PUSH",
+      "rlOutcome": "away +1.5 covered",
+      "bookFav": null,
+      "bookFavMl": null,
+      "bookTotal": null,
+      "bookSideResult": null
+    },
+    {
+      "matchup": "Hawks @ BayStars",
+      "actual": "4-2",
+      "actualTotal": 6,
+      "modelFav": "Hawks",
+      "modelFavMl": -158,
+      "modelTotal": 8.0,
+      "sideResult": "WIN",
+      "totalDiff": -2.0,
+      "totalSide": "UNDER",
+      "rlOutcome": "away +1.5 covered",
+      "bookFav": null,
+      "bookFavMl": null,
+      "bookTotal": null,
+      "bookSideResult": null
+    },
+    {
+      "matchup": "Lions @ Dragons",
+      "actual": "4-1",
+      "actualTotal": 5,
+      "modelFav": "Lions",
+      "modelFavMl": -112,
+      "modelTotal": 5.5,
+      "sideResult": "WIN",
+      "totalDiff": -0.5,
+      "totalSide": "UNDER",
+      "rlOutcome": "away +1.5 covered",
+      "bookFav": null,
+      "bookFavMl": null,
+      "bookTotal": null,
+      "bookSideResult": null
+    },
+    {
+      "matchup": "Buffaloes @ Carp",
+      "actual": "2-5",
+      "actualTotal": 7,
+      "modelFav": "Carp",
+      "modelFavMl": -117,
+      "modelTotal": 6.0,
+      "sideResult": "WIN",
+      "totalDiff": 1.0,
+      "totalSide": "OVER",
+      "rlOutcome": "home -1.5 covered",
+      "bookFav": null,
+      "bookFavMl": null,
+      "bookTotal": null,
+      "bookSideResult": null
+    }
+  ]
+}
